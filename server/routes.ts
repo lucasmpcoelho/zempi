@@ -18,7 +18,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         try {
           await appendToSheet(
             spreadsheetId,
-            'Sheet1!A:C',
+            'Sheet1!A:D',
             [[
               submission.name,
               submission.email,
