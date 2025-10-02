@@ -9,14 +9,16 @@ export default function About() {
       name: "Lucas Coelho",
       role: "Co-founder & CEO",
       linkedin: "https://www.linkedin.com/in/lucasmpcoelho/",
-      bio: "Apaixonado por wellness e tecnologia, Lucas acredita que a saúde é o maior ativo que podemos ter. Com experiência em produtos digitais e inovação, lidera o desenvolvimento do Zempi com foco em criar ferramentas que realmente transformam a vida das pessoas.",
+      background: "McKinsey, Google, Amazon",
+      bio: "Apaixonado por wellness e tecnologia, Lucas traz experiência de empresas de classe mundial como McKinsey, Google e Amazon. Acredita que a saúde é o maior ativo que podemos ter e aplica sua expertise em produtos digitais e estratégia para criar ferramentas que realmente transformam a vida das pessoas.",
       mission: "Democratizar o acesso a suporte médico inteligente e personalizado"
     },
     {
       name: "Rafael Sampaio",
       role: "Co-founder & CTO",
       linkedin: "https://www.linkedin.com/in/sampaiorafa/",
-      bio: "Rafael combina expertise técnica com paixão por impacto social. Acredita que a tecnologia deve servir às pessoas, não o contrário. Sua missão é construir sistemas que empoderam pacientes a tomarem controle da própria jornada de saúde.",
+      background: "Engenharia & Tecnologia",
+      bio: "Rafael combina expertise técnica de ponta com paixão por impacto social. Com forte background em engenharia de software e sistemas escaláveis, acredita que a tecnologia deve servir às pessoas, não o contrário. Lidera a construção de sistemas que empoderam pacientes a tomarem controle da própria jornada de saúde.",
       mission: "Criar tecnologia que coloca o paciente no centro de sua própria saúde"
     }
   ];
@@ -97,9 +99,14 @@ export default function About() {
                     <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
                       {founder.name}
                     </h3>
-                    <p className="text-lg text-primary font-semibold">
+                    <p className="text-lg text-primary font-semibold mb-3">
                       {founder.role}
                     </p>
+                    <div className="inline-block px-4 py-1.5 bg-primary/10 rounded-full">
+                      <p className="text-sm font-medium text-primary">
+                        {founder.background}
+                      </p>
+                    </div>
                   </div>
                   <a
                     href={founder.linkedin}
