@@ -112,6 +112,7 @@ export default function ChatSimulation() {
   const [visibleMessages, setVisibleMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const timeoutRefs = useRef<NodeJS.Timeout[]>([]);
   const hasStartedRef = useRef(false);
@@ -187,7 +188,9 @@ export default function ChatSimulation() {
   };
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   }, [visibleMessages, isTyping]);
 
   return (
@@ -249,7 +252,7 @@ export default function ChatSimulation() {
                   </div>
                 </div>
 
-                <div className="p-3 space-y-2 bg-[#ECE5DD] h-[650px] overflow-y-auto whatsapp-pattern" data-testid="chat-messages">
+                <div ref={chatContainerRef} className="p-3 space-y-2 bg-[#ECE5DD] h-[650px] overflow-y-auto whatsapp-pattern" data-testid="chat-messages">
                   <AnimatePresence mode="popLayout">
                     {visibleMessages.map((message) => (
                       <motion.div
