@@ -6,6 +6,17 @@ import { fromZodError } from "zod-validation-error";
 import { appendToSheet } from "./google-sheets";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Get all waitlist submissions
+  app.get("/api/waitlist", async (req, res) => {
+    try {
+      const submissions = await storage.getAllWaitlistSubmissions();
+      res.json(submissions);
+    } catch (error) {
+      console.error("Error fetching waitlist submissions:", error);
+      res.status(500).json({ error: "Erro ao buscar inscrições" });
+    }
+  });
+
   // Waitlist submission endpoint
   app.post("/api/waitlist", async (req, res) => {
     try {

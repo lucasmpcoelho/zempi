@@ -2,32 +2,44 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.getElementById('waitlist');
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="pt-32 pb-20 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-40 pb-32 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center space-y-8"
+          className="text-center space-y-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-foreground" data-testid="hero-title">
-            Navegue sua jornada com Mounjaro e Ozempic com mais segurança e sucesso
+          <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-foreground tracking-tight" data-testid="hero-title">
+            O que falta no seu tratamento GLP-1: suporte contínuo e inteligente
           </h1>
           
-          <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto" data-testid="hero-description">
-            O Zempi é seu médico assistente de IA que te acompanha 24/7, garantindo que você atinja seus objetivos sem imprevistos no tratamento
+          <p className="text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light" data-testid="hero-description">
+            Médico assistente de IA 24/7 pelo WhatsApp que maximiza resultados, previne perda muscular e garante aderência ao Ozempic e Mounjaro
           </p>
           
-          <div className="pt-4">
+          <div className="pt-6">
             <Button 
               size="lg"
-              className="px-10 py-6 bg-primary text-white rounded-full font-semibold text-lg hover:bg-primary/90 transition-colors"
+              onClick={scrollToWaitlist}
+              className="px-12 py-7 bg-primary text-white rounded-full font-semibold text-xl hover:bg-primary/90 transition-all hover:scale-105"
               data-testid="button-comecar-acompanhamento"
             >
-              Começar Agora
+              Entrar na Lista de Espera
             </Button>
           </div>
+
+          <p className="text-sm text-muted-foreground pt-4">
+            🔒 Criptografia de ponta a ponta • 🇧🇷 100% em português • ⚡ Respostas instantâneas
+          </p>
         </motion.div>
       </div>
     </section>

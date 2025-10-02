@@ -12,6 +12,7 @@ export interface IStorage {
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   createWaitlistSubmission(submission: InsertWaitlist): Promise<WaitlistSubmission>;
+  getAllWaitlistSubmissions(): Promise<WaitlistSubmission[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -40,6 +41,10 @@ export class DatabaseStorage implements IStorage {
   async createWaitlistSubmission(submission: InsertWaitlist): Promise<WaitlistSubmission> {
     const result = await this.db.insert(waitlistSubmissions).values(submission).returning();
     return result[0];
+  }
+
+  async getAllWaitlistSubmissions(): Promise<WaitlistSubmission[]> {
+    return await this.db.select().from(waitlistSubmissions);
   }
 }
 
@@ -72,12 +77,17 @@ export class MemStorage implements IStorage {
   async createWaitlistSubmission(submission: InsertWaitlist): Promise<WaitlistSubmission> {
     const id = randomUUID();
     const waitlistSubmission: WaitlistSubmission = { 
-      ...submission, 
+      ...submission,
+      phone: submission.phone ?? null,
       id, 
       createdAt: new Date() 
     };
     this.waitlistSubmissionsMap.set(id, waitlistSubmission);
     return waitlistSubmission;
+  }
+
+  async getAllWaitlistSubmissions(): Promise<WaitlistSubmission[]> {
+    return Array.from(this.waitlistSubmissionsMap.values());
   }
 }
 

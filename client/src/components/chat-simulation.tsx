@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CheckCircle, Send } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -10,7 +10,7 @@ interface Message {
 }
 
 export default function ChatSimulation() {
-  const [messages, setMessages] = useState<Message[]>([
+  const [messages] = useState<Message[]>([
     {
       id: 1,
       isZempi: true,
@@ -26,7 +26,7 @@ export default function ChatSimulation() {
     {
       id: 3,
       isZempi: true,
-      content: "Entendi. Analisando seu histórico, vi que você jantou salmão grelhado com batata doce ontem às 20h. A náusea pode estar relacionada à combinação de gordura do peixe + dose recente. Vou te ajudar:",
+      content: "Entendi. Analisando seu histórico, vi que você jantou salmão grelhado com batata doce ontem às 20h. A náusea pode estar relacionada à combinação de gordura do peixe + dose recente.",
       time: "8:19"
     },
     {
@@ -58,21 +58,61 @@ export default function ChatSimulation() {
     {
       id: 5,
       isZempi: false,
-      content: "Uau, não tinha percebido esse padrão! Obrigada!",
+      content: "Nossa, muito obrigada! Nem tinha percebido esse padrão. E sobre minha meta de peso?",
       time: "8:22"
     },
     {
       id: 6,
       isZempi: true,
-      content: "É para isso que estou aqui! 😊 Vou te enviar um relatório ao final da semana mostrando quais alimentos funcionam melhor para você. Te pergunto às 12h como está a náusea, ok?",
+      content: "Você está ótima! Perdeu 8kg em 6 semanas. Mas notei algo importante...",
       time: "8:23"
+    },
+    {
+      id: 7,
+      isZempi: true,
+      content: (
+        <div>
+          <p className="text-gray-800 mb-2 font-semibold">⚠️ Alerta de Massa Muscular:</p>
+          <p className="text-gray-700 text-xs mb-2">Sua ingestão de proteína está em 0.8g/kg (ideal: 1.6g/kg para GLP-1). Isso pode levar à perda muscular junto com a gordura.</p>
+          
+          <p className="text-gray-800 font-semibold mb-1 mt-3">💪 Plano personalizado:</p>
+          <ul className="space-y-1.5 text-xs mb-2">
+            <li className="flex items-start">
+              <CheckCircle className="text-primary h-3.5 w-3.5 mt-0.5 mr-2 flex-shrink-0" />
+              <span className="text-gray-700">Adicione 30g de proteína no café (2 ovos + iogurte grego)</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="text-primary h-3.5 w-3.5 mt-0.5 mr-2 flex-shrink-0" />
+              <span className="text-gray-700">Treino de resistência 3x/semana (já criei seu plano)</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="text-primary h-3.5 w-3.5 mt-0.5 mr-2 flex-shrink-0" />
+              <span className="text-gray-700">Whey protein após treino (20g)</span>
+            </li>
+          </ul>
+          <p className="text-gray-700 text-xs">📈 Com essas mudanças, você mantém músculos enquanto perde gordura.</p>
+        </div>
+      ),
+      time: "8:24"
+    },
+    {
+      id: 8,
+      isZempi: false,
+      content: "Perfeito! Vou seguir as orientações. Obrigada por cuidar de mim! 💙",
+      time: "8:26"
+    },
+    {
+      id: 9,
+      isZempi: true,
+      content: "É para isso que estou aqui! 😊 Te envio o relatório semanal amanhã e te pergunto às 12h como está a náusea. Bom dia!",
+      time: "8:27"
     }
   ]);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Title and Subtitle */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -80,12 +120,26 @@ export default function ChatSimulation() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground" data-testid="chat-title">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-8 text-foreground tracking-tight" data-testid="chat-title">
               Conversas inteligentes e proativas
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed" data-testid="chat-description">
-              O Zempi analisa padrões no seu tratamento, identifica correlações entre alimentos e sintomas, e oferece insights personalizados baseados no seu histórico.
+            <p className="text-xl text-muted-foreground leading-relaxed font-light mb-8" data-testid="chat-description">
+              O Zempi analisa padrões no seu tratamento, identifica correlações entre alimentos e sintomas, e oferece insights personalizados que você não conseguiria descobrir sozinho.
             </p>
+            <div className="space-y-4 text-muted-foreground">
+              <div className="flex items-start">
+                <CheckCircle className="text-primary h-6 w-6 mt-1 mr-3 flex-shrink-0" />
+                <p>Detecção automática de padrões alimentares que causam sintomas</p>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="text-primary h-6 w-6 mt-1 mr-3 flex-shrink-0" />
+                <p>Alertas de perda muscular com planos de ação personalizados</p>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="text-primary h-6 w-6 mt-1 mr-3 flex-shrink-0" />
+                <p>Acompanhamento contínuo baseado no seu histórico completo</p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Right side - Phone-sized WhatsApp demo */}
@@ -118,14 +172,14 @@ export default function ChatSimulation() {
                 </div>
 
                 {/* WhatsApp-style Chat Messages */}
-                <div className="p-3 space-y-2 bg-[#ECE5DD] h-[600px] overflow-y-auto whatsapp-pattern" data-testid="chat-messages">
+                <div className="p-3 space-y-2 bg-[#ECE5DD] h-[650px] overflow-y-auto whatsapp-pattern" data-testid="chat-messages">
                   <AnimatePresence>
                     {messages.map((message, index) => (
                       <motion.div
                         key={message.id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.4, duration: 0.4 }}
+                        transition={{ delay: index * 0.3, duration: 0.4 }}
                         className={`flex ${message.isZempi ? '' : 'justify-end'}`}
                       >
                         {message.isZempi ? (
