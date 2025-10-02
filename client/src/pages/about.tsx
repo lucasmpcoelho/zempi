@@ -2,6 +2,8 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import lucasPhoto from "@assets/lucas coelho picture_1759449350469.png";
+import rafaelPhoto from "@assets/rafael sampaio pic_1759449350471.jpeg";
 
 export default function About() {
   const founders = [
@@ -10,6 +12,7 @@ export default function About() {
       role: "Co-founder & CEO",
       linkedin: "https://www.linkedin.com/in/lucasmpcoelho/",
       background: "McKinsey, Google, Amazon",
+      photo: lucasPhoto,
       bio: "Apaixonado por wellness e tecnologia, Lucas traz experiência de empresas de classe mundial como McKinsey, Google e Amazon. Acredita que a saúde é o maior ativo que podemos ter e aplica sua expertise em produtos digitais e estratégia para criar ferramentas que realmente transformam a vida das pessoas.",
       mission: "Democratizar o acesso a suporte médico inteligente e personalizado"
     },
@@ -18,6 +21,7 @@ export default function About() {
       role: "Co-founder & CTO",
       linkedin: "https://www.linkedin.com/in/sampaiorafa/",
       background: "FinTech Expert, PwC, Deloitte",
+      photo: rafaelPhoto,
       bio: "Rafael combina expertise técnica de ponta com paixão por impacto social. Com experiência em FinTech e passagens por PwC e Deloitte, possui forte background em engenharia de software e sistemas escaláveis. Acredita que a tecnologia deve servir às pessoas, não o contrário, e lidera a construção de sistemas que empoderam pacientes a tomarem controle da própria jornada de saúde.",
       mission: "Criar tecnologia que coloca o paciente no centro de sua própria saúde"
     }
@@ -94,41 +98,51 @@ export default function About() {
                 className="bg-white rounded-3xl p-8 lg:p-10 shadow-lg border border-border hover:shadow-xl transition-shadow"
                 data-testid={`founder-card-${index}`}
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
-                      {founder.name}
-                    </h3>
-                    <p className="text-lg text-primary font-semibold mb-3">
-                      {founder.role}
-                    </p>
-                    <div className="inline-block px-4 py-1.5 bg-primary/10 rounded-full">
-                      <p className="text-sm font-medium text-primary">
-                        {founder.background}
-                      </p>
-                    </div>
+                <div className="flex flex-col items-center text-center mb-6">
+                  <div className="relative group mb-6">
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+                    <img
+                      src={founder.photo}
+                      alt={`Foto de ${founder.name}`}
+                      className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-white shadow-lg"
+                      data-testid={`photo-${index}`}
+                    />
                   </div>
+                  
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                    {founder.name}
+                  </h3>
+                  <p className="text-lg text-primary font-semibold mb-3">
+                    {founder.role}
+                  </p>
+                  <div className="inline-block px-4 py-1.5 bg-primary/10 rounded-full mb-4">
+                    <p className="text-sm font-medium text-primary">
+                      {founder.background}
+                    </p>
+                  </div>
+                  
                   <a
                     href={founder.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition-colors"
+                    className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2"
                     data-testid={`linkedin-${index}`}
                     aria-label={`LinkedIn de ${founder.name}`}
                   >
-                    <Linkedin className="h-7 w-7" />
+                    <Linkedin className="h-5 w-5" />
+                    <span className="text-sm font-medium">LinkedIn</span>
                   </a>
                 </div>
 
-                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
+                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6 text-center">
                   {founder.bio}
                 </p>
 
                 <div className="pt-6 border-t border-border">
-                  <p className="text-sm text-muted-foreground font-semibold mb-2 uppercase tracking-wide">
+                  <p className="text-sm text-muted-foreground font-semibold mb-2 uppercase tracking-wide text-center">
                     Missão Pessoal
                   </p>
-                  <p className="text-base lg:text-lg text-foreground font-medium leading-relaxed">
+                  <p className="text-base lg:text-lg text-foreground font-medium leading-relaxed text-center">
                     "{founder.mission}"
                   </p>
                 </div>
