@@ -17,8 +17,8 @@ export default function About() {
       name: "Rafael Sampaio",
       role: "Co-founder & CTO",
       linkedin: "https://www.linkedin.com/in/sampaiorafa/",
-      background: "Engenharia & Tecnologia",
-      bio: "Rafael combina expertise técnica de ponta com paixão por impacto social. Com forte background em engenharia de software e sistemas escaláveis, acredita que a tecnologia deve servir às pessoas, não o contrário. Lidera a construção de sistemas que empoderam pacientes a tomarem controle da própria jornada de saúde.",
+      background: "FinTech Expert, PwC, Deloitte",
+      bio: "Rafael combina expertise técnica de ponta com paixão por impacto social. Com experiência em FinTech e passagens por PwC e Deloitte, possui forte background em engenharia de software e sistemas escaláveis. Acredita que a tecnologia deve servir às pessoas, não o contrário, e lidera a construção de sistemas que empoderam pacientes a tomarem controle da própria jornada de saúde.",
       mission: "Criar tecnologia que coloca o paciente no centro de sua própria saúde"
     }
   ];
