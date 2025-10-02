@@ -81,23 +81,28 @@ export default function ChatSimulation() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-white rounded-2xl shadow-xl border border-border overflow-hidden" data-testid="chat-container">
-            {/* Chat Header */}
-            <div className="bg-gradient-to-r from-primary to-secondary p-6 flex items-center space-x-4">
-              <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <Bot className="text-white h-8 w-8" />
+          <div className="bg-white rounded-2xl shadow-2xl border border-border overflow-hidden" data-testid="chat-container">
+            {/* WhatsApp-style Chat Header */}
+            <div className="bg-primary p-4 flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 6 L16 6 L12 12 L16 12 L8 18 L11 12 L8 12 Z" fill="url(#headerGrad)" strokeWidth="1" stroke="url(#headerGrad)" strokeLinejoin="round" />
+                  <defs>
+                    <linearGradient id="headerGrad" x1="0" y1="0" x2="24" y2="24">
+                      <stop stopColor="#25D366" />
+                      <stop offset="1" stopColor="#128C7E" />
+                    </linearGradient>
+                  </defs>
+                </svg>
               </div>
-              <div>
-                <h3 className="text-white font-semibold text-lg">Zempi AI</h3>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-white/90 text-sm">Sempre disponível</span>
-                </div>
+              <div className="flex-1">
+                <h3 className="text-white font-semibold">Zempi AI</h3>
+                <div className="text-white/90 text-xs">online</div>
               </div>
             </div>
 
-            {/* Chat Messages */}
-            <div className="p-6 space-y-4 bg-muted/30 min-h-[500px]" data-testid="chat-messages">
+            {/* WhatsApp-style Chat Messages */}
+            <div className="p-4 space-y-2 bg-[#ECE5DD] min-h-[500px] whatsapp-pattern" data-testid="chat-messages">
               <AnimatePresence>
                 {messages.map((message, index) => (
                   <motion.div
@@ -105,53 +110,60 @@ export default function ChatSimulation() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.3, duration: 0.4 }}
-                    className={`flex items-start space-x-3 ${message.isZempi ? '' : 'justify-end'}`}
+                    className={`flex ${message.isZempi ? '' : 'justify-end'}`}
                   >
                     {message.isZempi ? (
-                      <>
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                          <Bot className="text-white h-5 w-5" />
-                        </div>
-                        <div className="bg-white rounded-2xl rounded-tl-sm p-4 shadow-sm max-w-md">
-                          {typeof message.content === 'string' ? (
-                            <p className="text-foreground">{message.content}</p>
-                          ) : (
-                            message.content
-                          )}
-                          <span className="text-xs text-muted-foreground mt-2 block">{message.time}</span>
-                        </div>
-                      </>
+                      <div className="bg-white rounded-lg rounded-tl-sm p-3 shadow-sm max-w-[75%]">
+                        {typeof message.content === 'string' ? (
+                          <p className="text-gray-800 text-sm">{message.content}</p>
+                        ) : (
+                          <div className="text-sm">
+                            <p className="text-gray-800 mb-2">Entendo. A náusea é um efeito comum nas primeiras semanas. Vou te ajudar com algumas orientações:</p>
+                            <ul className="space-y-1.5 text-xs">
+                              <li className="flex items-start">
+                                <CheckCircle className="text-primary h-3.5 w-3.5 mt-0.5 mr-2 flex-shrink-0" />
+                                <span className="text-gray-700">Tome a medicação com alimentos leves</span>
+                              </li>
+                              <li className="flex items-start">
+                                <CheckCircle className="text-primary h-3.5 w-3.5 mt-0.5 mr-2 flex-shrink-0" />
+                                <span className="text-gray-700">Evite alimentos muito gordurosos hoje</span>
+                              </li>
+                              <li className="flex items-start">
+                                <CheckCircle className="text-primary h-3.5 w-3.5 mt-0.5 mr-2 flex-shrink-0" />
+                                <span className="text-gray-700">Beba água regularmente em pequenos goles</span>
+                              </li>
+                            </ul>
+                            <p className="text-gray-800 mt-2">Se a náusea persistir ou piorar, me avise imediatamente! 🏥</p>
+                          </div>
+                        )}
+                        <span className="text-[10px] text-gray-500 block mt-1">{message.time}</span>
+                      </div>
                     ) : (
-                      <>
-                        <div className="bg-gradient-to-br from-primary to-secondary text-white rounded-2xl rounded-tr-sm p-4 shadow-sm max-w-md">
-                          <p>{message.content}</p>
-                          <span className="text-xs text-white/70 mt-2 block text-right">{message.time}</span>
-                        </div>
-                        <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                          <User className="text-muted-foreground h-5 w-5" />
-                        </div>
-                      </>
+                      <div className="bg-[#DCF8C6] rounded-lg rounded-tr-sm p-3 shadow-sm max-w-[75%]">
+                        <p className="text-gray-800 text-sm">{message.content}</p>
+                        <span className="text-[10px] text-gray-500 block mt-1 text-right">{message.time}</span>
+                      </div>
                     )}
                   </motion.div>
                 ))}
               </AnimatePresence>
             </div>
 
-            {/* Chat Input (Mock) */}
-            <div className="p-4 bg-white border-t border-border">
-              <div className="flex items-center space-x-3">
+            {/* WhatsApp-style Input */}
+            <div className="p-2 bg-[#F0F0F0] border-t border-gray-200">
+              <div className="flex items-center space-x-2">
                 <input 
                   type="text" 
-                  placeholder="Digite sua mensagem..." 
-                  className="flex-1 px-4 py-3 rounded-xl bg-muted border border-input focus:outline-none focus:ring-2 focus:ring-ring"
+                  placeholder="Mensagem" 
+                  className="flex-1 px-4 py-2.5 rounded-full bg-white border-0 focus:outline-none text-sm"
                   disabled
                   data-testid="chat-input"
                 />
                 <button 
-                  className="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold hover:opacity-90 transition-opacity"
+                  className="w-10 h-10 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center"
                   data-testid="chat-send-button"
                 >
-                  <Send className="h-5 w-5" />
+                  <Send className="h-4 w-4" />
                 </button>
               </div>
             </div>

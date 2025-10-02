@@ -8,7 +8,6 @@ const teamMembers = [
     credentials: "CRM 12345-SP | Especialista em Obesidade e Diabetes",
     bio: "15 anos de experiência em endocrinologia com foco em tratamentos com medicações GLP-1. Formada pela USP com pós-graduação em Harvard.",
     initials: "AS",
-    gradient: "from-primary to-secondary",
   },
   {
     name: "Dr. Carlos Mendes",
@@ -16,7 +15,6 @@ const teamMembers = [
     credentials: "CRM 67890-RJ | Especialista em Nutrologia",
     bio: "Especialista em nutrição clínica e emagrecimento saudável. Membro da Sociedade Brasileira de Nutrologia com mais de 10 anos de prática.",
     initials: "CM",
-    gradient: "from-secondary to-accent",
   },
   {
     name: "Dra. Mariana Costa",
@@ -24,7 +22,6 @@ const teamMembers = [
     credentials: "CRN 98765-SP | Mestre em Nutrição Clínica",
     bio: "Especialista em acompanhamento nutricional para pacientes em tratamento com GLP-1. Mestrado pela UNIFESP focado em obesidade.",
     initials: "MC",
-    gradient: "from-accent to-primary",
   },
 ];
 
@@ -76,17 +73,15 @@ export default function TeamSection() {
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-border"
+              className="bg-white rounded-2xl p-8 shadow-lg border border-border hover-lift"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               data-testid={`team-member-${index}`}
             >
-              <div
-                className={`w-24 h-24 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4`}
-              >
-                {member.initials}
+              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 border-2 border-primary/20">
+                <span className="text-primary font-bold text-2xl">{member.initials}</span>
               </div>
               <h3 className="text-xl font-bold text-center mb-1">{member.name}</h3>
               <p className="text-primary text-center font-semibold mb-2">{member.role}</p>

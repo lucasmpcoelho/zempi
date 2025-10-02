@@ -1,6 +1,22 @@
 import { useState } from "react";
-import { Heart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+function ZempiLogo() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="8" fill="url(#logoGradient)" />
+      <path d="M14 12 L26 12 L20 20 L26 20 L14 28 L18 20 L14 20 Z" fill="white" strokeWidth="1.5" stroke="white" strokeLinejoin="round" />
+      <circle cx="30" cy="12" r="3" fill="white" fillOpacity="0.9" />
+      <defs>
+        <linearGradient id="logoGradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#25D366" />
+          <stop offset="1" stopColor="#128C7E" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,11 +33,9 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <Heart className="text-white h-5 w-5" />
-            </div>
-            <span className="text-2xl font-bold gradient-text">Zempi</span>
+          <div className="flex items-center space-x-3">
+            <ZempiLogo />
+            <span className="text-2xl font-bold text-foreground">Zempi</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
