@@ -12,11 +12,11 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-foreground" data-testid="hero-title">
-            Acompanhe seu tratamento GLP-1 pelo <span className="gradient-text">WhatsApp</span>
+            Navegue sua jornada com Mounjaro e Ozempic com mais segurança e sucesso
           </h1>
           
           <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto" data-testid="hero-description">
-            Tire dúvidas, registre sintomas e receba orientação personalizada 24/7 com o Zempi AI
+            O Zempi é seu médico assistente de IA que te acompanha 24/7, garantindo que você atinja seus objetivos sem imprevistos no tratamento
           </p>
           
           <div className="pt-4">

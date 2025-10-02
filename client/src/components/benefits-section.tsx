@@ -1,26 +1,33 @@
-import { Clock, Brain, Shield, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const benefits = [
   {
-    icon: Clock,
-    title: "24/7 Disponível",
-    description: "Acompanhamento contínuo pelo WhatsApp a qualquer hora"
+    emoji: "📝",
+    title: "Check-ins proativos e diários"
   },
   {
-    icon: Brain,
-    title: "Inteligência Artificial",
-    description: "Orientações personalizadas baseadas no seu perfil"
+    emoji: "🤖",
+    title: "Respostas confiáveis, 24/7"
   },
   {
-    icon: Shield,
-    title: "Segurança no Tratamento",
-    description: "Alertas em tempo real sobre efeitos adversos"
+    emoji: "🍽️",
+    title: "Análise de refeições otimizada para GLP-1"
   },
   {
-    icon: MessageCircle,
-    title: "Conversas Proativas",
-    description: "O Zempi pergunta como você está ao longo do dia"
+    emoji: "🔍",
+    title: "Detetive de sintomas e alimentos"
+  },
+  {
+    emoji: "📊",
+    title: "Relatórios de causa e efeito"
+  },
+  {
+    emoji: "🎯",
+    title: "Preparação para manutenção"
+  },
+  {
+    emoji: "🔒",
+    title: "Privacidade e criptografia de ponta a ponta"
   }
 ];
 
@@ -36,26 +43,23 @@ export default function BenefitsSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-foreground" data-testid="benefits-title">
-            Por que usar o Zempi?
+            Funcionalidades
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
-              className="bg-white rounded-2xl p-8 text-center"
+              className="bg-white rounded-2xl p-6 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
               data-testid={`benefit-card-${index}`}
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <benefit.icon className="text-primary h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-foreground">{benefit.title}</h3>
-              <p className="text-muted-foreground text-sm">{benefit.description}</p>
+              <div className="text-4xl mb-3">{benefit.emoji}</div>
+              <h3 className="text-base font-semibold text-foreground">{benefit.title}</h3>
             </motion.div>
           ))}
         </div>
