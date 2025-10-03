@@ -1,4 +1,4 @@
-import { insertWaitlistSchema } from "./_lib/schema";
+import { insertWaitlistSchema } from "./_lib/schema.js";
 
 export const config = {
   runtime: "nodejs",
@@ -20,7 +20,7 @@ export default async function handler(req: any, res: any) {
     const spreadsheetId = process.env.GOOGLE_SHEET_ID;
     if (spreadsheetId) {
       try {
-        const { appendToSheet } = await import("./_lib/google-sheets");
+        const { appendToSheet } = await import("./_lib/google-sheets.js");
         await appendToSheet(spreadsheetId, "Sheet1!A:D", [[
           parsed.name,
           parsed.email,
