@@ -1,4 +1,20 @@
-import { Heart, Instagram, Facebook, Linkedin, Youtube, Shield, Lock } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Youtube, Shield, Lock } from "lucide-react";
+
+function ZempiLogo() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="8" fill="url(#logoGradientFooter)" />
+      <path d="M14 12 L26 12 L20 20 L26 20 L14 28 L18 20 L14 20 Z" fill="white" strokeWidth="1.5" stroke="white" strokeLinejoin="round" />
+      <circle cx="30" cy="12" r="3" fill="white" fillOpacity="0.9" />
+      <defs>
+        <linearGradient id="logoGradientFooter" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#25D366" />
+          <stop offset="1" stopColor="#128C7E" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
 
 const footerSections = [
   {
@@ -54,9 +70,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Heart className="text-white h-5 w-5" />
-              </div>
+              <ZempiLogo />
               <span className="text-2xl font-bold">Zempi</span>
             </div>
             <p className="text-white/70 mb-4">
