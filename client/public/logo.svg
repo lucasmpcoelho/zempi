@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#25D366"/>
+      <stop offset="1" stop-color="#128C7E"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="128" cy="128" r="120" fill="url(#g)"/>
+    <path d="M88 76h80l-40 44h40L88 180l24-60H88z" fill="#fff"/>
+    <circle cx="182" cy="76" r="12" fill="#fff" fill-opacity=".9"/>
+  </g>
+  <title>Zempi Logo Fallback</title>
+</svg>
+
