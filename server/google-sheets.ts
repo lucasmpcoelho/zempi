@@ -1,61 +1,50 @@
 import { google } from 'googleapis';
+import { JWT } from 'google-auth-library';
 
-let connectionSettings: any;
-
-async function getAccessToken() {
-  if (connectionSettings && connectionSettings.settings.expires_at && new Date(connectionSettings.settings.expires_at).getTime() > Date.now()) {
-    return connectionSettings.settings.access_token;
-  }
+/**
+ * Google Sheets client using Service Account
+ */
+async function getGoogleSheetsClient() {
+  const serviceAccountKey = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
   
-  const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
-  const xReplitToken = process.env.REPL_IDENTITY 
-    ? 'repl ' + process.env.REPL_IDENTITY 
-    : process.env.WEB_REPL_RENEWAL 
-    ? 'depl ' + process.env.WEB_REPL_RENEWAL 
-    : null;
-
-  if (!xReplitToken) {
-    throw new Error('X_REPLIT_TOKEN not found for repl/depl');
+  if (!serviceAccountKey) {
+    throw new Error('GOOGLE_SERVICE_ACCOUNT_KEY not set');
   }
 
-  connectionSettings = await fetch(
-    'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=google-sheet',
-    {
-      headers: {
-        'Accept': 'application/json',
-        'X_REPLIT_TOKEN': xReplitToken
-      }
-    }
-  ).then(res => res.json()).then(data => data.items?.[0]);
+  try {
+    const credentials = JSON.parse(
+      Buffer.from(serviceAccountKey, 'base64').toString('utf-8')
+    );
+    
+    const auth = new JWT({
+      email: credentials.client_email,
+      key: credentials.private_key,
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
 
-  const accessToken = connectionSettings?.settings?.access_token || connectionSettings.settings?.oauth?.credentials?.access_token;
-
-  if (!connectionSettings || !accessToken) {
-    throw new Error('Google Sheet not connected');
+    return google.sheets({ version: 'v4', auth });
+  } catch (error: any) {
+    console.error('❌ Error creating Google Sheets client:', error.message);
+    throw error;
   }
-  return accessToken;
-}
-
-export async function getUncachableGoogleSheetClient() {
-  const accessToken = await getAccessToken();
-
-  const oauth2Client = new google.auth.OAuth2();
-  oauth2Client.setCredentials({
-    access_token: accessToken
-  });
-
-  return google.sheets({ version: 'v4', auth: oauth2Client });
 }
 
 export async function appendToSheet(spreadsheetId: string, range: string, values: any[][]) {
-  const sheets = await getUncachableGoogleSheetClient();
-  
-  await sheets.spreadsheets.values.append({
-    spreadsheetId,
-    range,
-    valueInputOption: 'USER_ENTERED',
-    requestBody: {
-      values
-    }
-  });
+  try {
+    const sheets = await getGoogleSheetsClient();
+    
+    await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range,
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values
+      }
+    });
+    
+    console.log(`✅ Successfully appended ${values.length} row(s) to Google Sheets`);
+  } catch (error: any) {
+    console.error('❌ Error appending to Google Sheets:', error.message);
+    throw error;
+  }
 }

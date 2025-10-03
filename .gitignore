@@ -4,3 +4,28 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Google Service Account
+google-service-account-base64.txt
+service-account-*.json
+*-service-account.json
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Local runtime/state and generated assets
+.local/
+attached_assets/
+
+# Project-specific service account JSON
+zempi-*.json
