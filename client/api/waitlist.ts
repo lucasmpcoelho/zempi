@@ -3,7 +3,7 @@ import { insertWaitlistSchema } from "../../shared/schema";
 import { appendToSheet } from "../../server/google-sheets";
 
 export const config = {
-  runtime: "nodejs20.x",
+  runtime: "nodejs",
   regions: ["gru1"],
 };
 
