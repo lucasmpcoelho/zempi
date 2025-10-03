@@ -1,6 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { insertWaitlistSchema } from "../../shared/schema";
-import { appendToSheet } from "../../server/google-sheets";
 
 export const config = {
   runtime: "nodejs",
@@ -21,6 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const spreadsheetId = process.env.GOOGLE_SHEET_ID;
     if (spreadsheetId) {
       try {
+        const { appendToSheet } = await import("../../server/google-sheets");
         await appendToSheet(spreadsheetId, "Sheet1!A:D", [[
           parsed.name,
           parsed.email,
