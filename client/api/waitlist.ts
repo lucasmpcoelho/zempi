@@ -1,4 +1,4 @@
-import { insertWaitlistSchema } from "../../shared/schema";
+import { z } from "zod";
 
 export const config = {
   runtime: "nodejs",
@@ -12,26 +12,14 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    const parsed = insertWaitlistSchema.parse(
-      typeof req.body === "string" ? JSON.parse(req.body) : req.body,
-    );
+    const parsed = z.object({
+      name: z.string().min(2),
+      email: z.string().email(),
+      phone: z.string().optional(),
+    }).parse(typeof req.body === "string" ? JSON.parse(req.body) : req.body);
 
-    const spreadsheetId = process.env.GOOGLE_SHEET_ID;
-    if (spreadsheetId) {
-      try {
-        const { appendToSheet } = await import("../../server/google-sheets");
-        await appendToSheet(spreadsheetId, "Sheet1!A:D", [[
-          parsed.name,
-          parsed.email,
-          parsed.phone ?? "",
-          new Date().toISOString(),
-        ]]);
-      } catch (err) {
-        console.error("Error appending to Google Sheet:", (err as any)?.message || err);
-      }
-    }
-
-    return res.status(201).json({ success: true });
+    // No-op success; canonical function is at repo root /api/waitlist
+    return res.status(201).json({ success: true, echo: parsed });
   } catch (err: any) {
     if (err?.name === "ZodError") {
       return res.status(400).json({ error: "Dados inválidos", details: err?.errors });
