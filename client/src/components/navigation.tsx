@@ -41,12 +41,12 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-border" style={{ paddingTop: "env(safe-area-inset-top)" }} role="navigation" aria-label="Main">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-3 cursor-pointer" data-testid="logo-link">
             <ZempiLogo />
-            <span className="text-2xl font-bold text-foreground">Zempi</span>
+            <span className="hidden sm:inline text-2xl font-bold text-foreground">Zempi</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -90,8 +90,11 @@ export default function Navigation() {
           </div>
 
           <button 
-            className="md:hidden"
+            className="md:hidden -m-2 p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-controls="mobile-menu"
+            aria-expanded={isMenuOpen}
             data-testid="button-menu-toggle"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -100,7 +103,7 @@ export default function Navigation() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+          <div id="mobile-menu" className="md:hidden border-t border-border bg-background/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)]">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <button 
                 onClick={() => handleNavClick('beneficios')}
