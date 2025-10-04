@@ -18,6 +18,8 @@ export default function FinalCTASection() {
               src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400" 
               alt="Profissional de saúde apoiando paciente com tecnologia" 
               className="rounded-2xl shadow-2xl w-full max-w-4xl mx-auto"
+              loading="lazy"
+              decoding="async"
               data-testid="final-cta-image"
             />
           </div>
