@@ -35,10 +35,10 @@ export default function SocialProofSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight" data-testid="social-proof-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="social-proof-title">
             Suporte real leva a resultados reais
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+          <p className="fluid-lead text-muted-foreground max-w-3xl mx-auto font-light">
             Pacientes com acompanhamento contínuo têm significativamente mais sucesso no tratamento GLP-1
           </p>
         </motion.div>

@@ -57,10 +57,10 @@ export default function CommunitySection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 text-foreground tracking-tight" data-testid="community-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="community-title">
             Você não está sozinho nessa jornada
           </h2>
-          <p className="text-lg sm:text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-3xl mx-auto font-light">
+          <p className="fluid-lead text-muted-foreground leading-relaxed max-w-3xl mx-auto font-light">
             Junte-se a mais de 500 pacientes GLP-1 que estão conquistando resultados juntos
           </p>
         </motion.div>

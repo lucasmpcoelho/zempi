@@ -18,11 +18,11 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-foreground tracking-tight" data-testid="hero-title">
+          <h1 className="fluid-h1 font-bold leading-tight text-foreground tracking-tight" data-testid="hero-title">
             O que falta no seu tratamento GLP-1: suporte contínuo e inteligente
           </h1>
           
-          <p className="text-lg sm:text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-3xl mx-auto font-light" data-testid="hero-description">
+          <p className="fluid-lead text-muted-foreground leading-relaxed max-w-3xl mx-auto font-light" data-testid="hero-description">
             Médico assistente de IA 24/7 pelo WhatsApp que maximiza resultados, previne perda muscular e garante aderência ao Ozempic e Mounjaro
           </p>
           

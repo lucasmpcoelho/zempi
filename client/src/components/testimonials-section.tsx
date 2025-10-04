@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-3 text-foreground" data-testid="testimonials-title">
+          <h2 className="fluid-h2 font-bold mb-3 text-foreground" data-testid="testimonials-title">
             O que nossos pacientes dizem
           </h2>
         </motion.div>

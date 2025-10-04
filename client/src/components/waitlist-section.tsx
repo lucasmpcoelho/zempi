@@ -12,10 +12,10 @@ export default function WaitlistSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight" data-testid="waitlist-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="waitlist-title">
             Não desperdice seu tratamento GLP-1
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground font-light max-w-2xl mx-auto">
+          <p className="fluid-lead text-muted-foreground font-light max-w-2xl mx-auto">
             50% dos pacientes desistem nos primeiros 3 meses. Seja diferente. Entre na lista de espera e receba acesso prioritário ao Zempi.
           </p>
         </motion.div>

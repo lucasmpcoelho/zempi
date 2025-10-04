@@ -49,10 +49,10 @@ export default function BenefitsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight" data-testid="benefits-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="benefits-title">
             Suporte completo para sua jornada GLP-1
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+          <p className="fluid-lead text-muted-foreground max-w-3xl mx-auto font-light">
             Cada feature foi projetada para resolver problemas específicos que pacientes enfrentam durante o tratamento
           </p>
         </motion.div>

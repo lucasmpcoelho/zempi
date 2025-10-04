@@ -46,10 +46,10 @@ export default function FAQSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-3" data-testid="faq-title">
+          <h2 className="fluid-h2 font-bold mb-3" data-testid="faq-title">
             Perguntas <span className="gradient-text">frequentes</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground" data-testid="faq-description">
+          <p className="fluid-lead text-muted-foreground" data-testid="faq-description">
             Tire suas dúvidas sobre o Zempi e como podemos te ajudar.
           </p>
         </motion.div>
