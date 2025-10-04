@@ -83,7 +83,8 @@ export default function Navigation() {
           
           <div className="hidden md:block">
             <Button 
-              className="px-6 py-2.5 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              className="px-6 py-2.5 rounded-lg font-semibold transition-colors"
+              variant="default"
               data-testid="button-comecar-agora-nav"
             >
               Começar Agora
@@ -102,18 +103,18 @@ export default function Navigation() {
                   {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                 </button>
               </DrawerTrigger>
-              <DrawerContent className="border-t border-border bg-background/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)]">
+              <DrawerContent className="border-t border-border bg-background pb-[env(safe-area-inset-bottom)]">
                 <div className="px-2 pt-2 pb-3 space-y-1">
                   <button 
                     onClick={() => handleNavClick('beneficios')}
-                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
                     data-testid="mobile-nav-beneficios"
                   >
                     Benefícios
                   </button>
                   <button 
                     onClick={() => handleNavClick('como-funciona')}
-                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
                     data-testid="mobile-nav-como-funciona"
                   >
                     Como Funciona
@@ -121,21 +122,22 @@ export default function Navigation() {
                   <Link 
                     href="/quem-somos"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
                     data-testid="mobile-nav-quem-somos"
                   >
                     Quem Somos
                   </Link>
                   <button 
                     onClick={() => handleNavClick('contato')}
-                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
                     data-testid="mobile-nav-contato"
                   >
                     Contato
                   </button>
                   <DrawerClose asChild>
                     <Button 
-                      className="w-full mt-4 bg-accent text-accent-foreground"
+                      className="w-full mt-4"
+                      variant="default"
                       data-testid="mobile-button-comecar-agora"
                     >
                       Começar Agora

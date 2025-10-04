@@ -30,7 +30,8 @@ export default function HeroSection() {
             <Button 
               size="lg"
               onClick={scrollToWaitlist}
-              className="px-12 py-7 bg-primary text-white rounded-full font-semibold text-xl hover:bg-primary/90 transition-all hover:scale-105"
+              className="px-12 py-7 rounded-full font-semibold text-xl transition-all hover:scale-105"
+              variant="default"
               data-testid="button-comecar-acompanhamento"
             >
               Entrar na Lista de Espera
