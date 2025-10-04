@@ -11,6 +11,7 @@ import TestimonialsSection from "@/components/testimonials-section";
 import FAQSection from "@/components/faq-section";
 import WaitlistSection from "@/components/waitlist-section";
 import Footer from "@/components/footer";
+import StickyCTA from "@/components/sticky-cta";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <FAQSection />
       <WaitlistSection />
       <Footer />
+      <StickyCTA />
     </div>
   );
 }
