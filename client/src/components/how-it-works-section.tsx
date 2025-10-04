@@ -33,16 +33,16 @@ export default function HowItWorksSection() {
     <section id="como-funciona" className="py-32 bg-gray-50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-foreground tracking-tight" data-testid="how-it-works-title">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground tracking-tight" data-testid="how-it-works-title">
             Como funciona
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto font-light">
             Comece em minutos e tenha suporte contínuo durante toda sua jornada
           </p>
         </motion.div>
@@ -58,15 +58,15 @@ export default function HowItWorksSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               data-testid={`step-${index}`}
             >
-              <div className="bg-white rounded-3xl p-8 h-full hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 h-full hover:shadow-xl transition-shadow">
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center">
                     <step.icon className="text-white h-7 w-7" />
                   </div>
                   <div className="text-6xl font-bold text-primary/20">{step.number}</div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-foreground">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">{step.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
               
               {index < steps.length - 1 && (
