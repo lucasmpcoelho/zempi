@@ -29,6 +29,8 @@ export default function WaitlistForm() {
       email: "",
       phone: "",
     },
+    mode: "onChange",
+    reValidateMode: "onChange",
   });
 
   const mutation = useMutation({
@@ -87,7 +89,7 @@ export default function WaitlistForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg border border-border">
+    <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-border">
       <h3 className="text-2xl font-bold mb-2" data-testid="waitlist-form-title">
         Entre na Lista de Espera
       </h3>
@@ -106,11 +108,15 @@ export default function WaitlistForm() {
                 <FormControl>
                   <Input
                     placeholder="Seu nome completo"
+                    autoComplete="name"
+                    inputMode="text"
+                    aria-invalid={!!form.formState.errors.name}
+                    aria-describedby={form.formState.errors.name ? "name-error" : undefined}
                     {...field}
                     data-testid="input-name"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="name-error" />
               </FormItem>
             )}
           />
@@ -125,11 +131,15 @@ export default function WaitlistForm() {
                   <Input
                     type="email"
                     placeholder="seu@email.com"
+                    autoComplete="email"
+                    inputMode="email"
+                    aria-invalid={!!form.formState.errors.email}
+                    aria-describedby={form.formState.errors.email ? "email-error" : undefined}
                     {...field}
                     data-testid="input-email"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="email-error" />
               </FormItem>
             )}
           />
@@ -144,18 +154,23 @@ export default function WaitlistForm() {
                   <Input
                     type="tel"
                     placeholder="(00) 00000-0000"
+                    autoComplete="tel"
+                    inputMode="tel"
+                    aria-invalid={!!form.formState.errors.phone}
+                    aria-describedby={form.formState.errors.phone ? "phone-error" : undefined}
                     {...field}
                     data-testid="input-phone"
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage id="phone-error" />
               </FormItem>
             )}
           />
 
           <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold"
+            className="w-full"
+            variant="default"
             disabled={mutation.isPending}
             data-testid="button-submit-waitlist"
           >
