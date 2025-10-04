@@ -66,26 +66,26 @@ export default function Footer() {
   return (
     <footer id="contato" className="bg-foreground text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand Column */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <ZempiLogo />
               <span className="text-2xl font-bold">Zempi</span>
             </div>
-            <p className="text-white/70 mb-4">
+            <p className="text-white/70 mb-6">
               Seu médico-assistente de IA para tratamento com GLP-1. Acompanhamento 24/7 personalizado e seguro.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social) => (
                 <a 
                   key={social.label}
                   href={social.href} 
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                  className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                   aria-label={social.label}
                   data-testid={`social-${social.label.toLowerCase()}`}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-6 w-6" />
                 </a>
               ))}
             </div>
@@ -93,14 +93,14 @@ export default function Footer() {
 
           {/* Footer Sections */}
           {footerSections.map((section) => (
-            <div key={section.title}>
-              <h4 className="font-semibold text-lg mb-4">{section.title}</h4>
-              <ul className="space-y-3">
+            <div key={section.title} className="mt-8 md:mt-0">
+              <h4 className="font-semibold text-lg mb-3">{section.title}</h4>
+              <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <button
                       onClick={() => handleLinkClick(link.href)}
-                      className="text-white/70 hover:text-white transition-colors text-left"
+                      className="text-white/80 hover:text-white transition-colors text-left py-2"
                       data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
                     >
                       {link.name}
