@@ -42,10 +42,10 @@ export default function GamificationSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl lg:text-7xl font-bold mb-6 text-foreground tracking-tight" data-testid="gamification-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="gamification-title">
             Seu progresso merece ser celebrado
           </h2>
-          <p className="text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
+          <p className="fluid-lead text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
             Conquistas, sequências e pontos transformam tratamento em hábito sustentável
           </p>
         </motion.div>

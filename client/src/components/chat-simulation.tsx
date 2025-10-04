@@ -203,10 +203,10 @@ export default function ChatSimulation() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl lg:text-6xl font-bold mb-8 text-foreground tracking-tight" data-testid="chat-title">
+            <h2 className="fluid-h2 font-bold mb-6 text-foreground tracking-tight" data-testid="chat-title">
               Conversas inteligentes e proativas
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed font-light mb-8" data-testid="chat-description">
+            <p className="fluid-lead text-muted-foreground leading-relaxed font-light mb-8" data-testid="chat-description">
               O Zempi analisa padrões no seu tratamento, identifica correlações entre alimentos e sintomas, e oferece insights personalizados que você não conseguiria descobrir sozinho.
             </p>
             <div className="space-y-4 text-muted-foreground">
