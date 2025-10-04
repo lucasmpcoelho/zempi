@@ -51,16 +51,16 @@ export default function CommunitySection() {
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl lg:text-7xl font-bold mb-6 text-foreground tracking-tight" data-testid="community-title">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 text-foreground tracking-tight" data-testid="community-title">
             Você não está sozinho nessa jornada
           </h2>
-          <p className="text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
+          <p className="text-lg sm:text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-3xl mx-auto font-light">
             Junte-se a mais de 500 pacientes GLP-1 que estão conquistando resultados juntos
           </p>
         </motion.div>
@@ -75,10 +75,10 @@ export default function CommunitySection() {
             transition={{ duration: 0.7 }}
           >
             <div className="mb-8">
-              <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3">
                 Grupos temáticos no WhatsApp
               </h3>
-              <p className="text-xl text-muted-foreground font-light">
+              <p className="text-sm sm:text-base text-muted-foreground font-light">
                 Conecte-se com pessoas que entendem exatamente o que você está passando
               </p>
             </div>
@@ -147,10 +147,10 @@ export default function CommunitySection() {
             transition={{ duration: 0.7 }}
           >
             <div className="mb-8">
-              <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3">
                 O que a comunidade está dizendo
               </h3>
-              <p className="text-xl text-muted-foreground font-light">
+              <p className="text-sm sm:text-base text-muted-foreground font-light">
                 Suporte real de quem vive a mesma experiência
               </p>
             </div>
