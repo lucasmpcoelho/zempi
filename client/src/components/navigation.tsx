@@ -42,7 +42,16 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-border" style={{ paddingTop: "env(safe-area-inset-top)" }} role="navigation" aria-label="Main">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-border"
+      style={{
+        paddingTop: "env(safe-area-inset-top)",
+        paddingRight: "env(safe-area-inset-right)",
+        paddingLeft: "env(safe-area-inset-left)",
+      }}
+      role="navigation"
+      aria-label="Main"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-3 cursor-pointer" data-testid="logo-link">
@@ -85,6 +94,7 @@ export default function Navigation() {
             <Button 
               className="px-6 py-2.5 rounded-lg font-semibold transition-colors"
               variant="default"
+              onClick={() => handleNavClick('waitlist')}
               data-testid="button-comecar-agora-nav"
             >
               Começar Agora
@@ -95,7 +105,7 @@ export default function Navigation() {
             <Drawer open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <DrawerTrigger asChild>
                 <button 
-                  className="-m-2 p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
                   aria-expanded={isMenuOpen}
                   data-testid="button-menu-toggle"
@@ -104,7 +114,7 @@ export default function Navigation() {
                 </button>
               </DrawerTrigger>
               <DrawerContent className="border-t border-border bg-background pb-[env(safe-area-inset-bottom)]">
-                <div className="px-2 pt-2 pb-3 space-y-1">
+                <div className="px-4 pt-2 pb-3 space-y-1">
                   <button 
                     onClick={() => handleNavClick('beneficios')}
                     className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
@@ -138,6 +148,7 @@ export default function Navigation() {
                     <Button 
                       className="w-full mt-4"
                       variant="default"
+                      onClick={() => handleNavClick('waitlist')}
                       data-testid="mobile-button-comecar-agora"
                     >
                       Começar Agora
