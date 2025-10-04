@@ -23,13 +23,13 @@ export default function TestimonialsSection() {
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-foreground" data-testid="testimonials-title">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-3 text-foreground" data-testid="testimonials-title">
             O que nossos pacientes dizem
           </h2>
         </motion.div>
@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               data-testid={`testimonial-${index}`}
             >
-              <p className="text-foreground mb-6 leading-relaxed text-lg">
+              <p className="text-foreground mb-5 leading-relaxed text-base sm:text-lg">
                 "{testimonial.content}"
               </p>
               <div>
