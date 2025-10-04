@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
+import { Drawer, DrawerTrigger, DrawerContent, DrawerClose } from "@/components/ui/drawer";
 
 function ZempiLogo() {
   return (
@@ -89,60 +90,63 @@ export default function Navigation() {
             </Button>
           </div>
 
-          <button 
-            className="md:hidden -m-2 p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-            aria-controls="mobile-menu"
-            aria-expanded={isMenuOpen}
-            data-testid="button-menu-toggle"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div id="mobile-menu" className="md:hidden border-t border-border bg-background/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)]">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <button 
-                onClick={() => handleNavClick('beneficios')}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-beneficios"
-              >
-                Benefícios
-              </button>
-              <button 
-                onClick={() => handleNavClick('como-funciona')}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-como-funciona"
-              >
-                Como Funciona
-              </button>
-              <Link 
-                href="/quem-somos"
-                onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-quem-somos"
-              >
-                Quem Somos
-              </Link>
-              <button 
-                onClick={() => handleNavClick('contato')}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-contato"
-              >
-                Contato
-              </button>
-              <Button 
-                className="w-full mt-4 bg-accent text-accent-foreground"
-                data-testid="mobile-button-comecar-agora"
-              >
-                Começar Agora
-              </Button>
-            </div>
+          <div className="md:hidden">
+            <Drawer open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+              <DrawerTrigger asChild>
+                <button 
+                  className="-m-2 p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+                  aria-expanded={isMenuOpen}
+                  data-testid="button-menu-toggle"
+                >
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </DrawerTrigger>
+              <DrawerContent className="border-t border-border bg-background/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)]">
+                <div className="px-2 pt-2 pb-3 space-y-1">
+                  <button 
+                    onClick={() => handleNavClick('beneficios')}
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    data-testid="mobile-nav-beneficios"
+                  >
+                    Benefícios
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('como-funciona')}
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    data-testid="mobile-nav-como-funciona"
+                  >
+                    Como Funciona
+                  </button>
+                  <Link 
+                    href="/quem-somos"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    data-testid="mobile-nav-quem-somos"
+                  >
+                    Quem Somos
+                  </Link>
+                  <button 
+                    onClick={() => handleNavClick('contato')}
+                    className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
+                    data-testid="mobile-nav-contato"
+                  >
+                    Contato
+                  </button>
+                  <DrawerClose asChild>
+                    <Button 
+                      className="w-full mt-4 bg-accent text-accent-foreground"
+                      data-testid="mobile-button-comecar-agora"
+                    >
+                      Começar Agora
+                    </Button>
+                  </DrawerClose>
+                </div>
+              </DrawerContent>
+            </Drawer>
           </div>
-        )}
+        </div>
+        
       </div>
     </nav>
   );
