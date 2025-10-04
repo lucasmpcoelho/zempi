@@ -27,10 +27,10 @@ export default function FoodScannerSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl lg:text-7xl font-bold mb-6 text-foreground tracking-tight" data-testid="scanner-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="scanner-title">
             Esqueça planilhas de calorias
           </h2>
-          <p className="text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
+          <p className="fluid-lead text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
             Tire uma foto da refeição e receba análise nutricional completa em 3 segundos
           </p>
         </motion.div>
