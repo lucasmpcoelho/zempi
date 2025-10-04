@@ -10,7 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-40 pb-32 bg-white">
+    <section className="pt-32 pb-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center space-y-10"

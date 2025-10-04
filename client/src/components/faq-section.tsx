@@ -37,7 +37,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section id="contato" className="py-20 bg-background scroll-mt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
