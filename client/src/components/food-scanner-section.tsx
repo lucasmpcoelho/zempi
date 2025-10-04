@@ -113,7 +113,7 @@ export default function FoodScannerSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div>
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-100">
               <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
                 Tecnologia que facilita sua vida
               </h3>
@@ -126,7 +126,7 @@ export default function FoodScannerSection() {
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start space-x-4"
+                  className="flex items-start space-x-4 bg-white rounded-2xl p-4 border border-gray-100"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
