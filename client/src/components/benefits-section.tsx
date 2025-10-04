@@ -40,19 +40,19 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <section id="beneficios" className="py-32 bg-gray-50">
+    <section id="beneficios" className="py-32 bg-gray-50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-foreground tracking-tight" data-testid="benefits-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="benefits-title">
             Suporte completo para sua jornada GLP-1
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+          <p className="fluid-lead text-muted-foreground max-w-3xl mx-auto font-light">
             Cada feature foi projetada para resolver problemas específicos que pacientes enfrentam durante o tratamento
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
-              className="bg-white rounded-3xl p-10 hover:shadow-xl transition-shadow"
+              className="bg-white rounded-3xl p-8 sm:p-10 hover:shadow-xl transition-shadow"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -69,8 +69,8 @@ export default function BenefitsSection() {
               data-testid={`benefit-card-${index}`}
             >
               <div className="text-5xl mb-5">{benefit.emoji}</div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">{benefit.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">{benefit.title}</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{benefit.description}</p>
             </motion.div>
           ))}
         </div>

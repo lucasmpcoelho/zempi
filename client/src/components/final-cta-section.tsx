@@ -18,15 +18,17 @@ export default function FinalCTASection() {
               src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400" 
               alt="Profissional de saúde apoiando paciente com tecnologia" 
               className="rounded-2xl shadow-2xl w-full max-w-4xl mx-auto"
+              loading="lazy"
+              decoding="async"
               data-testid="final-cta-image"
             />
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6" data-testid="final-cta-title">
+          <h2 className="fluid-h2 font-bold mb-4" data-testid="final-cta-title">
             Comece sua jornada com o <span className="gradient-text">Zempi hoje</span>
           </h2>
           
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" data-testid="final-cta-description">
+          <p className="fluid-lead text-muted-foreground mb-6 max-w-3xl mx-auto" data-testid="final-cta-description">
             Junte-se aos pacientes que já estão tendo uma experiência mais segura, informada e bem-sucedida com o tratamento GLP-1.
           </p>
           

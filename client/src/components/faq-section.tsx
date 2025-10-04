@@ -37,19 +37,19 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section id="contato" className="py-20 bg-background scroll-mt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4" data-testid="faq-title">
+          <h2 className="fluid-h2 font-bold mb-3" data-testid="faq-title">
             Perguntas <span className="gradient-text">frequentes</span>
           </h2>
-          <p className="text-xl text-muted-foreground" data-testid="faq-description">
+          <p className="fluid-lead text-muted-foreground" data-testid="faq-description">
             Tire suas dúvidas sobre o Zempi e como podemos te ajudar.
           </p>
         </motion.div>

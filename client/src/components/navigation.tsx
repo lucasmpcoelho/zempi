@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
+import { Drawer, DrawerTrigger, DrawerContent, DrawerClose } from "@/components/ui/drawer";
 
 function ZempiLogo() {
   return (
@@ -41,12 +42,21 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-border">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-border"
+      style={{
+        paddingTop: "env(safe-area-inset-top)",
+        paddingRight: "env(safe-area-inset-right)",
+        paddingLeft: "env(safe-area-inset-left)",
+      }}
+      role="navigation"
+      aria-label="Main"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-3 cursor-pointer" data-testid="logo-link">
             <ZempiLogo />
-            <span className="text-2xl font-bold text-foreground">Zempi</span>
+            <span className="hidden sm:inline text-2xl font-bold text-foreground">Zempi</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -82,64 +92,74 @@ export default function Navigation() {
           
           <div className="hidden md:block">
             <Button 
-              className="px-6 py-2.5 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              className="px-6 py-2.5 rounded-lg font-semibold transition-colors"
+              variant="default"
+              onClick={() => handleNavClick('waitlist')}
               data-testid="button-comecar-agora-nav"
             >
               Começar Agora
             </Button>
           </div>
 
-          <button 
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            data-testid="button-menu-toggle"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <button 
-                onClick={() => handleNavClick('beneficios')}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-beneficios"
-              >
-                Benefícios
-              </button>
-              <button 
-                onClick={() => handleNavClick('como-funciona')}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-como-funciona"
-              >
-                Como Funciona
-              </button>
-              <Link 
-                href="/quem-somos"
-                onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-quem-somos"
-              >
-                Quem Somos
-              </Link>
-              <button 
-                onClick={() => handleNavClick('contato')}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-colors w-full text-left"
-                data-testid="mobile-nav-contato"
-              >
-                Contato
-              </button>
-              <Button 
-                className="w-full mt-4 bg-accent text-accent-foreground"
-                data-testid="mobile-button-comecar-agora"
-              >
-                Começar Agora
-              </Button>
-            </div>
+          <div className="md:hidden">
+            <Drawer open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+              <DrawerTrigger asChild>
+                <button 
+                  className="p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+                  aria-expanded={isMenuOpen}
+                  data-testid="button-menu-toggle"
+                >
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </DrawerTrigger>
+              <DrawerContent className="border-t border-border bg-background pb-[env(safe-area-inset-bottom)]">
+                <div className="px-4 pt-2 pb-3 space-y-1">
+                  <button 
+                    onClick={() => handleNavClick('beneficios')}
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
+                    data-testid="mobile-nav-beneficios"
+                  >
+                    Benefícios
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick('como-funciona')}
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
+                    data-testid="mobile-nav-como-funciona"
+                  >
+                    Como Funciona
+                  </button>
+                  <Link 
+                    href="/quem-somos"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
+                    data-testid="mobile-nav-quem-somos"
+                  >
+                    Quem Somos
+                  </Link>
+                  <button 
+                    onClick={() => handleNavClick('contato')}
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
+                    data-testid="mobile-nav-contato"
+                  >
+                    Contato
+                  </button>
+                  <DrawerClose asChild>
+                    <Button 
+                      className="w-full mt-4"
+                      variant="default"
+                      onClick={() => handleNavClick('waitlist')}
+                      data-testid="mobile-button-comecar-agora"
+                    >
+                      Começar Agora
+                    </Button>
+                  </DrawerClose>
+                </div>
+              </DrawerContent>
+            </Drawer>
           </div>
-        )}
+        </div>
+        
       </div>
     </nav>
   );

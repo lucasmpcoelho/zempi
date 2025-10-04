@@ -42,10 +42,10 @@ export default function GamificationSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl lg:text-7xl font-bold mb-6 text-foreground tracking-tight" data-testid="gamification-title">
+          <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="gamification-title">
             Seu progresso merece ser celebrado
           </h2>
-          <p className="text-2xl lg:text-3xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
+          <p className="fluid-lead text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
             Conquistas, sequências e pontos transformam tratamento em hábito sustentável
           </p>
         </motion.div>
@@ -153,7 +153,7 @@ export default function GamificationSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div>
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-100">
               <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
                 Por que gamificação funciona?
               </h3>
@@ -163,7 +163,7 @@ export default function GamificationSection() {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 bg-white rounded-2xl p-4 border border-gray-100">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Target className="h-6 w-6 text-primary" />
                 </div>
@@ -177,7 +177,7 @@ export default function GamificationSection() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 bg-white rounded-2xl p-4 border border-gray-100">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
@@ -191,7 +191,7 @@ export default function GamificationSection() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 bg-white rounded-2xl p-4 border border-gray-100">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Award className="h-6 w-6 text-primary" />
                 </div>
