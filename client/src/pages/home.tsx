@@ -6,7 +6,6 @@ const ChatSimulation = lazy(() => import("@/components/chat-simulation"));
 import BenefitsSection from "@/components/benefits-section";
 import GamificationSection from "@/components/gamification-section";
 import HowItWorksSection from "@/components/how-it-works-section";
-import CommunitySection from "@/components/community-section";
 import SocialProofSection from "@/components/social-proof-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import FAQSection from "@/components/faq-section";
@@ -28,7 +27,6 @@ export default function Home() {
       <BenefitsSection />
       <GamificationSection />
       <HowItWorksSection />
-      <CommunitySection />
       <SocialProofSection />
       <TestimonialsSection />
       <FAQSection />

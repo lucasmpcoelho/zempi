@@ -29,3 +29,4 @@ attached_assets/
 
 # Project-specific service account JSON
 zempi-*.json
+.vercel
