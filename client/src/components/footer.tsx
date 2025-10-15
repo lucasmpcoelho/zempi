@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Linkedin, Youtube, Shield, Lock } from "lucide-react";
+import { Link } from "wouter";
 
 function ZempiLogo() {
   return (
@@ -38,7 +39,7 @@ const footerSections = [
   {
     title: "Legal",
     links: [
-      { name: "Privacidade", href: "#" },
+      { name: "Privacidade", href: "/privacy" },
       { name: "Termos de Uso", href: "#" },
       { name: "Política de Cookies", href: "#" },
       { name: "LGPD", href: "#" }
@@ -98,13 +99,21 @@ export default function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <button
-                      onClick={() => handleLinkClick(link.href)}
-                      className="text-white/80 hover:text-white transition-colors text-left py-2"
-                      data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      {link.name}
-                    </button>
+                    {link.href.startsWith('#') ? (
+                      <button
+                        onClick={() => handleLinkClick(link.href)}
+                        className="text-white/80 hover:text-white transition-colors text-left py-2"
+                        data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        {link.name}
+                      </button>
+                    ) : (
+                      <Link href={link.href}>
+                        <a className="text-white/80 hover:text-white transition-colors block py-2" data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                          {link.name}
+                        </a>
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
