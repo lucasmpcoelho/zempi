@@ -49,11 +49,17 @@ export default function BenefitsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wide">
+              Personalizado para você
+            </span>
+          </div>
+
           <h2 className="fluid-h2 font-bold mb-4 text-foreground tracking-tight" data-testid="benefits-title">
-            Suporte completo para sua jornada GLP-1
+            Suporte completo para <span className="gradient-text">sua jornada única</span> com GLP-1
           </h2>
           <p className="fluid-lead text-muted-foreground max-w-3xl mx-auto font-light">
-            Cada feature foi projetada para resolver problemas específicos que pacientes enfrentam durante o tratamento
+            Cada funcionalidade se adapta às <strong className="text-foreground">suas necessidades específicas</strong>, resolvendo <strong className="text-foreground">seus desafios particulares</strong> durante o tratamento
           </p>
         </motion.div>
 

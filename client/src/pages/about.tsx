@@ -32,38 +32,45 @@ export default function About() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-foreground tracking-tight leading-tight" data-testid="about-title">
-              Quem somos nós
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full mb-6">
+              <div className="w-2 h-2 bg-blue-500 rounded-full" />
+              <span className="text-sm font-medium text-blue-900">
+                Nossa História
+              </span>
+            </div>
+            
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-gray-900 tracking-tight leading-tight" data-testid="about-title">
+              Quem somos
             </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light max-w-3xl mx-auto">
-              Somos dois apaixonados por wellness que acreditam que tecnologia e empatia podem transformar a forma como cuidamos da nossa saúde.
+            <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Dois empreendedores unidos pela missão de transformar o cuidado com a saúde
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Mission Statement */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-blue-50/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center bg-white rounded-2xl p-10 border border-gray-200 shadow-sm"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground tracking-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 tracking-tight">
               Nossa Missão
             </h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light max-w-3xl mx-auto">
-              Resolver o problema de aderência aos tratamentos GLP-1 através de um assistente médico de IA que oferece suporte contínuo, personalizado e proativo 24/7.
+            <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Resolver o problema de aderência aos tratamentos com <strong className="text-gray-900">Ozempic, Mounjaro e Saxenda</strong> através de acompanhamento médico contínuo, personalizado e disponível 24/7.
             </p>
           </motion.div>
         </div>
@@ -95,28 +102,27 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-3xl p-8 lg:p-10 shadow-lg border border-border hover:shadow-xl transition-shadow"
+                className="bg-white rounded-2xl p-8 lg:p-10 border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
                 data-testid={`founder-card-${index}`}
               >
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="relative group mb-6">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
                     <img
                       src={founder.photo}
                       alt={`Foto de ${founder.name}`}
-                      className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-white shadow-lg"
+                      className="w-32 h-32 lg:w-40 lg:h-40 rounded-2xl object-cover border-2 border-gray-200 group-hover:border-gray-300 transition-colors"
                       data-testid={`photo-${index}`}
                     />
                   </div>
                   
-                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
                     {founder.name}
                   </h3>
-                  <p className="text-lg text-primary font-semibold mb-3">
+                  <p className="text-lg text-blue-600 font-semibold mb-3">
                     {founder.role}
                   </p>
-                  <div className="inline-block px-4 py-1.5 bg-primary/10 rounded-full mb-4">
-                    <p className="text-sm font-medium text-primary">
+                  <div className="inline-block px-4 py-1.5 bg-gray-100 rounded-full mb-4">
+                    <p className="text-sm font-medium text-gray-700">
                       {founder.background}
                     </p>
                   </div>
@@ -125,24 +131,27 @@ export default function About() {
                     href={founder.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2"
+                    className="text-blue-600 hover:text-blue-700 transition-all inline-flex items-center gap-2 group relative"
                     data-testid={`linkedin-${index}`}
                     aria-label={`LinkedIn de ${founder.name}`}
                   >
-                    <Linkedin className="h-5 w-5" />
-                    <span className="text-sm font-medium">LinkedIn</span>
+                    <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                    <span className="text-sm font-medium relative">
+                      LinkedIn
+                      <span className="absolute bottom-0 left-0 w-0 h-px bg-blue-600 transition-all duration-300 group-hover:w-full" />
+                    </span>
                   </a>
                 </div>
 
-                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6 text-center">
+                <p className="text-base lg:text-lg text-gray-600 leading-relaxed mb-6 text-center">
                   {founder.bio}
                 </p>
 
-                <div className="pt-6 border-t border-border">
-                  <p className="text-sm text-muted-foreground font-semibold mb-2 uppercase tracking-wide text-center">
+                <div className="pt-6 border-t border-gray-100">
+                  <p className="text-sm text-gray-500 font-semibold mb-2 uppercase tracking-wide text-center">
                     Missão Pessoal
                   </p>
-                  <p className="text-base lg:text-lg text-foreground font-medium leading-relaxed text-center">
+                  <p className="text-base text-gray-900 font-medium leading-relaxed text-center">
                     "{founder.mission}"
                   </p>
                 </div>
@@ -161,24 +170,24 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-foreground tracking-tight text-center">
-              Por Que Criamos o Zempi
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-gray-900 tracking-tight text-center">
+              Por que criamos o Zempi
             </h2>
             
-            <div className="space-y-6 text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed bg-white rounded-2xl p-8 lg:p-10 border border-gray-200">
               <p>
-                <strong className="text-foreground">50% dos pacientes desistem de tratamentos GLP-1 nos primeiros 3 meses.</strong> Esse número nos chocou. Não por falta de medicamento, mas por falta de suporte contínuo.
+                <strong className="text-gray-900">50% dos pacientes desistem de tratamentos com Ozempic e Mounjaro nos primeiros 3 meses.</strong> Esse número nos chocou. Não por falta de medicamento, mas por falta de suporte contínuo.
               </p>
               
               <p>
-                Nós acreditamos que <strong className="text-foreground">toda pessoa merece ter um assistente médico ao seu lado</strong> - alguém que entende seus sintomas, monitora seus padrões, celebra suas conquistas e oferece orientação quando surgem dúvidas.
+                Nós acreditamos que <strong className="text-gray-900">toda pessoa merece ter acompanhamento médico ao seu lado</strong> — alguém que entende seus sintomas, monitora seus padrões, celebra suas conquistas e oferece orientação quando surgem dúvidas.
               </p>
               
               <p>
-                O Zempi nasceu dessa crença. Combinamos inteligência artificial de ponta com empatia humana para criar uma experiência que <strong className="text-foreground">transforma tratamentos solitários em jornadas apoiadas</strong>.
+                O Zempi nasceu dessa crença. Combinamos inteligência artificial de ponta com empatia humana para criar uma experiência que <strong className="text-gray-900">transforma tratamentos solitários em jornadas apoiadas</strong>.
               </p>
               
-              <p className="pt-4 text-xl lg:text-2xl font-semibold text-primary">
+              <p className="pt-4 text-xl font-semibold text-blue-600 border-l-4 border-blue-600 pl-4">
                 Porque saúde não é sobre números em uma balança. É sobre viver melhor, com mais energia, confiança e bem-estar.
               </p>
             </div>
@@ -187,7 +196,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -195,18 +204,18 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground tracking-tight">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-gray-900 tracking-tight">
               Junte-se à nossa jornada
             </h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed font-light mb-10">
-              Estamos construindo o futuro do cuidado de saúde. E você pode fazer parte disso.
+            <p className="text-xl text-gray-600 leading-relaxed mb-10">
+              Estamos construindo o futuro do cuidado de saúde. Você pode fazer parte disso.
             </p>
             <a
-              href="/#contato"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-xl text-lg hover:opacity-90 transition-opacity shadow-lg"
+              href="/#waitlist"
+              className="inline-block px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-xl text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
               data-testid="button-join-waitlist"
             >
-              Entre na Lista de Espera
+              Solicitar Acesso ao Programa Piloto
             </a>
           </motion.div>
         </div>

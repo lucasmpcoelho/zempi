@@ -108,6 +108,17 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: var(--font-sans);
@@ -124,6 +135,24 @@
 
   p {
     line-height: 1.7;
+  }
+
+  /* Premium focus states */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid hsl(210 100% 40%);
+    outline-offset: 2px;
+    border-radius: 0.375rem;
+  }
+
+  /* Remove default focus for mouse users */
+  button:focus:not(:focus-visible),
+  a:focus:not(:focus-visible),
+  input:focus:not(:focus-visible) {
+    outline: none;
   }
 }
 

@@ -74,45 +74,51 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-3 cursor-pointer" data-testid="logo-link">
-            <ZempiLogo />
+          <Link href="/" className="flex items-center space-x-3 cursor-pointer group" data-testid="logo-link">
+            <div className="transition-transform duration-300 group-hover:scale-105">
+              <ZempiLogo />
+            </div>
             <span className="hidden sm:inline text-2xl font-bold text-foreground">Zempi</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => handleNavClick('beneficios')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-beneficios"
             >
               Benefícios
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </button>
             <button 
               onClick={() => handleNavClick('como-funciona')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-como-funciona"
             >
               Como Funciona
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </button>
             <Link 
               href="/quem-somos"
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-quem-somos"
             >
               Quem Somos
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </Link>
             <button 
               onClick={() => handleNavClick('contato')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-contato"
             >
               Contato
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </button>
           </div>
           
           <div className="hidden md:block">
             <Button 
-              className="px-6 py-2.5 rounded-lg font-semibold transition-colors"
+              className="px-6 py-2.5 rounded-xl font-medium transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 bg-gray-900 hover:bg-gray-800"
               variant="default"
               onClick={() => handleNavClick('waitlist')}
               data-testid="button-comecar-agora-nav"

@@ -194,33 +194,55 @@ export default function ChatSimulation() {
   }, [visibleMessages, isTyping]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-white">
+    <section ref={sectionRef} className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="fluid-h2 font-bold mb-6 text-foreground tracking-tight" data-testid="chat-title">
-              Conversas inteligentes e proativas
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 tracking-tight" data-testid="chat-title">
+              Veja o Zempi em ação
             </h2>
-            <p className="fluid-lead text-muted-foreground leading-relaxed font-light mb-8" data-testid="chat-description">
-              O Zempi analisa padrões no seu tratamento, identifica correlações entre alimentos e sintomas, e oferece insights personalizados que você não conseguiria descobrir sozinho.
+            <p className="text-lg text-gray-600 leading-relaxed mb-8" data-testid="chat-description">
+              Análise inteligente de padrões individuais. Orientações específicas para seu corpo.
             </p>
-            <div className="space-y-4 text-muted-foreground">
-              <div className="flex items-start">
-                <CheckCircle className="text-primary h-6 w-6 mt-1 mr-3 flex-shrink-0" />
-                <p>Detecção automática de padrões alimentares que causam sintomas</p>
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="text-green-600 h-4 w-4" />
+                </div>
+                <p className="text-gray-700">
+                  Identifica gatilhos específicos de náusea no <strong className="text-gray-900">seu</strong> histórico
+                </p>
               </div>
-              <div className="flex items-start">
-                <CheckCircle className="text-primary h-6 w-6 mt-1 mr-3 flex-shrink-0" />
-                <p>Alertas de perda muscular com planos de ação personalizados</p>
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="text-green-600 h-4 w-4" />
+                </div>
+                <p className="text-gray-700">
+                  Previne perda muscular com plano nutricional personalizado
+                </p>
               </div>
-              <div className="flex items-start">
-                <CheckCircle className="text-primary h-6 w-6 mt-1 mr-3 flex-shrink-0" />
-                <p>Acompanhamento contínuo baseado no seu histórico completo</p>
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="text-green-600 h-4 w-4" />
+                </div>
+                <p className="text-gray-700">
+                  Check-ins diários adaptados ao <strong className="text-gray-900">seu</strong> progresso
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-gray-100">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 rounded-full">
+                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                <p className="text-xs font-medium text-blue-900">
+                  Supervisionado por médico • Orientações revisadas por profissionais certificados
+                </p>
               </div>
             </div>
           </motion.div>

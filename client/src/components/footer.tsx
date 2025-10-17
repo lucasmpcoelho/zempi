@@ -85,28 +85,30 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contato" className="bg-foreground text-white py-16">
+    <footer id="contato" className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand Column */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <ZempiLogo />
+            <div className="flex items-center space-x-2 mb-4 group cursor-pointer">
+              <div className="transition-transform duration-300 group-hover:scale-105">
+                <ZempiLogo />
+              </div>
               <span className="text-2xl font-bold">Zempi</span>
             </div>
-            <p className="text-white/70 mb-6">
-              Seu médico-assistente de IA para tratamento com GLP-1. Acompanhamento 24/7 personalizado e seguro.
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Acompanhamento médico 24/7 para tratamento com Ozempic, Mounjaro e Saxenda.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 sm:space-x-4">
               {socialLinks.map((social) => (
                 <a 
                   key={social.label}
                   href={social.href} 
-                  className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                  className="w-12 h-12 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                   aria-label={social.label}
                   data-testid={`social-${social.label.toLowerCase()}`}
                 >
-                  <social.icon className="h-6 w-6" />
+                  <social.icon className="h-6 w-6 sm:h-5 sm:w-5" />
                 </a>
               ))}
             </div>
@@ -115,22 +117,24 @@ export default function Footer() {
           {/* Footer Sections */}
           {footerSections.map((section) => (
             <div key={section.title} className="mt-8 md:mt-0">
-              <h4 className="font-semibold text-lg mb-3">{section.title}</h4>
+              <h4 className="font-semibold text-base mb-4 text-white">{section.title}</h4>
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     {link.href.startsWith('#') ? (
                       <button
                         onClick={() => handleLinkClick(link.href)}
-                        className="text-white/80 hover:text-white transition-colors text-left py-2"
+                        className="text-gray-400 hover:text-white transition-all duration-200 text-left py-2.5 sm:py-1.5 text-sm relative group inline-block min-h-[44px] sm:min-h-0 flex items-center"
                         data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
                       >
                         {link.name}
+                        <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
                       </button>
                     ) : (
                       <Link href={link.href}>
-                        <a className="text-white/80 hover:text-white transition-colors block py-2" data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <a className="text-gray-400 hover:text-white transition-all duration-200 text-sm py-2.5 sm:py-1.5 relative group inline-block min-h-[44px] sm:min-h-0 flex items-center" data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}>
                           {link.name}
+                          <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
                         </a>
                       </Link>
                     )}
@@ -142,18 +146,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/60 text-sm">
-              © 2024 Zempi. Todos os direitos reservados.
+            <p className="text-gray-500 text-sm">
+              © 2025 Zempi. Todos os direitos reservados.
             </p>
             <div className="flex items-center space-x-6">
-              <span className="text-white/60 text-sm flex items-center">
-                <Shield className="mr-2 h-4 w-4 text-primary" />
+              <span className="text-gray-500 text-sm flex items-center group">
+                <Shield className="mr-2 h-4 w-4 text-green-500 transition-transform duration-300 group-hover:scale-110" />
                 Dados protegidos por LGPD
               </span>
-              <span className="text-white/60 text-sm flex items-center">
-                <Lock className="mr-2 h-4 w-4 text-primary" />
+              <span className="text-gray-500 text-sm flex items-center group">
+                <Lock className="mr-2 h-4 w-4 text-blue-500 transition-transform duration-300 group-hover:scale-110" />
                 Conexão segura
               </span>
             </div>

@@ -29,8 +29,8 @@ export default function WaitlistForm() {
       email: "",
       phone: "",
     },
-    mode: "onChange",
-    reValidateMode: "onChange",
+    mode: "onBlur", // Validate on blur for better UX
+    reValidateMode: "onChange", // But re-validate on change after first blur
   });
 
   const mutation = useMutation({
@@ -89,100 +89,152 @@ export default function WaitlistForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-border">
-      <h3 className="text-2xl font-bold mb-2" data-testid="waitlist-form-title">
-        Entre na Lista de Espera
-      </h3>
-      <p className="text-muted-foreground mb-6">
-        Preencha o formulário abaixo e seja um dos primeiros a ter acesso ao Zempi.
-      </p>
-
+    <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Nome Completo</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Seu nome completo"
-                    autoComplete="name"
-                    inputMode="text"
-                    aria-invalid={!!form.formState.errors.name}
-                    aria-describedby={form.formState.errors.name ? "name-error" : undefined}
-                    {...field}
-                    data-testid="input-name"
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field, fieldState }) => (
+                      <FormItem>
+                        <FormLabel className="text-sm font-medium text-gray-700">
+                          Nome completo <span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative">
+                            <Input
+                              placeholder="Ex: Maria Silva"
+                              autoComplete="name"
+                              inputMode="text"
+                              className={`h-12 pr-10 transition-all ${
+                                fieldState.error
+                                  ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                  : fieldState.isDirty && !fieldState.error
+                                  ? 'border-green-300 focus:border-green-500 focus:ring-green-500'
+                                  : 'border-gray-300 focus:border-gray-900 focus:ring-gray-900'
+                              }`}
+                              aria-invalid={!!fieldState.error}
+                              aria-describedby={fieldState.error ? "name-error" : undefined}
+                              {...field}
+                              data-testid="input-name"
+                            />
+                            {fieldState.isDirty && !fieldState.error && (
+                              <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                <CheckCircle2 className="h-5 w-5 text-green-500" />
+                              </div>
+                            )}
+                          </div>
+                        </FormControl>
+                        <FormMessage id="name-error" className="text-sm" />
+                      </FormItem>
+                    )}
                   />
-                </FormControl>
-                <FormMessage id="name-error" />
-              </FormItem>
-            )}
-          />
 
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="seu@email.com"
-                    autoComplete="email"
-                    inputMode="email"
-                    aria-invalid={!!form.formState.errors.email}
-                    aria-describedby={form.formState.errors.email ? "email-error" : undefined}
-                    {...field}
-                    data-testid="input-email"
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field, fieldState }) => (
+                      <FormItem>
+                        <FormLabel className="text-sm font-medium text-gray-700">
+                          Email <span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative">
+                            <Input
+                              type="email"
+                              placeholder="Ex: maria@email.com"
+                              autoComplete="email"
+                              inputMode="email"
+                              className={`h-12 pr-10 transition-all ${
+                                fieldState.error
+                                  ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                  : fieldState.isDirty && !fieldState.error
+                                  ? 'border-green-300 focus:border-green-500 focus:ring-green-500'
+                                  : 'border-gray-300 focus:border-gray-900 focus:ring-gray-900'
+                              }`}
+                              aria-invalid={!!fieldState.error}
+                              aria-describedby={fieldState.error ? "email-error" : undefined}
+                              {...field}
+                              data-testid="input-email"
+                            />
+                            {fieldState.isDirty && !fieldState.error && (
+                              <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                <CheckCircle2 className="h-5 w-5 text-green-500" />
+                              </div>
+                            )}
+                          </div>
+                        </FormControl>
+                        <FormMessage id="email-error" className="text-sm" />
+                      </FormItem>
+                    )}
                   />
-                </FormControl>
-                <FormMessage id="email-error" />
-              </FormItem>
-            )}
-          />
 
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Telefone (Opcional)</FormLabel>
-                <FormControl>
-                  <Input
-                    type="tel"
-                    placeholder="(00) 00000-0000"
-                    autoComplete="tel"
-                    inputMode="tel"
-                    aria-invalid={!!form.formState.errors.phone}
-                    aria-describedby={form.formState.errors.phone ? "phone-error" : undefined}
-                    {...field}
-                    data-testid="input-phone"
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field, fieldState }) => (
+                      <FormItem>
+                        <FormLabel className="text-sm font-medium text-gray-700">
+                          WhatsApp <span className="text-gray-400 text-xs">(opcional)</span>
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative">
+                            <Input
+                              type="tel"
+                              placeholder="Ex: (11) 98765-4321"
+                              autoComplete="tel"
+                              inputMode="tel"
+                              className={`h-12 pr-10 transition-all ${
+                                fieldState.error
+                                  ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                  : fieldState.isDirty && !fieldState.error && field.value
+                                  ? 'border-green-300 focus:border-green-500 focus:ring-green-500'
+                                  : 'border-gray-300 focus:border-gray-900 focus:ring-gray-900'
+                              }`}
+                              aria-invalid={!!fieldState.error}
+                              aria-describedby={fieldState.error ? "phone-error" : undefined}
+                              {...field}
+                              data-testid="input-phone"
+                            />
+                            {fieldState.isDirty && !fieldState.error && field.value && (
+                              <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                                <CheckCircle2 className="h-5 w-5 text-green-500" />
+                              </div>
+                            )}
+                          </div>
+                        </FormControl>
+                        <FormMessage id="phone-error" className="text-sm" />
+                        {!fieldState.error && !field.value && (
+                          <p className="text-xs text-gray-500 mt-1">
+                            Recomendado para acompanhamento via WhatsApp
+                          </p>
+                        )}
+                      </FormItem>
+                    )}
                   />
-                </FormControl>
-                <FormMessage id="phone-error" />
-              </FormItem>
-            )}
-          />
 
-          <Button
-            type="submit"
-            className="w-full"
-            variant="default"
-            disabled={mutation.isPending}
-            data-testid="button-submit-waitlist"
-          >
-            {mutation.isPending ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Enviando...
-              </>
-            ) : (
-              "Confirmar Inscrição"
-            )}
-          </Button>
+          <div className="pt-4 border-t border-gray-100">
+            <p className="text-xs text-gray-500 mb-4 leading-relaxed">
+              Ao solicitar acesso, você concorda que entraremos em contato via email 
+              e WhatsApp para avaliar seu perfil. Seus dados são protegidos pela LGPD.
+            </p>
+
+            <Button
+              type="submit"
+              className="w-full h-12 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-xl transition-all hover:shadow-md"
+              disabled={mutation.isPending}
+              data-testid="button-submit-waitlist"
+            >
+              {mutation.isPending ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Enviando...
+                </>
+              ) : (
+                "Solicitar Acesso"
+              )}
+            </Button>
+          </div>
         </form>
       </Form>
     </div>

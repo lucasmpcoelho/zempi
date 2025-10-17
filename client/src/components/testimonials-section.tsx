@@ -4,19 +4,22 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 
 const testimonials = [
   {
-    content: "O Zempi mudou completamente minha experiência com o tratamento. Agora tenho orientação personalizada todos os dias.",
+    content: "Antes: náusea 4-5x por semana. A IA detectou que peixes gordurosos eram meu gatilho. Agora: 1 episódio por mês.",
     name: "Maria C.",
-    location: "São Paulo, SP"
+    location: "42 anos • Ozempic há 6 meses • São Paulo",
+    metric: "Redução de 80% nos episódios de náusea"
   },
   {
-    content: "Finalmente consigo ter um acompanhamento contínuo sem precisar esperar consultas. O Zempi responde na hora.",
-    name: "Ricardo S.",
-    location: "Rio de Janeiro, RJ"
+    content: "Estava perdendo 40% de massa muscular. O Zempi ajustou minha proteína de 0.8g/kg para 1.6g/kg. Continuo perdendo gordura mas mantendo músculos.",
+    name: "Carlos S.",
+    location: "38 anos • Mounjaro há 4 meses • Rio de Janeiro",
+    metric: "Preservação de massa magra"
   },
   {
-    content: "É como ter um médico disponível 24 horas por dia! A forma como adapta as orientações é incrível.",
+    content: "Economizei +R$2.400 em consultas extras. Tiro dúvidas na hora e tenho orientação quando preciso, sem ansiedade.",
     name: "Ana P.",
-    location: "Belo Horizonte, MG"
+    location: "35 anos • Saxenda há 8 meses • Belo Horizonte",
+    metric: "R$2.400 economizados em 6 meses"
   }
 ];
 
@@ -35,19 +38,23 @@ export default function TestimonialsSection() {
       carouselApi.off("select", onSelect);
     };
   }, [carouselApi]);
+  
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-14"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="fluid-h2 font-bold mb-3 text-foreground" data-testid="testimonials-title">
-            O que nossos pacientes dizem
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-gray-900" data-testid="testimonials-title">
+            Histórias reais de pacientes
           </h2>
+          <p className="text-lg text-gray-600">
+            Resultados específicos, não genéricos
+          </p>
         </motion.div>
 
         {/* Mobile carousel */}
@@ -57,32 +64,37 @@ export default function TestimonialsSection() {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
                   <motion.div
-                    className="bg-gray-50 rounded-2xl p-8"
+                    className="bg-gray-50 rounded-2xl p-8 border border-gray-100"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     data-testid={`testimonial-${index}`}
                   >
-                    <p className="text-foreground mb-5 leading-relaxed text-base sm:text-lg">
+                    <p className="text-gray-800 mb-6 leading-relaxed">
                       "{testimonial.content}"
                     </p>
-                    <div>
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                    <div className="pt-4 border-t border-gray-200">
+                      <div className="inline-block px-3 py-1 bg-green-50 rounded-full mb-3">
+                        <span className="text-xs font-semibold text-green-700">
+                          ✓ {testimonial.metric}
+                        </span>
+                      </div>
+                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                      <p className="text-sm text-gray-600">{testimonial.location}</p>
                     </div>
                   </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="flex justify-center gap-2 mt-4" aria-label="Indicadores do carrossel">
+          <div className="flex justify-center gap-2 mt-6" aria-label="Indicadores do carrossel">
             {Array.from({ length: slideCount }).map((_, i) => (
               <button
                 key={i}
                 aria-label={`Ir para depoimento ${i + 1}`}
                 onClick={() => carouselApi?.scrollTo(i)}
-                className={`h-2.5 w-2.5 rounded-full ${i === current ? "bg-foreground" : "bg-muted"}`}
+                className={`h-3 w-3 sm:h-2.5 sm:w-2.5 rounded-full transition-all min-w-[12px] min-h-[12px] ${i === current ? "bg-gray-900 w-8 sm:w-6" : "bg-gray-300"}`}
               />
             ))}
           </div>
@@ -93,19 +105,24 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-2xl p-8"
+              className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               data-testid={`testimonial-${index}`}
             >
-              <p className="text-foreground mb-5 leading-relaxed text-base sm:text-lg">
+              <p className="text-gray-800 mb-6 leading-relaxed">
                 "{testimonial.content}"
               </p>
-              <div>
-                <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+              <div className="pt-4 border-t border-gray-200">
+                <div className="inline-block px-3 py-1 bg-green-50 rounded-full mb-3">
+                  <span className="text-xs font-semibold text-green-700">
+                    ✓ {testimonial.metric}
+                  </span>
+                </div>
+                <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                <p className="text-sm text-gray-600">{testimonial.location}</p>
               </div>
             </motion.div>
           ))}
