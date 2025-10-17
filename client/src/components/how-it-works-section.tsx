@@ -136,17 +136,21 @@ export default function HowItWorksSection() {
               Sua jornada com o Zempi
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 tracking-tight" data-testid="how-it-works-title">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 tracking-tight fluid-h2" data-testid="how-it-works-title">
             Como funciona o acompanhamento
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed fluid-body">
             Do primeiro contato aos resultados sustentáveis: você nunca está sozinho
           </p>
         </motion.div>
 
         {/* Mobile Carousel */}
         <div className="lg:hidden">
-          <Carousel opts={{ align: "start" }} setApi={setCarouselApi}>
+          <Carousel
+            opts={{ align: "start", dragFree: true, containScroll: "trimSnaps" }}
+            setApi={setCarouselApi}
+            className="relative"
+          >
             <CarouselContent>
               {journeyPhases.map((phase, index) => (
                 <CarouselItem key={index}>
@@ -154,6 +158,28 @@ export default function HowItWorksSection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            {/* Mobile controls */}
+            <div className="absolute inset-y-0 left-0 right-0 pointer-events-none">
+              <div className="flex items-center justify-between h-full">
+                <button
+                  aria-label="Anterior"
+                  onClick={() => carouselApi?.scrollPrev()}
+                  className="pointer-events-auto ml-2 h-9 w-9 rounded-full bg-white/90 border border-gray-200 shadow-md flex items-center justify-center active:scale-95"
+                >
+                  <span className="sr-only">Anterior</span>
+                  {/* simple chevron */}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button
+                  aria-label="Próximo"
+                  onClick={() => carouselApi?.scrollNext()}
+                  className="pointer-events-auto mr-2 h-9 w-9 rounded-full bg-white/90 border border-gray-200 shadow-md flex items-center justify-center active:scale-95"
+                >
+                  <span className="sr-only">Próximo</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
           </Carousel>
           <div className="flex justify-center gap-2 mt-6" aria-label="Indicadores do carrossel">
             {Array.from({ length: slideCount }).map((_, i) => (

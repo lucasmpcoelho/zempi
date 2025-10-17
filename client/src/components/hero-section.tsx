@@ -28,19 +28,18 @@ export default function HeroSection() {
                   >
                     <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
                     <span className="text-xs sm:text-sm font-medium text-blue-900">
-                      IA médica treinada com casos reais de Ozempic
+                      IA médica treinada em diretrizes de GLP-1
                     </span>
                   </motion.div>
 
           {/* Headline - Ultra clean */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] text-gray-900 tracking-tight max-w-4xl mx-auto" data-testid="hero-title">
-            O que falta no seu tratamento com{" "}
-            <span className="text-gray-900">Ozempic, Mounjaro ou Saxenda</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] text-gray-900 tracking-tight max-w-4xl mx-auto fluid-h1" data-testid="hero-title">
+            Seu Ozempic / Mounjaro com padrão clínico
           </h1>
           
           {/* Subheadline - Emotional + Specific Solution */}
-          <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto font-light" data-testid="hero-description">
-            Acompanhamento médico 24/7 via WhatsApp — para você não ficar sozinho entre as consultas
+          <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto font-light fluid-lead" data-testid="hero-description">
+            Acompanhamento 24/7 via WhatsApp — orientação segura e personalizada para seu histórico, dose e sintomas
           </p>
           
           {/* Impact preview - mobile (stacked) */}
@@ -54,9 +53,9 @@ export default function HeroSection() {
             <div className="px-4 pt-4 pb-2 flex items-center justify-between">
               <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-blue-50">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                <span className="text-[11px] font-semibold text-blue-900 tracking-wide">Impacto real</span>
+                <span className="text-[11px] font-semibold text-blue-900 tracking-wide">Resultados comprovados</span>
               </div>
-              <span className="text-[11px] text-gray-700 font-semibold">Impacto</span>
+              <span className="text-[11px] text-gray-700 font-semibold">Comparativo</span>
             </div>
             <div className="px-4 pb-4 space-y-4">
               {/* Row 1 */}
@@ -113,9 +112,9 @@ export default function HeroSection() {
             <div className="px-5 pt-4 pb-3 flex items-center justify-between">
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-blue-50">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                <span className="text-[11px] font-semibold text-blue-900 tracking-wide">Impacto real</span>
+                <span className="text-[11px] font-semibold text-blue-900 tracking-wide">Resultados comprovados</span>
               </div>
-              <span className="text-[11px] text-gray-700 font-semibold">Impacto</span>
+              <span className="text-[11px] text-gray-700 font-semibold">Comparativo</span>
             </div>
             <div className="px-5 pb-5 space-y-3">
               {/* Row 1 */}
@@ -173,7 +172,7 @@ export default function HeroSection() {
                     <Button 
                       size="lg"
                       onClick={scrollToWaitlist}
-                      className="px-10 py-6 sm:py-6 h-14 sm:h-auto rounded-xl font-medium text-base transition-all hover:shadow-lg hover:-translate-y-0.5 bg-gray-900 hover:bg-gray-800"
+                      className="px-10 py-5 sm:py-6 h-14 sm:h-auto rounded-xl font-medium text-base transition-all hover:shadow-lg hover:-translate-y-0.5 bg-gray-900 hover:bg-gray-800"
                       data-testid="button-comecar-acompanhamento"
                     >
                       Solicitar Acesso ao Programa Piloto

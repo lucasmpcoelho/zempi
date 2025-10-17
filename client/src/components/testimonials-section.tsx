@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
 
         {/* Mobile carousel */}
         <div className="md:hidden">
-          <Carousel opts={{ align: "start" }} setApi={setCarouselApi}>
+          <Carousel opts={{ align: "start", dragFree: true, containScroll: "trimSnaps" }} setApi={setCarouselApi}>
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>

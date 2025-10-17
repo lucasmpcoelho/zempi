@@ -196,7 +196,7 @@ export default function ChatSimulation() {
   return (
     <section ref={sectionRef} className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -274,7 +274,14 @@ export default function ChatSimulation() {
                   </div>
                 </div>
 
-                <div ref={chatContainerRef} className="p-3 space-y-2 bg-[#ECE5DD] h-[650px] overflow-y-auto whatsapp-pattern" data-testid="chat-messages">
+                <div
+                  ref={chatContainerRef}
+                  className="p-3 space-y-2 bg-[#ECE5DD] h-[520px] sm:h-[650px] overflow-y-auto whatsapp-pattern"
+                  data-testid="chat-messages"
+                  role="log"
+                  aria-live="polite"
+                  aria-relevant="additions"
+                >
                   <AnimatePresence mode="popLayout">
                     {visibleMessages.map((message) => (
                       <motion.div

@@ -63,11 +63,11 @@ export default function BenefitsSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
-              className="bg-white rounded-3xl p-8 sm:p-10 hover:shadow-xl transition-shadow"
+              className="bg-white rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-shadow"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

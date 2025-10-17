@@ -4,7 +4,7 @@ import { CheckCircle2, MessageSquare, BarChart, FileText, Stethoscope } from "lu
 
 export default function WaitlistSection() {
   return (
-    <section id="waitlist" className="py-24 bg-gray-50">
+    <section id="waitlist" className="py-24 bg-gray-50 scroll-mt-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"

@@ -117,6 +117,11 @@
     html {
       scroll-behavior: auto;
     }
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   body {
@@ -126,6 +131,7 @@
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
     letter-spacing: -0.01em;
+    overflow-x: hidden; /* prevent horizontal scroll on mobile */
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -236,5 +242,16 @@
         rgba(37, 211, 102, 0.03) 20px,
         rgba(37, 211, 102, 0.03) 40px
       );
+  }
+
+  /* Mobile-first gesture utility for carousels: allow vertical scroll while dragging horizontally */
+  .touch-pan-y {
+    touch-action: pan-y;
+  }
+
+  /* Performance: only render content when needed */
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px; /* reserve space to avoid layout shift */
   }
 }

@@ -3,19 +3,19 @@ import { X, CheckCircle2, FileText } from "lucide-react";
 
 export default function OldNewComparisonSection() {
   const oldWay = [
-    "Consulta a cada 3 meses (apenas 4x/ano)",
-    "Mesma orientação genérica para todos",
-    "Sem suporte entre consultas",
-    "Efeitos colaterais descobertos tarde demais",
-    "Ajustes de dose 'no escuro'"
+    "Consultas episódicas (≈ a cada 3 meses), baixa continuidade",
+    "Orientações genéricas, pouca estratificação de risco",
+    "Ausência de monitoramento entre consultas",
+    "Eventos adversos detectados tardiamente",
+    "Ajustes de dose com baixa instrumentação de dados"
   ];
 
   const newWay = [
-    "Disponível 24/7 via WhatsApp (365 dias/ano)",
-    "Protocolo adaptado ao SEU corpo e padrões",
-    "Check-ins diários nos primeiros 30 dias",
-    "IA detecta gatilhos antes de virarem problemas",
-    "Ajustes de dose baseados nos SEUS dados"
+    "Suporte clínico 24/7 via WhatsApp, 365 dias/ano",
+    "Protocolo individualizado por histórico, dose e padrões",
+    "Check-ins diários nas primeiras 4 semanas (intensidade adaptativa)",
+    "IA clínica antecipa gatilhos e orienta manejo preventivo",
+    "Ajustes orientados por dados, documentados e revisados"
   ];
 
   const studies = [
@@ -44,11 +44,11 @@ export default function OldNewComparisonSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 tracking-tight leading-tight">
-            Como você trata seu GLP-1 hoje
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 tracking-tight leading-tight fluid-h2">
+            Manejo do tratamento com GLP-1: modelo tradicional vs acompanhamento Zempi
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-            A diferença entre ficar sozinho e ter suporte contínuo
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light fluid-body">
+            Diferença entre prática episódica e acompanhamento clínico contínuo
           </p>
         </motion.div>
 
@@ -74,13 +74,13 @@ export default function OldNewComparisonSection() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-50 rounded-full mb-6">
                 <X className="h-4 w-4 text-red-600" />
                 <span className="text-xs font-semibold text-red-900 uppercase tracking-wide">
-                  Modo Atual
+                  Modelo tradicional (episódico)
                 </span>
               </div>
 
               {/* Subtitle - Nubank-style humanized copy */}
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                Sistema Tradicional
+                Prática convencional
               </h3>
               <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                 Como a maioria dos pacientes é tratada hoje
@@ -108,10 +108,10 @@ export default function OldNewComparisonSection() {
               {/* Result Badge - Tesla-style data presentation */}
               <div className="pt-6 border-t border-red-100">
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                  Resultado Típico
+                  Desfecho típico
                 </p>
                 <p className="text-2xl sm:text-3xl font-bold text-red-600 mb-1">
-                  50% desistem
+                  Descontinuação precoce em até 50%
                 </p>
                 <p className="text-sm text-gray-600">
                   nos primeiros 3 meses
@@ -133,16 +133,16 @@ export default function OldNewComparisonSection() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 rounded-full mb-6">
                 <CheckCircle2 className="h-4 w-4 text-green-600" />
                 <span className="text-xs font-semibold text-green-900 uppercase tracking-wide">
-                  Com Zempi
+                  Com Zempi — acompanhamento clínico contínuo
                 </span>
               </div>
 
               {/* Subtitle */}
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                Acompanhamento Contínuo
+                Acompanhamento clínico contínuo
               </h3>
               <p className="text-sm text-gray-600 mb-6 leading-relaxed">
-                Como deveria ser com suporte médico 24/7
+                Estrutura clínica com suporte 24/7
               </p>
 
               {/* List Items */}
@@ -167,13 +167,13 @@ export default function OldNewComparisonSection() {
               {/* Result Badge */}
               <div className="pt-6 border-t border-green-100">
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                  Resultado Zempi
+                  Desfecho esperado
                 </p>
                 <p className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
-                  6+ meses
+                  Aderência média ≥ 6 meses
                 </p>
                 <p className="text-sm text-gray-600">
-                  de aderência média
+                  com redução de eventos adversos reportados
                 </p>
               </div>
             </div>

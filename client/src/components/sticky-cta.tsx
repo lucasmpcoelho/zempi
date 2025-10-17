@@ -17,6 +17,7 @@ export default function StickyCTA() {
     const hero = document.querySelector('section');
     const threshold = (hero?.clientHeight ?? 400) * 0.6;
     const waitlist = document.getElementById('waitlist');
+    const formInputs = Array.from(document.querySelectorAll('input, textarea, select')) as HTMLElement[];
 
     const onScroll = () => {
       const currentY = window.scrollY;
@@ -25,15 +26,32 @@ export default function StickyCTA() {
       
       // Hide when reaching waitlist section
       const waitlistTop = waitlist?.offsetTop ?? Infinity;
-      const nearWaitlist = currentY > (waitlistTop - window.innerHeight / 2);
+      const nearWaitlist = currentY > (waitlistTop - window.innerHeight * 0.8);
       
-      setVisible(pastHero && (scrollingUp || currentY < lastScrollYRef.current + 100) && !nearWaitlist);
+      const anyInputFocused = formInputs.some((el) => el === document.activeElement);
+
+      setVisible(
+        pastHero &&
+        (scrollingUp || currentY < lastScrollYRef.current + 100) &&
+        !nearWaitlist &&
+        !anyInputFocused
+      );
       lastScrollYRef.current = currentY;
     };
 
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+
+    const onFocusIn = () => setVisible(false);
+    const onFocusOut = () => onScroll();
+    document.addEventListener('focusin', onFocusIn);
+    document.addEventListener('focusout', onFocusOut);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('focusin', onFocusIn);
+      document.removeEventListener('focusout', onFocusOut);
+    };
   }, []);
 
   return (

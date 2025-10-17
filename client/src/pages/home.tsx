@@ -10,7 +10,6 @@ const ClinicalAuthoritySection = lazy(() => import("@/components/clinical-author
 import TestimonialsSection from "@/components/testimonials-section";
 import FAQSection from "@/components/faq-section";
 import WaitlistSection from "@/components/waitlist-section";
-const WhatsIncludedSection = lazy(() => import("@/components/whats-included-section"));
 import Footer from "@/components/footer";
 import StickyCTA from "@/components/sticky-cta";
 
@@ -35,24 +34,32 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <Suspense fallback={<SectionLoader />}>
-        <OldNewComparisonSection />
+        <div className="content-auto">
+          <OldNewComparisonSection />
+        </div>
       </Suspense>
-      <SocialProofSection />
+      <div className="content-auto">
+        <SocialProofSection />
+      </div>
       <Suspense fallback={<SectionLoader />}> 
-        <ChatSimulation />
+        <div className="content-auto">
+          <ChatSimulation />
+        </div>
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
-        <InsightsSection />
+        <div className="content-auto">
+          <InsightsSection />
+        </div>
       </Suspense>
       <HowItWorksSection />
       <Suspense fallback={<SectionLoader />}>
-        <ClinicalAuthoritySection />
+        <div className="content-auto">
+          <ClinicalAuthoritySection />
+        </div>
       </Suspense>
       <TestimonialsSection />
       <FAQSection />
-      <Suspense fallback={<SectionLoader />}>
-        <WhatsIncludedSection />
-      </Suspense>
+      {/* WhatsIncludedSection removed for a more streamlined mobile-first flow */}
       <WaitlistSection />
       <Footer />
       <StickyCTA />

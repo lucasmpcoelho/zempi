@@ -131,7 +131,7 @@ export default function Navigation() {
             <Drawer open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <DrawerTrigger asChild>
                 <button 
-                  className="p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="p-3 rounded-md hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary min-h-[44px] min-w-[44px]"
                   aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
                   aria-expanded={isMenuOpen}
                   data-testid="button-menu-toggle"
