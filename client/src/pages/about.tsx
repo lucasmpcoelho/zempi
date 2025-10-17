@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 import lucasPhoto from "@assets/lucas coelho picture_1759449350469.png";
 import rafaelPhoto from "@assets/rafael sampaio pic_1759449350471.jpeg";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function About() {
   const founders = [
@@ -25,6 +26,17 @@ export default function About() {
       bio: "Rafael combina expertise técnica de ponta com paixão por impacto social. Com experiência em FinTech e passagens por PwC e Deloitte, possui forte background em engenharia de software e sistemas escaláveis. Acredita que a tecnologia deve servir às pessoas, não o contrário, e lidera a construção de sistemas que empoderam pacientes a tomarem controle da própria jornada de saúde.",
       mission: "Criar tecnologia que coloca o paciente no centro de sua própria saúde"
     }
+  ];
+
+  const advisors = [
+    {
+      name: "Dr. Alexandre Almeida",
+      role: "Advisor Médico",
+      photo: "/alexandre-almeida.webp",
+      bio:
+        "Médico Clínico, com experiência em GLP-1, orienta nossa estratégia clínica para resultados seguros e baseados em evidências.",
+      initials: "AA",
+    },
   ];
 
   return (
@@ -155,6 +167,52 @@ export default function About() {
                     "{founder.mission}"
                   </p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Medical Advisory Board */}
+      <section className="py-24 bg-white px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground tracking-tight">
+              Conselho Médico
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed font-light max-w-2xl mx-auto">
+              Supervisão clínica independente, garantindo segurança e aderência aos melhores padrões de evidência.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {advisors.map((advisor, index) => (
+              <motion.div
+                key={advisor.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                data-testid={`advisor-card-${index}`}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <Avatar className="h-16 w-16">
+                    <AvatarImage src={advisor.photo} alt={`Foto do ${advisor.name}`} />
+                    <AvatarFallback>{advisor.initials}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">{advisor.name}</h3>
+                    <p className="text-blue-600 font-semibold">{advisor.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed">{advisor.bio}</p>
               </motion.div>
             ))}
           </div>

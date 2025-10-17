@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Stethoscope, Shield, Brain, Users } from "lucide-react";
+import { Stethoscope, Shield, Brain, Users, Quote } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const pillars = [
   {
@@ -123,6 +124,42 @@ export default function ClinicalAuthoritySection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Advisor Callout - inspirado em Qoves */}
+        <motion.div
+          className="mt-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          aria-labelledby="advisor-callout-title"
+        >
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                <Quote className="h-5 w-5" />
+              </div>
+              <div className="flex-1">
+                <p id="advisor-callout-title" className="text-gray-800 leading-relaxed">
+                  "A combinação de diretrizes clínicas com tecnologia de ponta permite um acompanhamento contínuo e personalizado em GLP‑1 — com foco em segurança e adesão."
+                </p>
+                <div className="mt-4 flex items-center gap-3">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage src="/alexandre-almeida.webp" alt="Foto do Dr. Alexandre Almeida, Advisor Médico da Zempi" />
+                    <AvatarFallback>AA</AvatarFallback>
+                  </Avatar>
+                  <div className="text-sm">
+                    <p className="font-semibold text-gray-900">Dr. Alexandre Almeida</p>
+                    <p className="text-gray-600">Advisor Médico</p>
+                  </div>
+                  <a href="/quem-somos" className="ml-auto text-blue-600 hover:text-blue-700 text-sm font-medium underline-offset-4 hover:underline">
+                    Conheça nosso time
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
