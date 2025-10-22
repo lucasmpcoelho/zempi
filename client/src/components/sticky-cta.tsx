@@ -75,7 +75,7 @@ export default function StickyCTA() {
               onClick={scrollToWaitlist}
               data-testid="sticky-cta-join-waitlist"
             >
-              Solicitar Acesso
+              Começar por R$32/mês
             </Button>
           </div>
         </motion.div>
