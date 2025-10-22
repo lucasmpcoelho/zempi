@@ -73,8 +73,8 @@ export default function WaitlistForm() {
           </div>
           <h3 className="text-2xl font-bold mb-2">Inscrição Confirmada!</h3>
           <p className="text-muted-foreground mb-6">
-            Obrigado pelo seu interesse no Zempi. Entraremos em contato em breve para
-            dar início ao seu acompanhamento personalizado.
+            Obrigado pelo seu interesse no Zempi. Você receberá um email em até 24h com
+            instruções de pagamento e acesso ao WhatsApp.
           </p>
           <Button
             onClick={() => setIsSuccess(false)}
@@ -231,7 +231,7 @@ export default function WaitlistForm() {
                   Enviando...
                 </>
               ) : (
-                "Solicitar Acesso"
+                "Começar acompanhamento"
               )}
             </Button>
           </div>

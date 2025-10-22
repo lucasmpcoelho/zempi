@@ -169,17 +169,17 @@ export default function HeroSection() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                   >
-                    <Button 
+                    <Button
                       size="lg"
                       onClick={scrollToWaitlist}
                       className="px-10 py-5 sm:py-6 h-14 sm:h-auto rounded-xl font-medium text-base transition-all hover:shadow-lg hover:-translate-y-0.5 bg-gray-900 hover:bg-gray-800"
                       data-testid="button-comecar-acompanhamento"
                     >
-                      Solicitar Acesso ao Programa Piloto
+                      Começar por R$32/mês
                     </Button>
-                    
+
                     <p className="text-sm text-gray-500 mt-4">
-                      Programa piloto • Seleção criteriosa
+                      Preço de lançamento para primeiros usuários
                     </p>
                   </motion.div>
 
