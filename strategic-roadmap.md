@@ -303,36 +303,333 @@ Build the muscle, habits, and metabolic foundation NOW — while your GLP-1 is w
 
 ---
 
-## 📱 PRODUCT ROADMAP
+## 📱 PRODUCT ROADMAP: 3-Layer Architecture
 
-### Q4 2025: Foundation
-- [x] WhatsApp integration
-- [x] Daily check-in system
-- [x] Basic symptom tracking
-- [ ] Muscle preservation protocol v1
-- [ ] Habit formation system v1
-- [ ] Medical review workflow
+Every feature is built across three layers:
+1. **WhatsApp Layer** (Daily interface - what users SEE and DO)
+2. **Intelligence Layer** (Pattern recognition - what the AI DETECTS)
+3. **Dashboard Layer** (Weekly review - what users UNDERSTAND)
 
-### Q1 2026: Intelligence
-- [ ] AI pattern recognition (food/symptom correlations)
-- [ ] Transition readiness scoring
-- [ ] Personalized protein targets
-- [ ] Resistance training program generator
-- [ ] Automated medical escalation triggers
+### Core Features (MVP - Q4 2025)
+*Must prove users are building foundation for post-GLP-1 success*
 
-### Q2 2026: Scale
-- [ ] Tiered pricing launch
-- [ ] Community features
-- [ ] Provider portal for doctors
-- [ ] Insurance pilot programs
-- [ ] Referral system
+#### 🥩 FEATURE 1: Muscle Preservation System
+**Value Prop**: "Your metabolism won't crash when you stop"
 
-### Q3 2026: Innovation
-- [ ] Predictive weight regain algorithms
-- [ ] Metabolic health biomarker integration
-- [ ] Employer wellness platform
-- [ ] Clinical trial partnerships
-- [ ] International expansion planning
+**WhatsApp Layer:**
+- [x] Basic check-ins implemented
+- [ ] **Week 1**: Personalized protein target messaging
+  - 7am: "Good morning! Your protein target: 120g (based on your 150lb weight)"
+  - Photo meal logging → "Looks like 25g protein, 350 cal"
+  - 8pm: "Daily check: 95g / 120g (79%). Need 25g more?"
+- [ ] **Week 2**: Resistance training integration
+  - M/W/F: "Resistance training reminder: Upper body - 20 min routine"
+  - Exercise logging: Photo/text confirmation
+  - Streak tracking: "That's 3 workouts this week!"
+
+**Intelligence Layer:**
+- [ ] **Week 1**: Protein compliance calculator (rolling 7-day %)
+- [ ] **Week 1**: Weight loss rate monitor (weekly average)
+- [ ] **Week 2**: Muscle loss risk detection
+  - Algorithm: `if weight_loss > 2lb/week AND protein < 70% → ALERT`
+  - Auto-intervention: "You're losing too fast - increase protein!"
+- [ ] **Week 2**: Personalized target calculation (0.8g/lb body weight)
+
+**Dashboard Layer:**
+- [ ] **Week 2**: Muscle Health Score card (0-100)
+  - Weight trend graph with protein overlay
+  - Risk indicator (green/yellow/red)
+  - Formula: `(protein_compliance * 0.6) + (exercise_frequency * 0.4)`
+- [ ] **Week 3**: Weekly summary report
+  - "You lost 1.2lb with 85% protein = muscle preserved ✅"
+
+---
+
+#### 🔄 FEATURE 2: Habit Formation Engine
+**Value Prop**: "Behaviors become automatic, outlasting medication"
+
+**WhatsApp Layer:**
+- [x] Daily symptom tracking implemented
+- [ ] **Week 3**: Streak messaging
+  - "That's 3 days in a row hitting protein! Forming a habit!"
+  - "This week: 6/7 protein ✅, 3/3 workouts ✅"
+- [ ] **Week 3**: Pattern-based encouragement
+  - "You haven't missed a Monday workout in 4 weeks!"
+- [ ] **Week 4**: Evening reflection
+  - "How did you feel today? 1-10"
+  - Habit consistency questions
+
+**Intelligence Layer:**
+- [ ] **Week 3**: Streak tracking engine
+  - Consecutive days hitting targets
+  - Longest streak achievements
+- [ ] **Week 3**: Pattern detection
+  - `if protein_hit_21_days → "Habit formed!"`
+  - `if always_misses_breakfast → intervention`
+  - `if friday_nights_fail → weekend_trigger_alert`
+- [ ] **Week 4**: Habit automation scoring
+  - Formula: `consistency_30_days * (1 - reminder_dependency)`
+  - 0-30% = Building, 31-70% = Forming, 71-100% = Automated
+
+**Dashboard Layer:**
+- [ ] **Week 3**: Habit Streaks calendar
+  - Visual 30-day grid
+  - Green = both targets hit
+  - Yellow = protein only
+  - Red = missed
+- [ ] **Week 4**: Habit Automation Score (0-100%)
+  - Current level indicator
+  - "What it means" explanation
+  - Improvement recommendations
+
+---
+
+#### 🎯 FEATURE 3: Transition Readiness Tracker
+**Value Prop**: "Know when you're ready to stop - and won't regain"
+
+**WhatsApp Layer:**
+- [ ] **Week 4**: Initial readiness messaging
+  - "You've been on GLP-1 for 4 weeks. Starting readiness tracking..."
+- [ ] **Weekly**: Progress updates
+  - "Transition Readiness: 35% → 42% this week!"
+  - "You're 65% ready. Here's what's missing..."
+- [ ] **At 85%**: Celebration + next steps
+  - "🎉 85% ready! Time to talk to your doctor about tapering."
+
+**Intelligence Layer:**
+- [ ] **Week 4**: Transition Readiness Algorithm
+  ```
+  Protein consistency (30pts): 90%+ days = 30, 80-89% = 20, <80% = 0
+  Exercise consistency (30pts): 3x/week for 4wk = 30, 2x/wk = 15, <2x = 0
+  Weight stability (20pts): <1.5lb/wk = 20, 1.5-2lb = 10, >2lb = 0
+  Habit automation (20pts): No reminders = 20, occasional = 10, daily = 0
+  ```
+- [ ] **Week 4**: Timeline prediction
+  - "At this pace, ready in 8 weeks"
+- [ ] **Ongoing**: Risk scoring
+  - `if readiness < 60% → "High regain risk"`
+
+**Dashboard Layer:**
+- [ ] **Week 4**: Transition Readiness Dashboard
+  - Big percentage display (0-100%)
+  - Category breakdown
+  - "What you need to improve" list
+  - Estimated readiness date
+- [ ] **Week 4**: Phase indicators
+  - 0-30%: "Building Foundation"
+  - 31-60%: "Forming Habits"
+  - 61-84%: "Nearly Ready"
+  - 85-100%: "Ready to Transition"
+
+---
+
+#### 🤢 FEATURE 4: Side Effect Management (Supporting)
+**Value Prop**: "Stay on meds long enough to build foundation"
+
+**WhatsApp Layer:**
+- [x] Basic symptom tracking implemented
+- [ ] **Week 1**: Enhanced symptom flow
+  - "Any nausea? None/Mild/Moderate/Severe"
+  - If moderate+: "What did you eat last 4 hours?"
+  - Immediate guidance: "Try ginger tea + crackers"
+- [ ] **Week 2**: Pattern alerts
+  - "Dairy triggers your nausea 80% of the time - avoid?"
+
+**Intelligence Layer:**
+- [ ] **Week 1**: Food/symptom correlation tracking
+- [ ] **Week 2**: Pattern detection
+  - `if food_item → symptom 4/5 times → trigger_alert`
+- [ ] **Week 2**: Escalation triggers
+  - `if severe_3_days → medical_review`
+
+**Dashboard Layer:**
+- [ ] **Week 2**: Side effect timeline
+- [ ] **Week 2**: Food trigger analysis (ranked by frequency)
+- [ ] **Week 3**: Severity trends over time
+
+---
+
+#### 🏥 FEATURE 5: Medical Oversight (Credibility)
+**Value Prop**: "Physician-guided, not just an app"
+
+**WhatsApp Layer:**
+- [ ] **Week 1**: Initial medical review notification
+  - "Dr. Almeida reviewed your profile. Starting protein: 120g/day"
+- [ ] **Ongoing**: Escalation responses
+  - "A doctor will review within 2 hours"
+- [ ] **Monthly**: Progress review
+  - "Dr. Almeida reviewed your month - looking great!"
+
+**Intelligence Layer:**
+- [ ] **Week 1**: Red flag detection system
+  - Severe side effects 3+ days
+  - Weight loss >3lb/week
+  - Protein <50% for 7 days
+  - User-reported concerning symptoms
+- [ ] **Week 1**: Auto-queue for medical review
+- [ ] **Week 2**: Priority scoring (urgent vs routine)
+
+**Dashboard Layer (Provider Portal):**
+- [ ] **Week 2**: Patient queue (sorted by risk)
+- [ ] **Week 2**: Quick review interface
+  - Muscle Health Score
+  - Side effects this week
+  - Red flags
+  - Approve/modify/escalate buttons
+- [ ] **Week 3**: Batch review capability (10 patients/15 min)
+
+---
+
+### Intelligence Upgrade (Q1 2026)
+*Make features smarter and more personalized*
+
+#### WhatsApp Intelligence Enhancements
+- [ ] **Contextual recommendations**
+  - "You always skip breakfast protein - try this 2-min recipe"
+  - Smart reminder timing (learns when user needs nudges)
+- [ ] **Progressive resistance program**
+  - Auto-generates Week 1-12 workout plan
+  - Adapts to user performance
+- [ ] **Predictive nausea alerts**
+  - "You ate dairy last 3x and got nausea - avoid tonight?"
+- [ ] **Habit formation prediction**
+  - "At this rate, breakfast protein will be automatic in 12 days"
+
+#### Intelligence Layer Upgrades
+- [ ] **Advanced pattern recognition**
+  - Multi-variable food/symptom correlations
+  - Context-aware recommendations (time, location, mood)
+- [ ] **Transition readiness forecasting**
+  - "You'll be ready to stop medication in May 2026"
+  - Confidence intervals
+- [ ] **Body composition estimation**
+  - Algorithm: `weight + protein + exercise → lean mass estimate`
+  - Track estimated muscle loss/gain
+- [ ] **Behavior change prediction**
+  - Which habits will stick long-term
+  - Early intervention for at-risk patterns
+
+#### Dashboard Layer Upgrades
+- [ ] **Comparative analytics**
+  - "You're preserving muscle better than 78% of users"
+  - Percentile rankings
+- [ ] **Predictive charts**
+  - "If you continue this pace, ready in 8 weeks"
+  - Scenario modeling ("What if I hit protein 95% of days?")
+- [ ] **Detailed pattern insights**
+  - "Your nausea triggers (ranked by frequency)"
+  - Root cause analysis
+- [ ] **Transition timeline**
+  - Visual roadmap to readiness
+  - Milestone celebrations
+
+---
+
+### Scale Features (Q2 2026)
+*Growth, retention, and business model expansion*
+
+#### Retention & Community
+- [ ] **Peer accountability groups**
+  - 5-8 users, same GLP-1 start date
+  - Shared milestones and check-ins
+- [ ] **Success stories**
+  - Users who successfully stopped GLP-1s without regain
+  - 6-month, 12-month follow-ups
+- [ ] **Expert AMAs**
+  - Nutritionists, trainers, endocrinologists
+  - Q&A sessions in WhatsApp groups
+
+#### Business Model Expansion
+- [ ] **Tiered pricing launch**
+  - Basic: AI + weekly human review (R$49)
+  - Premium: Daily human coaching + medical oversight (R$99)
+  - Enterprise: Employer/insurance partnerships (custom)
+- [ ] **Provider Portal v2**
+  - Insurance outcome reporting
+  - ROI tracking (cost savings vs ER visits, extra appointments)
+  - Quality metrics dashboard
+- [ ] **Employer wellness dashboard**
+  - Aggregate metrics (no PII)
+  - Program ROI
+  - Engagement rates
+
+#### Growth Channels
+- [ ] **Referral system**
+  - Give R$10, Get R$10
+  - Bonus for referring users who stay 3+ months
+- [ ] **Insurance pilot program**
+  - 3 partner insurers
+  - Co-pay reduction pilot
+- [ ] **Clinical trial partnership**
+  - 12-month weight maintenance study
+  - Academic institution collaboration
+  - Publication target: 2027
+
+---
+
+### Innovation & Moat (Q3 2026)
+*Long-term differentiation through unique data and outcomes*
+
+#### Advanced Intelligence
+- [ ] **Predictive weight regain model**
+  - Risk score: readiness + behavior patterns + historical data
+  - Early intervention for high-risk users
+- [ ] **Metabolic health integration**
+  - Optional biomarker integration (glucose, insulin, hormones)
+  - Comprehensive metabolic health score
+- [ ] **Maintenance protocol**
+  - Post-GLP-1 coaching (12 months after stopping)
+  - Regain prevention system
+  - Ongoing muscle preservation
+
+#### Platform Expansion
+- [ ] **White-label solution**
+  - Healthcare systems can brand as their own
+  - API + UI components
+- [ ] **Telehealth partner API**
+  - Integrate with Ro, Hims, etc.
+  - They prescribe, we coach post-medication
+- [ ] **International expansion**
+  - US market research
+  - Mexico, Argentina expansion planning
+  - Localization requirements
+
+#### Clinical Validation
+- [ ] **Outcomes publication**
+  - 12-month weight maintenance data
+  - Muscle preservation results
+  - Medical journal submission
+- [ ] **Insurance coverage lobbying**
+  - Position as cost-saving intervention
+  - Medicare/Medicaid coverage push
+  - Employer mandate advocacy
+
+---
+
+### Technical Architecture Stack
+
+#### WhatsApp Integration
+- **Current**: WhatsApp Business API
+- **Q1 2026**: Multi-agent conversation management
+- **Q2 2026**: Rich media (video routines, recipe cards)
+
+#### Intelligence Layer
+- **Current**: Rule-based triggers + simple ML
+- **Q1 2026**: Pattern recognition models, time-series forecasting
+- **Q2 2026**: Reinforcement learning for personalization
+- **Q3 2026**: Predictive models (regain risk, readiness timing)
+
+#### Dashboard Layer
+- **Current**: React + shadcn/ui
+- **Q1 2026**: Real-time data sync, advanced visualizations
+- **Q2 2026**: Provider portal, multi-tenant architecture
+- **Q3 2026**: API platform, white-label customization
+
+#### Data Infrastructure
+- **Current**: PostgreSQL, basic analytics
+- **Q1 2026**: Data warehouse, ML pipeline
+- **Q2 2026**: Real-time streaming, A/B testing framework
+- **Q3 2026**: Predictive analytics platform
 
 ---
 
@@ -440,28 +737,216 @@ Most subscriptions churn fast. Our value INCREASES when medication stops.
 
 ---
 
+## 🗑️ DEPRECATED POV TO REMOVE FROM WEBSITE
+
+### Current Messaging That Undermines New Value Prop
+
+#### ❌ Hero Section (client/src/components/hero-section.tsx:37)
+**DELETE**: "Seu Ozempic / Mounjaro com padrão clínico"
+- **Problem**: Positions us as medication optimizer, not life-after-medication solution
+- **Replace with**: "Não perca só peso. Mantenha para sempre."
+- **Why**: Addresses #1 user fear (weight regain after stopping)
+
+#### ❌ Hero Subheadline (client/src/components/hero-section.tsx:42)
+**DELETE**: "Acompanhamento 24/7 via WhatsApp — orientação segura e personalizada para seu histórico, dose e sintomas"
+- **Problem**: Sounds like customer support, not transformation system
+- **Replace with**: "Construa hoje a base que mantém os resultados amanhã — quando o GLP-1 parar, seu peso não volta."
+- **Why**: Clear cause-effect, addresses discontinuation cliff
+
+#### ⚠️ Benefits Section Header (client/src/components/benefits-section.tsx:59)
+**REVISE**: "Suporte completo para sua jornada única com GLP-1"
+- **Problem**: Focuses on "during" journey, not "after"
+- **Replace with**: "Construa a base para manter o peso — para sempre"
+- **Why**: Emphasizes permanent results, not temporary support
+
+#### ⚠️ Benefits Section Subheader (client/src/components/benefits-section.tsx:61-63)
+**REVISE**: "Cada funcionalidade se adapta às suas necessidades específicas, resolvendo seus desafios particulares durante o tratamento"
+- **Problem**: "Durante o tratamento" = temporary mindset
+- **Replace with**: "Cada funcionalidade te prepara para o dia em que você parar o GLP-1 — sem medo de voltar ao peso anterior"
+- **Why**: Reframes features as preparation for discontinuation
+
+### Benefits Cards to DELETE/REVISE (client/src/components/benefits-section.tsx:3-38)
+
+#### ❌ DELETE: "Otimização de Resultados"
+```javascript
+{
+  emoji: "📈",
+  title: "Otimização de Resultados",
+  description: "Análise de refeições específica para GLP-1 que maximiza perda de gordura e preserva massa magra"
+}
+```
+- **Problem**: Too generic, sounds like "better results while on meds"
+- **Not aligned**: Doesn't address post-medication scenario
+
+#### ❌ DELETE: "Insights Baseados em Dados"
+```javascript
+{
+  emoji: "🔬",
+  title: "Insights Baseados em Dados",
+  description: "Relatórios de causa e efeito que mostram quais alimentos e hábitos funcionam melhor para VOCÊ"
+}
+```
+- **Problem**: Nice-to-have, not core value prop
+- **Not aligned**: Data insights don't prevent weight regain
+
+#### ❌ DELETE: "Privacidade Total"
+```javascript
+{
+  emoji: "🔐",
+  title: "Privacidade Total",
+  description: "Criptografia de ponta a ponta e conformidade total com LGPD"
+}
+```
+- **Problem**: Table stakes, not a differentiator
+- **Not aligned**: Doesn't deliver on core promise
+
+#### ✅ KEEP & ENHANCE: "Prevenção de Perda Muscular"
+```javascript
+{
+  emoji: "💪",
+  title: "Prevenção de Perda Muscular", // GOOD
+  description: "Receitas ricas em proteína e treinos personalizados para evitar a perda muscular comum em tratamentos GLP-1"
+}
+```
+- **Enhancement needed**: Add "para manter metabolismo após parar medicação"
+- **New description**: "Protocolo diário de proteína e treino que preserva músculo — garantindo que seu metabolismo não desacelere quando parar o GLP-1"
+
+#### ✅ KEEP: "Gerenciamento de Efeitos Colaterais"
+```javascript
+{
+  emoji: "🤢",
+  title: "Gerenciamento de Efeitos Colaterais",
+  description: "Identifica padrões entre alimentos e náusea, te ajudando a evitar sintomas antes que aconteçam"
+}
+```
+- **Enhancement needed**: Explain WHY this matters for core value prop
+- **New description**: "Identifica padrões entre alimentos e náusea — para você ficar na medicação tempo suficiente para construir hábitos permanentes"
+
+#### ⚠️ REVISE: "Aderência ao Tratamento"
+```javascript
+{
+  emoji: "🎯",
+  title: "Aderência ao Tratamento", // WEAK
+  description: "Check-ins diários que mantêm você no caminho e evitam a desistência prematura"
+}
+```
+- **New title**: "Formação de Hábitos Permanentes"
+- **New description**: "Check-ins diários que automatizam comportamentos saudáveis — transformando em hábitos que duram para sempre, mesmo sem medicação"
+
+#### ✅ KEEP & PROMOTE: "Suporte na Transição"
+```javascript
+{
+  emoji: "🏥",
+  title: "Suporte na Transição", // EXCELLENT
+  description: "Preparação para manutenção pós-medicação garantindo resultados duradouros"
+}
+```
+- **This is CORE to new value prop**
+- **Enhancement**: Make this more prominent, possibly feature in hero
+- **New description**: "Sistema de prontidão que te avisa quando está pronto para parar o GLP-1 — sem medo de engordar de novo"
+
+### NEW Benefits to ADD
+
+#### ✅ ADD: "Prontidão para Pós-Medicação"
+```javascript
+{
+  emoji: "🎯",
+  title: "Prontidão para Pós-Medicação",
+  description: "Score de prontidão que indica quando você pode parar o GLP-1 com segurança — baseado em hábitos formados e músculo preservado"
+}
+```
+
+#### ✅ ADD: "Acompanhamento Médico Contínuo"
+```javascript
+{
+  emoji: "👨‍⚕️",
+  title: "Acompanhamento Médico Contínuo",
+  description: "Supervisão médica diária por Dr. Alexandre Almeida — garantindo segurança clínica durante e APÓS a medicação"
+}
+```
+
+### REVISED Benefits Section (Final)
+
+```javascript
+const benefits = [
+  {
+    emoji: "💪",
+    title: "Preservação Muscular Garantida",
+    description: "Protocolo diário de proteína (120g+) e treino de força que preserva músculo — garantindo metabolismo ativo mesmo após parar o GLP-1"
+  },
+  {
+    emoji: "🔄",
+    title: "Formação de Hábitos Permanentes",
+    description: "Sistema de check-ins que transforma comportamentos em automáticos — hábitos que duram para sempre, independente de medicação"
+  },
+  {
+    emoji: "🎯",
+    title: "Prontidão para Pós-Medicação",
+    description: "Score de prontidão (0-100%) que indica quando você pode parar o GLP-1 — sem medo de voltar ao peso anterior"
+  },
+  {
+    emoji: "🤢",
+    title: "Gerenciamento de Efeitos Colaterais",
+    description: "Identifica padrões (ex: laticínios → náusea) para você ficar na medicação tempo suficiente para construir sua base"
+  },
+  {
+    emoji: "👨‍⚕️",
+    title: "Supervisão Médica Diária",
+    description: "Dr. Alexandre Almeida revisa seu progresso semanalmente — suporte clínico durante e após a medicação"
+  },
+  {
+    emoji: "📱",
+    title: "Tudo via WhatsApp",
+    description: "Check-ins diários, coaching em tempo real, alertas médicos — tudo no app que você já usa, sem complicação"
+  }
+];
+```
+
+### Other Website Elements to Update
+
+#### CTA Buttons
+- **OLD**: "Começar por R$32/mês"
+- **NEW**: "Garantir meus resultados para sempre — R$32/mês"
+
+#### Social Proof
+- **Focus shift**: From "lost weight on Ozempic" to "stopped Ozempic 6 months ago, still maintaining weight"
+- **Testimonial priority**: Users who successfully discontinued > users currently on medication
+
+#### FAQ Section
+- **Add prominently**: "What happens when I stop the medication?"
+- **Add prominently**: "How do you prevent weight regain?"
+- **Add prominently**: "When will I be ready to stop GLP-1s?"
+
+---
+
 ## 🔄 NEXT STEPS
 
 ### Immediate (This Week)
-- [ ] Update website copy to reflect new positioning
-- [ ] Revise hero section: "Insurance against weight regain"
-- [ ] Update benefits to prioritize muscle preservation & habit formation
-- [ ] Add "What happens after GLP-1s?" education section
-- [ ] Refresh testimonials to emphasize long-term concerns
+- [ ] Update hero section with new value prop
+  - Replace headline: "Não perca só peso. Mantenha para sempre."
+  - Replace subheadline: Focus on post-medication
+- [ ] Revise benefits section
+  - Delete: Otimização de Resultados, Insights, Privacidade
+  - Add: Prontidão para Pós-Medicação, Supervisão Médica
+  - Enhance: Prevenção Muscular with "após parar medicação" framing
+- [ ] Update CTAs to emphasize permanence
+- [ ] Add FAQ: "O que acontece quando eu parar o GLP-1?"
 
 ### Short-Term (This Month)
-- [ ] Create content series on weight regain statistics
-- [ ] Develop muscle preservation protocol documentation
-- [ ] Launch transition readiness assessment
-- [ ] Interview users about discontinuation fears
+- [ ] Create content series: "70% regain weight after stopping GLP-1s"
+- [ ] Develop muscle preservation protocol v1 (WhatsApp messages)
+- [ ] Ship Week 1-4 features from MVP roadmap
+- [ ] Interview beta users about discontinuation fears
 - [ ] Partner outreach to endocrinologists
+- [ ] Social proof shift: Find users who successfully stopped meds
 
 ### Medium-Term (Next Quarter)
-- [ ] Clinical trial proposal for 12-month weight maintenance
+- [ ] Ship transition readiness dashboard
+- [ ] Clinical trial proposal (12-month weight maintenance study)
 - [ ] Insurance partnership pitch deck
+  - Position as "cost savings vs ER visits + extra appointments"
 - [ ] Employer wellness program framework
-- [ ] Community features for peer support
-- [ ] International expansion research (US, LATAM)
+- [ ] First "successfully discontinued" case studies
 
 ---
 
