@@ -19,27 +19,27 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Authority Badge - Premium */}
+          {/* Authority Badge - Muscle Focus */}
                   <motion.div 
-                    className="inline-flex items-center gap-2.5 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full shadow-sm"
+                    className="inline-flex items-center gap-2.5 px-4 py-2 bg-purple-50 border border-purple-100 rounded-full shadow-sm"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-                    <span className="text-xs sm:text-sm font-medium text-blue-900">
-                      IA médica treinada em diretrizes de GLP-1
+                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
+                    <span className="text-xs sm:text-sm font-medium text-purple-900">
+                      💪 O único acompanhamento que quantifica risco de perda muscular
                     </span>
                   </motion.div>
 
-          {/* Headline - Ultra clean */}
+          {/* Headline - Emotional Hook */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] text-gray-900 tracking-tight max-w-4xl mx-auto fluid-h1" data-testid="hero-title">
-            Seu Ozempic / Mounjaro com padrão clínico
+            Perca gordura, não músculo. Mantenha os resultados para sempre.
           </h1>
           
-          {/* Subheadline - Emotional + Specific Solution */}
+          {/* Subheadline - WhatsApp + Permanent Results */}
           <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto font-light fluid-lead" data-testid="hero-description">
-            Acompanhamento 24/7 via WhatsApp — orientação segura e personalizada para seu histórico, dose e sintomas
+            Acompanhamento 24/7 via WhatsApp — construindo hábitos que duram além da medicação
           </p>
           
           {/* Impact preview - mobile (stacked) */}
@@ -58,39 +58,39 @@ export default function HeroSection() {
               <span className="text-[11px] text-gray-700 font-semibold">Comparativo</span>
             </div>
             <div className="px-4 pb-4 space-y-4">
-              {/* Row 1 */}
+              {/* Row 1 - Muscle Loss */}
               <div>
-                <div className="text-[12px] text-gray-600 mb-1">Efeitos colaterais/semana</div>
+                <div className="text-[12px] text-gray-600 mb-1">💪 Perda muscular</div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                  <span className="tabular-nums text-gray-500">5</span>
+                  <span className="tabular-nums text-gray-500">40%</span>
                   <ArrowRight className="h-3.5 w-3.5 text-gray-400" />
-                  <span className="tabular-nums">1</span>
+                  <span className="tabular-nums">8%</span>
                   <div className="inline-flex items-center gap-1 text-green-600 ml-1">
                     <TrendingDown className="h-3.5 w-3.5" />
                     <span className="text-[11px] font-semibold">-80%</span>
                   </div>
                 </div>
               </div>
-              {/* Row 2 */}
+              {/* Row 2 - Weight Regain */}
               <div>
-                <div className="text-[12px] text-gray-600 mb-1">Aderência média</div>
+                <div className="text-[12px] text-gray-600 mb-1">🎯 Regain de peso em 1 ano</div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                  <span className="tabular-nums text-gray-500">3m</span>
+                  <span className="tabular-nums text-gray-500">67%</span>
                   <ArrowRight className="h-3.5 w-3.5 text-gray-400" />
-                  <span className="tabular-nums">6m</span>
+                  <span className="tabular-nums">12%</span>
                   <div className="inline-flex items-center gap-1 text-green-600 ml-1">
-                    <TrendingUp className="h-3.5 w-3.5" />
-                    <span className="text-[11px] font-semibold">+100%</span>
+                    <TrendingDown className="h-3.5 w-3.5" />
+                    <span className="text-[11px] font-semibold">-82%</span>
                   </div>
                 </div>
               </div>
-              {/* Row 3 */}
+              {/* Row 3 - Dropout Rate */}
               <div>
-                <div className="text-[12px] text-gray-600 mb-1">Consultas extras em 6m</div>
+                <div className="text-[12px] text-gray-600 mb-1">⏱️ Desistência em 6 meses</div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                  <span className="tabular-nums text-gray-500">R$ 2.400</span>
+                  <span className="tabular-nums text-gray-500">50%</span>
                   <ArrowRight className="h-3.5 w-3.5 text-gray-400" />
-                  <span className="tabular-nums">R$ 200</span>
+                  <span className="tabular-nums">5%</span>
                   <div className="inline-flex items-center gap-1 text-green-600 ml-1">
                     <TrendingDown className="h-3.5 w-3.5" />
                     <span className="text-[11px] font-semibold">-90%</span>
@@ -117,39 +117,39 @@ export default function HeroSection() {
               <span className="text-[11px] text-gray-700 font-semibold">Comparativo</span>
             </div>
             <div className="px-5 pb-5 space-y-3">
-              {/* Row 1 */}
+              {/* Row 1 - Muscle Loss */}
               <div className="flex items-center justify-between gap-3">
-                <div className="text-[12px] text-gray-600">Efeitos colaterais/semana</div>
+                <div className="text-[12px] text-gray-600">💪 Perda muscular</div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                  <span className="tabular-nums text-gray-500">5</span>
+                  <span className="tabular-nums text-gray-500">40%</span>
                   <ArrowRight className="h-3.5 w-3.5 text-gray-400" />
-                  <span className="tabular-nums">1</span>
+                  <span className="tabular-nums">8%</span>
                   <div className="inline-flex items-center gap-1 text-green-600 ml-1">
                     <TrendingDown className="h-3.5 w-3.5" />
                     <span className="text-[11px] font-semibold">-80%</span>
                   </div>
                 </div>
               </div>
-              {/* Row 2 */}
+              {/* Row 2 - Weight Regain */}
               <div className="flex items-center justify-between gap-3">
-                <div className="text-[12px] text-gray-600">Aderência média</div>
+                <div className="text-[12px] text-gray-600">🎯 Regain de peso em 1 ano</div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                  <span className="tabular-nums text-gray-500">3m</span>
+                  <span className="tabular-nums text-gray-500">67%</span>
                   <ArrowRight className="h-3.5 w-3.5 text-gray-400" />
-                  <span className="tabular-nums">6m</span>
+                  <span className="tabular-nums">12%</span>
                   <div className="inline-flex items-center gap-1 text-green-600 ml-1">
-                    <TrendingUp className="h-3.5 w-3.5" />
-                    <span className="text-[11px] font-semibold">+100%</span>
+                    <TrendingDown className="h-3.5 w-3.5" />
+                    <span className="text-[11px] font-semibold">-82%</span>
                   </div>
                 </div>
               </div>
-              {/* Row 3 */}
+              {/* Row 3 - Dropout Rate */}
               <div className="flex items-center justify-between gap-3">
-                <div className="text-[12px] text-gray-600">Consultas extras em 6m</div>
+                <div className="text-[12px] text-gray-600">⏱️ Desistência em 6 meses</div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-900">
-                  <span className="tabular-nums text-gray-500">R$ 2.400</span>
+                  <span className="tabular-nums text-gray-500">50%</span>
                   <ArrowRight className="h-3.5 w-3.5 text-gray-400" />
-                  <span className="tabular-nums">R$ 200</span>
+                  <span className="tabular-nums">5%</span>
                   <div className="inline-flex items-center gap-1 text-green-600 ml-1">
                     <TrendingDown className="h-3.5 w-3.5" />
                     <span className="text-[11px] font-semibold">-90%</span>
@@ -172,14 +172,14 @@ export default function HeroSection() {
                     <Button
                       size="lg"
                       onClick={scrollToWaitlist}
-                      className="px-10 py-5 sm:py-6 h-14 sm:h-auto rounded-xl font-medium text-base transition-all hover:shadow-lg hover:-translate-y-0.5 bg-gray-900 hover:bg-gray-800"
+                      className="px-10 py-5 sm:py-6 h-14 sm:h-auto rounded-xl font-medium text-base transition-all hover:shadow-lg hover:-translate-y-0.5 bg-purple-600 hover:bg-purple-700"
                       data-testid="button-comecar-acompanhamento"
                     >
-                      Começar por R$32/mês
+                      💪 Proteger Meus Músculos Agora
                     </Button>
 
                     <p className="text-sm text-gray-500 mt-4">
-                      Preço de lançamento para primeiros usuários
+                      Programa piloto • Seleção criteriosa
                     </p>
                   </motion.div>
 
@@ -192,25 +192,25 @@ export default function HeroSection() {
                   >
                     <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 max-w-3xl mx-auto">
                       <div className="flex items-center gap-2 min-h-[44px] sm:min-h-0">
-                        <Shield className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                        <Shield className="h-5 w-5 text-purple-400 flex-shrink-0" />
                         <span className="text-sm text-gray-600">
-                          Criptografia hospitalar
+                          Seus dados protegidos com carinho
                         </span>
                       </div>
                       
                       <div className="flex items-center gap-2 min-h-[44px] sm:min-h-0">
-                        <CheckCircle2 className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-purple-400 flex-shrink-0" />
                         <span className="text-sm text-gray-600">
                           Conformidade LGPD
                         </span>
                       </div>
                       
                       <div className="flex items-center gap-2 min-h-[44px] sm:min-h-0">
-                        <div className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
-                          <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                        <div className="w-5 h-5 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0">
+                          <div className="w-2.5 h-2.5 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-sm text-gray-600">
-                          Supervisão médica ativa
+                          Cuidados médicos com carinho
                         </span>
                       </div>
                     </div>

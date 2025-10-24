@@ -4,18 +4,18 @@ import { X, CheckCircle2, FileText } from "lucide-react";
 export default function OldNewComparisonSection() {
   const oldWay = [
     "Consultas episódicas (≈ a cada 3 meses), baixa continuidade",
-    "Orientações genéricas, pouca estratificação de risco",
-    "Ausência de monitoramento entre consultas",
+    "25-40% de perda muscular não monitorada",
+    "Sem orientação sobre proteína adequada (1.6g/kg)",
     "Eventos adversos detectados tardiamente",
-    "Ajustes de dose com baixa instrumentação de dados"
+    "Nenhum foco em criar hábitos duradouros"
   ];
 
   const newWay = [
     "Suporte clínico 24/7 via WhatsApp, 365 dias/ano",
-    "Protocolo individualizado por histórico, dose e padrões",
-    "Check-ins diários nas primeiras 4 semanas (intensidade adaptativa)",
+    "Score Muscular Diário (protege seus músculos ativamente) 💪",
+    "Gamificação e streaks que criam hábitos duradouros 🔥",
     "IA clínica antecipa gatilhos e orienta manejo preventivo",
-    "Ajustes orientados por dados, documentados e revisados"
+    "Personal Habit Template para manutenção pós-medicação 📖"
   ];
 
   const studies = [
@@ -45,10 +45,10 @@ export default function OldNewComparisonSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 tracking-tight leading-tight fluid-h2">
-            Manejo do tratamento com GLP-1: modelo tradicional vs acompanhamento Zempi
+            Por que 50% desistem do GLP-1 nos primeiros 6 meses?
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light fluid-body">
-            Diferença entre prática episódica e acompanhamento clínico contínuo
+            A diferença entre tratamento isolado e acompanhamento que protege músculos e constrói hábitos
           </p>
         </motion.div>
 
@@ -111,10 +111,10 @@ export default function OldNewComparisonSection() {
                   Desfecho típico
                 </p>
                 <p className="text-2xl sm:text-3xl font-bold text-red-600 mb-1">
-                  Descontinuação precoce em até 50%
+                  Descontinuação + recuperação de peso
                 </p>
                 <p className="text-sm text-gray-600">
-                  nos primeiros 3 meses
+                  em 67% dos casos após 1 ano
                 </p>
               </div>
             </div>

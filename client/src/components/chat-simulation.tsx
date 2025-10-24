@@ -63,7 +63,7 @@ const allMessages: Message[] = [
   {
     id: 6,
     isZempi: true,
-    content: "Você está ótima! Perdeu 8kg em 6 semanas. Mas notei algo importante...",
+    content: "Você está ótima! 🎉 Perdeu 8kg em 6 semanas. Mas notei algo importante sobre seus músculos...",
     time: "8:23"
   },
   {
@@ -103,7 +103,7 @@ const allMessages: Message[] = [
   {
     id: 9,
     isZempi: true,
-    content: "É para isso que estou aqui! 😊 Te envio o relatório semanal amanhã e te pergunto às 12h como está a náusea. Bom dia!",
+    content: "É para isso que estou aqui! 😊🎉 Te envio o relatório semanal amanhã e te pergunto às 12h como está a náusea. Você não está sozinha! 💜",
     time: "8:27"
   }
 ];
@@ -194,8 +194,72 @@ export default function ChatSimulation() {
   }, [visibleMessages, isTyping]);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white">
+    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-green-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* WhatsApp Advantages Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-100 rounded-full mb-6">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span className="text-sm font-semibold text-green-900">
+              ZERO concorrentes globais com coach via WhatsApp
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 tracking-tight">
+            Por Que WhatsApp?
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            A gente sabe que você não vai abrir mais um app todo dia. Por isso, levamos o acompanhamento para <strong className="text-gray-900">onde você já está</strong>. 💚
+          </p>
+
+          {/* 3 Stats Comparison */}
+          <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+            <motion.div
+              className="bg-white rounded-2xl p-6 border border-green-100 shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="text-4xl mb-3">📱</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">3+ horas/dia</div>
+              <p className="text-sm text-gray-600">no WhatsApp</p>
+              <p className="text-xs text-gray-400 mt-2">vs. 2 min/dia em apps de saúde</p>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-2xl p-6 border border-green-100 shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="text-4xl mb-3">💬</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">90%</div>
+              <p className="text-sm text-gray-600">taxa de leitura</p>
+              <p className="text-xs text-gray-400 mt-2">vs. 15% notificações push</p>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-2xl p-6 border border-green-100 shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="text-4xl mb-3">⚡</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">10 segundos</div>
+              <p className="text-sm text-gray-600">para registrar</p>
+              <p className="text-xs text-gray-400 mt-2">vs. 2 minutos abrindo app</p>
+            </motion.div>
+          </div>
+        </motion.div>
+
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -203,9 +267,9 @@ export default function ChatSimulation() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 tracking-tight" data-testid="chat-title">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 tracking-tight" data-testid="chat-title">
               Veja o Zempi em ação
-            </h2>
+            </h3>
             <p className="text-lg text-gray-600 leading-relaxed mb-8" data-testid="chat-description">
               Análise inteligente de padrões individuais. Orientações específicas para seu corpo.
             </p>

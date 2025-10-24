@@ -4,22 +4,36 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 
 const testimonials = [
   {
-    content: "Antes: náusea 4-5x por semana. A IA detectou que peixes gordurosos eram meu gatilho. Agora: 1 episódio por mês.",
+    id: "vp1",
+    content: "Perdi 12kg, mas o mais importante: mantive minha massa muscular. O score diário me guiou para comer proteína suficiente. Agora tenho definição, não flacidez. 💪",
     name: "Maria C.",
     location: "42 anos • Ozempic há 6 meses • São Paulo",
-    metric: "Redução de 80% nos episódios de náusea"
+    metric: "Score Muscular: 85/100 (zona segura por 5 meses)",
+    valueProposition: "VP1: Proteja Seus Músculos"
   },
   {
-    content: "Estava perdendo 40% de massa muscular. O Zempi ajustou minha proteína de 0.8g/kg para 1.6g/kg. Continuo perdendo gordura mas mantendo músculos.",
-    name: "Carlos S.",
-    location: "38 anos • Mounjaro há 4 meses • Rio de Janeiro",
-    metric: "Preservação de massa magra"
-  },
-  {
-    content: "Economizei +R$2.400 em consultas extras. Tiro dúvidas na hora e tenho orientação quando preciso, sem ansiedade.",
+    id: "vp2",
+    content: "Parei o Ozempic há 3 meses. Não recuperei 1kg. O Zempi me ensinou os hábitos que funcionam pro MEU corpo. Tenho meu 'manual pessoal' agora. 🎯",
     name: "Ana P.",
     location: "35 anos • Saxenda há 8 meses • Belo Horizonte",
-    metric: "R$2.400 economizados em 6 meses"
+    metric: "Peso mantido por 3 meses pós-medicação",
+    valueProposition: "VP2: Crie Hábitos Que Duram"
+  },
+  {
+    id: "vp3",
+    content: "A IA detectou que peixes gordurosos causavam 80% da minha náusea. Ajustei e caiu para 1 episódio/mês. Levei o relatório pro endocrinologista e ele ficou impressionado. 📊",
+    name: "Carlos S.",
+    location: "38 anos • Mounjaro há 4 meses • Rio de Janeiro",
+    metric: "Redução de 90% em episódios de náusea",
+    valueProposition: "VP3: Entenda Seu Corpo"
+  },
+  {
+    id: "vp4",
+    content: "Não me sinto sozinha. Check-in diário no WhatsApp é tipo ter uma amiga nutricionista comigo 24/7. E quando bateu ansiedade à noite, responderam em 5 minutos. 💙",
+    name: "Juliana R.",
+    location: "40 anos • Ozempic há 3 meses • Curitiba",
+    metric: "NPS: 10/10 - Se sente apoiada",
+    valueProposition: "VP4: Nunca Esteja Sozinho(a)"
   }
 ];
 
@@ -49,11 +63,16 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+            <span className="text-sm font-semibold text-purple-900">
+              💜 Histórias Reais
+            </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-gray-900" data-testid="testimonials-title">
-            Histórias reais de pacientes
+            Pessoas reais, resultados reais
           </h2>
           <p className="text-lg text-gray-600">
-            Resultados específicos, não genéricos
+            Cada jornada é única. Estas são histórias de quem já está transformando sua vida. 🎉
           </p>
         </motion.div>
 

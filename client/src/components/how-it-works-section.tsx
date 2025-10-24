@@ -59,7 +59,7 @@ const journeyPhases: JourneyPhase[] = [
     results: [
       { icon: CheckCircle2, text: "Gatilhos de náusea identificados" },
       { icon: CheckCircle2, text: "Horários ideais de refeição definidos" },
-      { icon: CheckCircle2, text: "Primeiros padrões detectados pela IA" }
+      { icon: CheckCircle2, text: "A IA aprende seus padrões únicos (quando você sente náusea, quais alimentos funcionam)" }
     ],
     highlight: "A IA aprende como SEU corpo reage ao medicamento"
   },
@@ -78,28 +78,28 @@ const journeyPhases: JourneyPhase[] = [
     results: [
       { icon: CheckCircle2, text: "Protocolo otimizado para seu metabolismo" },
       { icon: CheckCircle2, text: "Efeitos colaterais reduzidos em 70-80%" },
-      { icon: CheckCircle2, text: "Rotina alimentar personalizada consolidada" }
+      { icon: CheckCircle2, text: "Primeiras conquistas desbloqueadas: 🏆 First Week Warrior, 💪 7-Day Protein Streak" }
     ],
     highlight: "Seu tratamento agora é preditivo, não reativo"
   },
   {
     period: "3+ meses",
-    title: "Sustentabilidade e comunidade",
-    subtitle: "Resultados duradouros",
+    title: "Construindo Hábitos Para Vida",
+    subtitle: "Resultados que duram para sempre",
     icon: Trophy,
     color: "text-orange-600",
     bgColor: "bg-orange-50",
     support: [
       { icon: Users, text: "Acesso à comunidade exclusiva Zempi" },
-      { icon: Shield, text: "Supervisão médica contínua" },
+      { icon: Shield, text: "Cuidados médicos contínuos com carinho" },
       { icon: Brain, text: "IA antecipa necessidades antes de você sentir" }
     ],
     results: [
       { icon: CheckCircle2, text: "Aderência média 2x maior que sem acompanhamento" },
-      { icon: CheckCircle2, text: "Manutenção de massa muscular preservada" },
-      { icon: CheckCircle2, text: "Hábitos saudáveis consolidados" }
+      { icon: CheckCircle2, text: "Personal Habit Template criado: 'Seus padrões de sucesso documentados'" },
+      { icon: CheckCircle2, text: "Quando parar a medicação, você tem um manual do SEU corpo 📖" }
     ],
-    highlight: "Transformação sustentável, não apenas perda de peso"
+    highlight: "67% recuperam 2/3 do peso em 1 ano. Com Zempi, você constrói hábitos que duram para sempre 🎯"
   }
 ];
 
@@ -257,7 +257,7 @@ export default function HowItWorksSection() {
 
         {/* Bottom CTA */}
         <motion.div 
-          className="mt-16 text-center"
+          className="mt-16 text-center space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -268,6 +268,15 @@ export default function HowItWorksSection() {
             <span className="text-sm text-gray-700">
               Acompanhamento 24/7 • Resposta em minutos, não dias
             </span>
+          </div>
+          
+          <div className="max-w-2xl mx-auto bg-orange-50 border border-orange-200 rounded-2xl p-6 mt-6">
+            <p className="text-base font-semibold text-orange-900 mb-2">
+              🎯 Por que isso importa?
+            </p>
+            <p className="text-sm text-orange-800 leading-relaxed">
+              <strong>67% das pessoas recuperam 2/3 do peso em 1 ano após parar GLP-1.</strong> Com Zempi, você constrói hábitos que duram para sempre — não dependência temporária de medicação.
+            </p>
           </div>
         </motion.div>
       </div>

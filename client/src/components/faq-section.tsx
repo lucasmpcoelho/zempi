@@ -1,8 +1,30 @@
 import { useState } from "react";
-import { ChevronDown, Info, Stethoscope, Shield, DollarSign, Users, Pill, HelpCircle, UserCheck, TrendingUp } from "lucide-react";
+import { ChevronDown, Info, Stethoscope, Shield, DollarSign, Users, Pill, HelpCircle, UserCheck, TrendingUp, Dumbbell } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
+  // NEW: Philosophical Questions - Core Objections
+  {
+    icon: Dumbbell,
+    question: "Por que devo me preocupar com perda muscular?",
+    answer: {
+      main: "25-40% do peso que você perde com GLP-1 é músculo, não gordura. Isso causa:",
+      secondary: "• Pele flácida e 'Ozempic face' • Fraqueza e fadiga • Metabolismo mais lento (facilita regain) • Aparência envelhecida",
+      highlight: "O Zempi é o ÚNICO que quantifica seu risco de perda muscular diariamente e te guia para proteger seus músculos enquanto perde gordura."
+    },
+    isHighlight: true,
+    isPhilosophical: true
+  },
+  {
+    icon: TrendingUp,
+    question: "Como o Zempi evita que eu recupere o peso?",
+    answer: {
+      main: "67% das pessoas recuperam 2/3 do peso em 1 ano após parar GLP-1. Não ensinamos você a FAZER dieta. Ensinamos você a VIVER saudável.",
+      secondary: "• Gamificação cria hábitos (7, 14, 30-day streaks 🔥) • Reflexões semanais para autoconhecimento • Personal Habit Template após 30 dias: documentamos o que funciona pro SEU corpo • Maintenance Mode quando você parar a medicação",
+      highlight: "Você sai com um 'manual' do seu corpo, não dependência de acompanhamento."
+    },
+    isPhilosophical: true
+  },
   // Philosophical Questions - Addressing objections
   {
     icon: HelpCircle,
@@ -140,8 +162,8 @@ export default function FAQSection() {
             const iconColor = "text-blue-600";
             const cardBg = isPhilosophical ? "bg-blue-50/50" : "bg-white";
             
-            // Add divider before technical questions
-            const showDivider = index === 3 && index > 0;
+            // Add divider before technical questions (after 5 philosophical: 2 new + 3 existing)
+            const showDivider = index === 5 && index > 0;
             
             return (
               <>

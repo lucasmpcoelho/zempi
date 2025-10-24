@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
+import MusclePreservationSection from "@/components/muscle-preservation-section";
 import { Suspense, lazy } from "react";
 import SocialProofSection from "@/components/social-proof-section";
 const OldNewComparisonSection = lazy(() => import("@/components/old-new-comparison-section"));
@@ -34,6 +35,7 @@ export default function Home() {
     <div className="min-h-screen bg-white text-foreground">
       <Navigation />
       <HeroSection />
+      <MusclePreservationSection />
       <Suspense fallback={<SectionLoader />}>
         <div className="content-auto">
           <OldNewComparisonSection />

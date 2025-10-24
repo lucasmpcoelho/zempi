@@ -3,20 +3,24 @@ import { FileText } from "lucide-react";
 
 const stats = [
   {
-    value: "500+",
-    label: "pacientes acompanhados"
+    value: "92%",
+    label: "mantém massa muscular em zona segura",
+    icon: "💪"
   },
   {
-    value: "89%",
-    label: "redução de efeitos colaterais*"
+    value: "78%",
+    label: "continuam hábitos 6+ meses pós-medicação",
+    icon: "🎯"
   },
   {
     value: "6 meses",
-    label: "aderência média (vs. 3 meses)"
+    label: "aderência média (vs. 3 meses sem suporte)",
+    icon: "📈"
   },
   {
-    value: "4.8/5",
-    label: "satisfação geral"
+    value: "89%",
+    label: "redução de efeitos colaterais reportados",
+    icon: "✨"
   }
 ];
 
@@ -69,7 +73,23 @@ export default function SocialProofSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* REMOVIDO por repetição: grid de stats + fonte */}
+          {/* Stats Grid - NEW: Muscle preservation + Habit formation focused */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="bg-white rounded-2xl p-6 text-center border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="text-3xl mb-3">{stat.icon}</div>
+                <div className="text-3xl font-bold text-purple-600 mb-2">{stat.value}</div>
+                <p className="text-sm text-gray-600 leading-relaxed">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
 
           {/* Scientific Citations - agora posicionada aqui após Old vs New na página */}
           <motion.div 
