@@ -19,27 +19,27 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Authority Badge - Muscle Focus */}
-                  <motion.div 
-                    className="inline-flex items-center gap-2.5 px-4 py-2 bg-purple-50 border border-purple-100 rounded-full shadow-sm"
+          {/* Authority Badge - Muscle Focus with Fear Hook */}
+                  <motion.div
+                    className="inline-flex items-center gap-2.5 px-4 py-2 bg-red-50 border border-red-200 rounded-full shadow-sm"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                    <span className="text-xs sm:text-sm font-medium text-purple-900">
-                      💪 O único acompanhamento que quantifica risco de perda muscular
+                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                    <span className="text-xs sm:text-sm font-semibold text-red-900">
+                      ⚠️ 25-40% da perda de peso em Ozempic/Mounjaro é músculo, não gordura
                     </span>
                   </motion.div>
 
-          {/* Headline - Emotional Hook */}
+          {/* Headline - Question Format for Engagement */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] text-gray-900 tracking-tight max-w-4xl mx-auto fluid-h1" data-testid="hero-title">
-            Perca gordura, não músculo. Mantenha os resultados para sempre.
+            Você está emagrecendo com Ozempic ou Mounjaro. Mas está perdendo gordura... ou músculo?
           </h1>
-          
-          {/* Subheadline - WhatsApp + Permanent Results */}
+
+          {/* Subheadline - Unique Value Prop */}
           <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto font-light fluid-lead" data-testid="hero-description">
-            Acompanhamento 24/7 via WhatsApp — construindo hábitos que duram além da medicação
+            Primeiro acompanhamento no Brasil que quantifica seu risco de perda muscular diariamente — via WhatsApp, onde você já está
           </p>
           
           {/* Impact preview - mobile (stacked) */}
@@ -175,11 +175,11 @@ export default function HeroSection() {
                       className="px-10 py-5 sm:py-6 h-14 sm:h-auto rounded-xl font-medium text-base transition-all hover:shadow-lg hover:-translate-y-0.5 bg-purple-600 hover:bg-purple-700"
                       data-testid="button-comecar-acompanhamento"
                     >
-                      💪 Proteger Meus Músculos Agora
+                      Avaliar Meu Risco Muscular
                     </Button>
 
                     <p className="text-sm text-gray-500 mt-4">
-                      Programa piloto • Seleção criteriosa
+                      Programa piloto • Vagas limitadas para garantir qualidade do acompanhamento
                     </p>
                   </motion.div>
 

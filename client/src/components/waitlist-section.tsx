@@ -13,11 +13,17 @@ export default function WaitlistSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-100 rounded-full mb-6">
+            <div className="w-2 h-2 bg-purple-500 rounded-full" />
+            <span className="text-sm font-semibold text-purple-900">
+              Programa Piloto
+            </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900" data-testid="waitlist-title">
-            Comece seu acompanhamento
+            Solicite Avaliação de Elegibilidade
           </h2>
           <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
-            R$32/mês durante o lançamento beta. Acompanhamento profissional via WhatsApp com supervisão médica ativa.
+            O Zempi é um programa piloto com vagas limitadas. Priorizamos qualidade do acompanhamento acima de crescimento rápido.
           </p>
         </motion.div>
 
@@ -28,31 +34,45 @@ export default function WaitlistSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          {/* Pricing Info Box */}
-          <div className="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-200">
+          {/* What's Included Box */}
+          <div className="bg-purple-50/50 rounded-xl p-6 mb-8 border border-purple-100">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Cada paciente recebe:</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">💳</span>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="h-5 w-5 text-purple-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-gray-600">Investimento</p>
-                  <p className="text-lg font-semibold text-gray-900">R$32/mês</p>
+                  <p className="font-medium text-gray-900">Onboarding 1:1 personalizado</p>
+                  <p className="text-sm text-gray-600">60 minutos de análise detalhada do seu caso</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📅</span>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="h-5 w-5 text-purple-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-gray-600">Compromisso</p>
-                  <p className="text-lg font-semibold text-gray-900">Mensal, sem fidelidade</p>
+                  <p className="font-medium text-gray-900">Score muscular calculado diariamente</p>
+                  <p className="text-sm text-gray-600">Zona verde/amarela/vermelha em tempo real</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">✓</span>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="h-5 w-5 text-purple-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-gray-600">Flexibilidade</p>
-                  <p className="text-lg font-semibold text-gray-900">Cancele quando quiser</p>
+                  <p className="font-medium text-gray-900">Plano nutricional adaptado ao SEU metabolismo</p>
+                  <p className="text-sm text-gray-600">Baseado nos seus padrões únicos</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="h-5 w-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-gray-900">Acesso direto à equipe médica via WhatsApp</p>
+                  <p className="text-sm text-gray-600">Resposta em minutos, não dias</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mb-6">
+            <p className="text-gray-700 leading-relaxed">
+              Preencha abaixo e entraremos em contato em até <strong>48 horas</strong> para avaliar se o programa é adequado para você.
+            </p>
           </div>
 
           <WaitlistForm />
@@ -65,7 +85,7 @@ export default function WaitlistSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Você receberá instruções de acesso em até 24h
+          🔒 Seus dados protegidos com carinho • Conformidade LGPD
         </motion.p>
       </div>
     </section>
