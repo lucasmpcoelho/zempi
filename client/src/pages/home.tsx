@@ -3,13 +3,10 @@ import HeroSection from "@/components/hero-section";
 import MusclePreservationSection from "@/components/muscle-preservation-section";
 import { Suspense, lazy } from "react";
 import SocialProofSection from "@/components/social-proof-section";
-const OldNewComparisonSection = lazy(() => import("@/components/old-new-comparison-section"));
 const ChatSimulation = lazy(() => import("@/components/chat-simulation"));
-const InsightsSection = lazy(() => import("@/components/insights-section"));
 import HowItWorksSection from "@/components/how-it-works-section";
 const ClinicalAuthoritySection = lazy(() => import("@/components/clinical-authority-section"));
 import TestimonialsSection from "@/components/testimonials-section";
-import PricingSection from "@/components/pricing-section";
 import FAQSection from "@/components/faq-section";
 import WaitlistSection from "@/components/waitlist-section";
 import Footer from "@/components/footer";
@@ -36,22 +33,12 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <MusclePreservationSection />
-      <Suspense fallback={<SectionLoader />}>
-        <div className="content-auto">
-          <OldNewComparisonSection />
-        </div>
-      </Suspense>
       <div className="content-auto">
         <SocialProofSection />
       </div>
-      <Suspense fallback={<SectionLoader />}> 
-        <div className="content-auto">
-          <ChatSimulation />
-        </div>
-      </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <div className="content-auto">
-          <InsightsSection />
+          <ChatSimulation />
         </div>
       </Suspense>
       <HowItWorksSection />
@@ -61,9 +48,7 @@ export default function Home() {
         </div>
       </Suspense>
       <TestimonialsSection />
-      <PricingSection />
       <FAQSection />
-      {/* WhatsIncludedSection removed for a more streamlined mobile-first flow */}
       <WaitlistSection />
       <Footer />
       <StickyCTA />

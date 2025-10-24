@@ -65,14 +65,14 @@ export default function TestimonialsSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
             <span className="text-sm font-semibold text-purple-900">
-              💜 Histórias Reais
+              💜 Casos Reais
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-gray-900" data-testid="testimonials-title">
-            Pessoas reais, resultados reais
+            Eles perderam peso. Mantiveram músculos.
           </h2>
           <p className="text-lg text-gray-600">
-            Cada jornada é única. Estas são histórias de quem já está transformando sua vida. 🎉
+            Cada jornada é única. Veja como pessoas usando Ozempic e Mounjaro protegeram seus músculos com o Zempi.
           </p>
         </motion.div>
 

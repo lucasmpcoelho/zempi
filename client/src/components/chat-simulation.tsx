@@ -63,7 +63,7 @@ const allMessages: Message[] = [
   {
     id: 6,
     isZempi: true,
-    content: "Você está ótima! 🎉 Perdeu 8kg em 6 semanas. Mas notei algo importante sobre seus músculos...",
+    content: "Você está ótima! 🎉 Perdeu 8kg em 6 semanas. Deixa eu checar seus músculos...",
     time: "8:23"
   },
   {
@@ -71,9 +71,22 @@ const allMessages: Message[] = [
     isZempi: true,
     content: (
       <div>
-        <p className="text-gray-800 mb-2 font-semibold text-sm">⚠️ Alerta de Massa Muscular:</p>
-        <p className="text-gray-700 text-sm mb-2">Sua ingestão de proteína está em 0.8g/kg (ideal: 1.6g/kg para GLP-1). Isso pode levar à perda muscular junto com a gordura.</p>
-        
+        {/* Muscle Score Visual */}
+        <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-3 mb-3">
+          <p className="text-xs font-semibold text-yellow-900 mb-2">💪 SCORE MUSCULAR</p>
+          <div className="flex items-center gap-2 mb-1">
+            <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="h-full bg-yellow-500" style={{ width: '78%' }}></div>
+            </div>
+            <span className="text-sm font-bold text-yellow-900">78/100</span>
+          </div>
+          <p className="text-xs text-yellow-800 font-semibold">🟡 Zona de atenção</p>
+          <p className="text-xs text-gray-700 mt-1">Proteína: 0.8g/kg | Meta: 1.6g/kg</p>
+        </div>
+
+        <p className="text-gray-800 mb-2 font-semibold text-sm">⚠️ O que isso significa:</p>
+        <p className="text-gray-700 text-sm mb-2">Com 0.8g/kg de proteína, você está em risco de perder músculo junto com a gordura. Vamos ajustar para zona verde?</p>
+
         <p className="text-gray-800 font-semibold mb-1 mt-3 text-sm">💪 Plano personalizado:</p>
         <ul className="space-y-1.5 mb-2">
           <li className="flex items-start">
@@ -89,7 +102,7 @@ const allMessages: Message[] = [
             <span className="text-gray-700 text-sm">Whey protein após treino (20g)</span>
           </li>
         </ul>
-        <p className="text-gray-700 text-sm">📈 Com essas mudanças, você mantém músculos enquanto perde gordura.</p>
+        <p className="text-gray-700 text-sm">📈 Com essas mudanças, seu score vai para 90+ (zona verde) e você mantém músculos enquanto perde gordura.</p>
       </div>
     ),
     time: "8:24"
@@ -268,10 +281,10 @@ export default function ChatSimulation() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 tracking-tight" data-testid="chat-title">
-              Veja o Zempi em ação
+              Como Maria descobriu que 40% da perda era músculo
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed mb-8" data-testid="chat-description">
-              Análise inteligente de padrões individuais. Orientações específicas para seu corpo.
+              O Zempi quantifica seu risco muscular diariamente e cria planos específicos para o SEU corpo.
             </p>
 
             <div className="space-y-4">

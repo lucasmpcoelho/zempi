@@ -70,12 +70,12 @@ export default function StickyCTA() {
           <div className="max-w-7xl mx-auto px-4 pt-3">
             <Button
               size="lg"
-              className="w-full bg-gray-900 hover:bg-gray-800 rounded-xl font-medium transition-all duration-300 hover:shadow-lg"
+              className="w-full bg-purple-600 hover:bg-purple-700 rounded-xl font-medium transition-all duration-300 hover:shadow-lg"
               variant="default"
               onClick={scrollToWaitlist}
               data-testid="sticky-cta-join-waitlist"
             >
-              Começar por R$32/mês
+              Avaliar Meu Risco Muscular
             </Button>
           </div>
         </motion.div>
