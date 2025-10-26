@@ -82,7 +82,7 @@ export default function Navigation() {
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
-            <button 
+            <button
               onClick={() => handleNavClick('beneficios')}
               className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-beneficios"
@@ -90,7 +90,7 @@ export default function Navigation() {
               Benefícios
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </button>
-            <button 
+            <button
               onClick={() => handleNavClick('como-funciona')}
               className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-como-funciona"
@@ -98,7 +98,15 @@ export default function Navigation() {
               Como Funciona
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </button>
-            <Link 
+            <Link
+              href="/dashboard"
+              className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
+              data-testid="nav-dashboard"
+            >
+              Dashboard
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
+            </Link>
+            <Link
               href="/quem-somos"
               className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-quem-somos"
@@ -106,7 +114,7 @@ export default function Navigation() {
               Quem Somos
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-full" />
             </Link>
-            <button 
+            <button
               onClick={() => handleNavClick('contato')}
               className="text-gray-700 hover:text-gray-900 transition-all duration-200 relative group"
               data-testid="nav-contato"
@@ -141,21 +149,29 @@ export default function Navigation() {
               </DrawerTrigger>
               <DrawerContent className="border-t border-border bg-background pb-[env(safe-area-inset-bottom)]">
                 <div className="px-4 pt-2 pb-3 space-y-1">
-                  <button 
+                  <button
                     onClick={() => handleNavClick('beneficios')}
                     className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
                     data-testid="mobile-nav-beneficios"
                   >
                     Benefícios
                   </button>
-                  <button 
+                  <button
                     onClick={() => handleNavClick('como-funciona')}
                     className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
                     data-testid="mobile-nav-como-funciona"
                   >
                     Como Funciona
                   </button>
-                  <Link 
+                  <Link
+                    href="/dashboard"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
+                    data-testid="mobile-nav-dashboard"
+                  >
+                    Dashboard
+                  </Link>
+                  <Link
                     href="/quem-somos"
                     onClick={() => setIsMenuOpen(false)}
                     className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
@@ -163,7 +179,7 @@ export default function Navigation() {
                   >
                     Quem Somos
                   </Link>
-                  <button 
+                  <button
                     onClick={() => handleNavClick('contato')}
                     className="block px-3 py-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors w-full text-left"
                     data-testid="mobile-nav-contato"
@@ -171,7 +187,7 @@ export default function Navigation() {
                     Contato
                   </button>
                   <DrawerClose asChild>
-                    <Button 
+                    <Button
                       className="w-full mt-4"
                       variant="default"
                       onClick={() => handleNavClick('waitlist')}

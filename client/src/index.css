@@ -38,6 +38,18 @@
   --sidebar-accent-foreground: hsl(210 100% 40%);
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(210 100% 40%);
+
+  /* Zempi Health Dashboard Colors */
+  --health-teal: hsl(180 70% 45%);
+  --health-teal-light: hsl(180 70% 95%);
+  --health-teal-dark: hsl(180 70% 35%);
+  --health-green: hsl(142 70% 45%);
+  --health-green-light: hsl(142 70% 95%);
+  --health-amber: hsl(38 92% 50%);
+  --health-amber-light: hsl(38 92% 95%);
+  --health-red: hsl(0 70% 60%);
+  --health-red-light: hsl(0 70% 95%);
+
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
@@ -89,6 +101,18 @@
   --sidebar-accent-foreground: hsl(210 100% 40%);
   --sidebar-border: hsl(210 5.2632% 14.9020%);
   --sidebar-ring: hsl(210 100% 40%);
+
+  /* Zempi Health Dashboard Colors (Dark Mode) */
+  --health-teal: hsl(180 70% 50%);
+  --health-teal-light: hsl(180 70% 15%);
+  --health-teal-dark: hsl(180 70% 60%);
+  --health-green: hsl(142 70% 50%);
+  --health-green-light: hsl(142 70% 15%);
+  --health-amber: hsl(38 92% 55%);
+  --health-amber-light: hsl(38 92% 15%);
+  --health-red: hsl(0 70% 65%);
+  --health-red-light: hsl(0 70% 15%);
+
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
