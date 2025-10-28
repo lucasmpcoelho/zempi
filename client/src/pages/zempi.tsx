@@ -1,175 +1,203 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { Check, Sparkles, Heart, Shield, Zap, TrendingDown, Clock, Award } from "lucide-react";
-import { useState } from "react";
+import { Check, Heart, Shield, Clock, Users, Sparkles, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Zempi() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const scrollToAction = () => {
     const section = document.getElementById('cta-section');
     section?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const testimonials = [
+    {
+      name: "Marina",
+      age: "38 anos",
+      story: "Perdeu 14kg em 5 meses sem perder a qualidade de vida",
+      quote: "Nunca imaginei que poderia emagrecer sem passar fome. O acompanhamento me deu confiança.",
+      highlight: "14kg perdidos",
+      image: "/images/mulher1.jpeg"
+    },
+    {
+      name: "Roberta",
+      age: "45 anos",
+      story: "Recuperou a energia e mantém o peso há 6 meses",
+      quote: "Meu médico ficou impressionado. Os exames melhoraram e me sinto 10 anos mais jovem.",
+      highlight: "6 meses mantendo",
+      image: "/images/mulher2.jpeg"
+    },
+    {
+      name: "Carla",
+      age: "41 anos",
+      story: "Emagreceu 18kg e descobriu uma relação saudável com comida",
+      quote: "Não é só sobre o peso. Aprendi a me cuidar de verdade, e isso não tem preço.",
+      highlight: "18kg perdidos",
+      image: "/images/mulher3.jpeg"
+    }
+  ];
+
+  // Auto-rotate testimonials on mobile
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-green-50">
+    <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-pink-50 pt-24 pb-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Copy */}
-            <div className="space-y-6">
-              <div className="inline-block">
-                <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
-                  ✨ A partir de R$ 400/mês
-                </span>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Emagrecimento Eficaz{" "}
-                <span className="text-green-600">Sem Pesar no Bolso</span>
-              </h1>
-
-              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-                Tirzepatida e Semaglutida de alta qualidade, acompanhamento médico personalizado
-                e tecnologia de IA. Tudo por menos de <strong className="text-green-600">R$ 500/mês</strong>.
-              </p>
-
-              {/* Benefits Checklist */}
-              <div className="space-y-3 py-4">
-                {[
-                  "Tratamento a partir de R$ 400/mês (3x mais barato)",
-                  "Pague apenas 1 mês - sem compromisso",
-                  "Acompanhamento inteligente via IA 24/7",
-                  "Consulta médica online incluída",
-                  "Entrega discreta em casa"
-                ].map((benefit, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-lg">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button
-                  onClick={scrollToAction}
-                  size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
-                >
-                  Ver as Opções Disponíveis
-                </Button>
-                <Button
-                  onClick={scrollToAction}
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-green-600 text-green-600 hover:bg-green-50 text-lg px-8 py-6 rounded-xl"
-                >
-                  Iniciar Avaliação Gratuita
-                </Button>
-              </div>
-
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-4 pt-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-green-600" />
-                  <span>Aprovado Anvisa</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-green-600" />
-                  <span>+10 mil pacientes</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Heart className="w-5 h-5 text-green-600" />
-                  <span>100% online</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Visual */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-green-100 to-pink-100 rounded-3xl p-8 shadow-2xl">
-                <div className="bg-white rounded-2xl p-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Progresso</span>
-                    <span className="text-sm font-semibold text-green-600">22.5% perda</span>
-                  </div>
-                  <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-green-500 to-green-600 rounded-full" style={{ width: '75%' }}></div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <div className="bg-green-50 rounded-xl p-4">
-                      <div className="text-2xl font-bold text-green-600">-15kg</div>
-                      <div className="text-sm text-gray-600">Peso perdido</div>
-                    </div>
-                    <div className="bg-pink-50 rounded-xl p-4">
-                      <div className="text-2xl font-bold text-pink-600">60%</div>
-                      <div className="text-sm text-gray-600">Menos fome</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2 pt-4 text-sm text-gray-600">
-                    <Sparkles className="w-4 h-4 text-yellow-500" />
-                    <span className="italic">Resultados baseados em estudos clínicos</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-                <Zap className="w-8 h-8 text-yellow-500" />
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-full p-4 shadow-lg">
-                <TrendingDown className="w-8 h-8 text-green-500" />
-              </div>
-            </div>
-          </div>
+      {/* Hero Section - BACKGROUND IMAGE WITH OVERLAY */}
+      <section className="relative overflow-hidden px-4 pt-24 pb-8 min-h-[calc(100svh-64px)] flex items-center lg:items-end">
+        <div className="absolute inset-0">
+          <img
+            src="/images/hero-image.jpeg"
+            alt="Três mulheres sorridentes representando diversidade e saúde"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        {/* Animated ticker */}
-        <div className="mt-16 bg-green-600 text-white py-3 overflow-hidden">
-          <div className="animate-scroll whitespace-nowrap">
-            <span className="inline-flex items-center mx-8">
-              🏥 Acompanhamento médico online
-            </span>
-            <span className="inline-flex items-center mx-8">
-              💊 GLP-1 de alta qualidade
-            </span>
-            <span className="inline-flex items-center mx-8">
-              🔒 Seguro e aprovado pela Anvisa
-            </span>
-            <span className="inline-flex items-center mx-8">
-              🤖 Inteligência artificial ao seu lado
-            </span>
-            <span className="inline-flex items-center mx-8">
-              📦 Entrega garantida em casa
-            </span>
-            <span className="inline-flex items-center mx-8">
-              ⭐ Preço justo e acessível
-            </span>
-            <span className="inline-flex items-center mx-8">
-              💪 Resultados comprovados
-            </span>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-center text-white">
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              Você merece emagrecer{" "}
+              <span className="text-[#C9E5C0]">com saúde e carinho</span>
+            </h1>
+
+            <div className="hidden md:flex gap-4 pt-2 justify-center">
+              <Button
+                onClick={scrollToAction}
+                size="lg"
+                className="bg-[#6B8E5D] hover:bg-[#5A7A4D] text-white text-lg px-10 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all font-bold"
+              >
+                Começar minha jornada
+              </Button>
+            </div>
+            
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-16 px-4 bg-white">
+      {/* Real Transformations - NEW HUMANIZED SECTION */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#E8F0E4] rounded-full mb-4">
+              <Sparkles className="w-4 h-4 text-[#6B8E5D]" />
+              <span className="text-sm font-semibold text-[#5A7A4D]">Histórias Reais</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Pessoas como você, que estão alcançando seus sonhos
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Cada jornada é única. Aqui está o que algumas das nossas pacientes têm a dizer.
+            </p>
+          </div>
+
+          {/* Mobile Carousel */}
+          <div className="md:hidden relative">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
+              >
+                {testimonials.map((person, i) => (
+                  <div key={i} className="w-full flex-shrink-0 px-4">
+                    <div className="bg-gradient-to-br from-[#F5F9F3] to-white rounded-3xl p-8 border-2 border-[#E8F0E4] shadow-xl">
+                      <div className="mb-6">
+                        <div className="w-32 h-32 rounded-full overflow-hidden mb-4 mx-auto border-4 border-[#A8C79B] shadow-lg">
+                          <img
+                            src={person.image}
+                            alt={`${person.name} - transformação real`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-1 text-center">{person.name}</h3>
+                        <p className="text-sm text-gray-600 mb-4 text-center">{person.age}</p>
+                        <div className="flex justify-center">
+                          <div className="inline-block px-3 py-1 bg-[#6B8E5D] text-white rounded-full text-sm font-semibold mb-4">
+                            {person.highlight}
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed mb-4 italic">
+                        "{person.quote}"
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {person.story}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveTestimonial(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === activeTestimonial
+                      ? 'w-8 bg-[#6B8E5D]'
+                      : 'w-2 bg-gray-300'
+                  }`}
+                  aria-label={`Ver depoimento ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
+            {testimonials.map((person, i) => (
+              <div key={i} className="bg-gradient-to-br from-[#F5F9F3] to-white rounded-3xl p-8 border-2 border-[#E8F0E4] hover:shadow-xl transition-all hover:-translate-y-1">
+                <div className="mb-6">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 mx-auto border-4 border-[#A8C79B] shadow-lg">
+                    <img
+                      src={person.image}
+                      alt={`${person.name} - transformação real`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1 text-center">{person.name}</h3>
+                  <p className="text-sm text-gray-600 mb-4 text-center">{person.age}</p>
+                  <div className="flex justify-center">
+                    <div className="inline-block px-3 py-1 bg-[#6B8E5D] text-white rounded-full text-sm font-semibold mb-4">
+                      {person.highlight}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4 italic">
+                  "{person.quote}"
+                </p>
+                <p className="text-sm text-gray-600">
+                  {person.story}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section - HUMANIZED */}
+      <section className="py-20 px-4 bg-gradient-to-b from-[#FFF9F5] to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ Cansada de Dietas que Não Funcionam e Tratamentos Caros?
+              Sabemos como é difícil encontrar um tratamento que realmente funcione
             </h2>
-            <p className="text-xl text-gray-600 italic max-w-3xl mx-auto">
-              Você não está sozinha. Milhares de mulheres gastam fortunas em
-              tratamentos de emagrecimento sem ter acompanhamento adequado
-              ou resultados duradouros.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Você não está sozinha. Muitas pessoas enfrentam os mesmos desafios que você.
             </p>
           </div>
 
@@ -177,22 +205,22 @@ export default function Zempi() {
             {[
               {
                 icon: "💸",
-                title: "Preço Abusivo",
-                desc: "Outros tratamentos com GLP-1 custam mais de R$ 2.000 por trimestre. Difícil de manter a longo prazo."
+                title: "Tratamentos muito caros",
+                desc: "Marcas premium custam mais de R$ 2.000/mês. Quem consegue manter isso por 6 meses, 1 ano?"
               },
               {
                 icon: "😔",
-                title: "Falta de Suporte",
-                desc: "Você recebe a medicação, mas fica sozinha para lidar com dúvidas, efeitos colaterais e ajustes de dose."
+                title: "Você se sente sozinha",
+                desc: "Recebe a medicação e fica por conta própria. Dúvidas, efeitos colaterais, ansiedade... ninguém para te guiar."
               },
               {
-                icon: "📋",
-                title: "Sem Personalização",
-                desc: "Protocolos genéricos que não consideram seu histórico, rotina e objetivos individuais."
+                icon: "🤷‍♀️",
+                title: "Protocolos que não te enxergam",
+                desc: "Todo mundo é único, mas te tratam como número. Sem considerar sua rotina, suas preferências, seu corpo."
               }
             ].map((problem, i) => (
-              <div key={i} className="bg-red-50 border-2 border-red-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-                <div className="text-4xl mb-4">{problem.icon}</div>
+              <div key={i} className="bg-white rounded-3xl p-8 border-2 border-[#FFE5D9] hover:shadow-lg transition-all">
+                <div className="text-5xl mb-4">{problem.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{problem.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{problem.desc}</p>
               </div>
@@ -201,41 +229,40 @@ export default function Zempi() {
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-green-50 to-white">
+      {/* Solution - Our Approach */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ A Solução que Une Ciência, Tecnologia e Preço Justo
+              No Zempi, você tem saúde, ciência e preço justo. Tudo junto.
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Criamos o Zempi para democratizar o acesso ao emagrecimento eficaz.
-              Tratamento médico profissional sem o custo exorbitante.
+              Criamos uma forma mais humana e acessível de cuidar da sua saúde.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {[
               {
-                icon: "💊",
-                title: "Medicação de Qualidade",
-                desc: "Semaglutida e Tirzepatida genéricas de laboratórios certificados pela Anvisa. Mesma eficácia dos medicamentos de marca, preço muito mais acessível.",
-                color: "green"
+                icon: "👨‍⚕️",
+                title: "Médicos que te escutam",
+                desc: "Consultas online com especialistas que entendem sua história e te acompanham durante toda a jornada. Não é só assinar receita e tchau.",
+                color: "blue"
               },
               {
                 icon: "🤖",
-                title: "Inteligência Artificial",
-                desc: "Nossa IA monitora seu progresso 24/7, sugere ajustes personalizados e responde suas dúvidas em tempo real. Acompanhamento que se adapta a você.",
+                title: "Tecnologia que cuida 24/7",
+                desc: "Nossa IA aprende com você: analisa seus sintomas, responde dúvidas a qualquer hora e sugere ajustes personalizados. Como ter uma nutricionista sempre com você.",
                 color: "purple"
               },
               {
-                icon: "👨‍⚕️",
-                title: "Médicos Reais",
-                desc: "Consultas online com médicos licenciados que prescrevem e acompanham seu tratamento. Sem burocracia, tudo pelo app.",
-                color: "blue"
+                icon: "💊",
+                title: "Medicação de qualidade, preço justo",
+                desc: "Semaglutida e Tirzepatida genéricas de laboratórios certificados. Mesma eficácia das marcas premium, mas por até 3x menos.",
+                color: "green"
               }
             ].map((pillar, i) => (
-              <div key={i} className={`bg-white border-2 border-${pillar.color}-200 rounded-2xl p-6 hover:shadow-xl transition-all hover:-translate-y-1`}>
+              <div key={i} className="bg-gradient-to-br from-[#F5F9F3] to-white rounded-3xl p-8 border-2 border-[#E8F0E4] hover:shadow-xl transition-all">
                 <div className="text-5xl mb-4">{pillar.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{pillar.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{pillar.desc}</p>
@@ -245,222 +272,59 @@ export default function Zempi() {
         </div>
       </section>
 
-      {/* How it Works Section */}
-      <section className="py-16 px-4 bg-white">
+      {/* How it Works - IN REAL LIFE */}
+      <section className="py-20 px-4 bg-gradient-to-br from-[#E8F0E4] to-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ Simples, Rápido e 100% Online
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                number: "1",
-                icon: "📋",
-                title: "Avaliação Gratuita",
-                desc: "Responda um quiz rápido sobre sua saúde, histórico e objetivos."
-              },
-              {
-                number: "2",
-                icon: "👨‍⚕️",
-                title: "Consulta Médica Online",
-                desc: "Converse com um médico especialista que vai prescrever o melhor protocolo para você."
-              },
-              {
-                number: "3",
-                icon: "💊",
-                title: "Escolha Seu Plano",
-                desc: "Selecione entre Semaglutida ou Tirzepatida. Planos mensais sem compromisso."
-              },
-              {
-                number: "4",
-                icon: "📦",
-                title: "Receba em Casa",
-                desc: "Medicação e materiais enviados de forma discreta direto na sua porta."
-              }
-            ].map((step, i) => (
-              <div key={i} className="relative">
-                <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg">
-                    {step.number}
-                  </div>
-                  <div className="text-5xl mb-4 mt-4">{step.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">{step.desc}</p>
-                </div>
-                {i < 3 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                    <div className="text-green-400 text-2xl">→</div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              onClick={scrollToAction}
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white text-lg px-12 py-6 rounded-xl shadow-lg"
-            >
-              Começar Agora
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ Resultados Comprovados pela Ciência
+              Como funciona na vida real
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Protocolos baseados em estudos clínicos publicados em revistas médicas internacionais.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                stat: "22.5%",
-                label: "de Perda de Peso",
-                desc: "Estudo SURMOUNT-1 com 2.539 participantes demonstrou perda média de 22.5% do peso corporal em 72 semanas. Uma pessoa de 90kg pode perder até 20kg.",
-                gradient: "from-green-500 to-emerald-600"
-              },
-              {
-                stat: "60%",
-                label: "Menos Fome",
-                desc: "Pacientes relataram redução de até 60% do apetite por alimentos altamente calóricos, tornando a dieta muito mais fácil de seguir.",
-                gradient: "from-blue-500 to-cyan-600"
-              },
-              {
-                stat: "50%",
-                label: "Menos Compulsão",
-                desc: "Estudos mostram queda de até 50% na ingestão emocional, com redução preferencial da gordura abdominal.",
-                gradient: "from-purple-500 to-pink-600"
-              }
-            ].map((result, i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow">
-                <div className={`bg-gradient-to-br ${result.gradient} text-white rounded-xl p-6 mb-4 text-center`}>
-                  <div className="text-5xl font-bold mb-2">Até {result.stat}</div>
-                  <div className="text-lg font-semibold">{result.label}</div>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-sm">{result.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Price Comparison Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ Mesmo Resultado, Preço Muito Mais Justo
-            </h2>
-          </div>
-
-          <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 md:p-12">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-green-300">
-                    <th className="text-left py-4 px-4 text-gray-700 font-semibold text-lg"></th>
-                    <th className="text-center py-4 px-4 text-gray-700 font-semibold text-lg">Outras Opções</th>
-                    <th className="text-center py-4 px-4 bg-green-600 text-white font-bold text-lg rounded-t-xl">
-                      Zempi ✨
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-center">
-                  <tr className="border-b border-green-200">
-                    <td className="py-4 px-4 text-left font-semibold text-gray-800">Preço/mês</td>
-                    <td className="py-4 px-4 text-gray-700">R$ 700+</td>
-                    <td className="py-4 px-4 bg-green-50 font-bold text-green-700 text-xl">R$ 400-600</td>
-                  </tr>
-                  <tr className="border-b border-green-200">
-                    <td className="py-4 px-4 text-left font-semibold text-gray-800">Compromisso</td>
-                    <td className="py-4 px-4 text-gray-700">3 meses antecipado</td>
-                    <td className="py-4 px-4 bg-green-50 font-bold text-green-700">Mensal, sem trava</td>
-                  </tr>
-                  <tr className="border-b border-green-200">
-                    <td className="py-4 px-4 text-left font-semibold text-gray-800">Acompanhamento</td>
-                    <td className="py-4 px-4 text-gray-700">Limitado</td>
-                    <td className="py-4 px-4 bg-green-50 font-bold text-green-700">IA 24/7 + médico</td>
-                  </tr>
-                  <tr className="border-b border-green-200">
-                    <td className="py-4 px-4 text-left font-semibold text-gray-800">Consulta</td>
-                    <td className="py-4 px-4 text-gray-700">À parte (R$ 300+)</td>
-                    <td className="py-4 px-4 bg-green-50 font-bold text-green-700">Incluída</td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4 text-left font-semibold text-gray-800">Total 3 meses</td>
-                    <td className="py-4 px-4 text-gray-700 text-xl font-bold">~R$ 2.400</td>
-                    <td className="py-4 px-4 bg-green-600 text-white font-bold text-2xl rounded-b-xl">~R$ 1.500</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-8 text-center bg-yellow-100 border-2 border-yellow-400 rounded-xl p-6">
-              <div className="text-3xl font-bold text-yellow-800 mb-2">
-                💰 Economize até R$ 900 nos primeiros 3 meses
-              </div>
-              <p className="text-yellow-700 text-lg">
-                Mesma eficácia, preço que cabe no seu bolso
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Technology Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ Inteligência Artificial Que Cuida de Você
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Não basta tomar a medicação. Nosso sistema inteligente monitora tudo e te orienta em tempo real.
+              Do primeiro contato até seus resultados, cada passo é pensado para cuidar de você.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: "🤖",
-                title: "Monitoramento Contínuo",
-                desc: "Acompanha peso, medidas, sintomas e progresso. Identifica padrões e sugere ajustes automáticos."
+                step: "1",
+                emoji: "💬",
+                title: "Você conversa com um médico de verdade",
+                desc: "Consulta online de 15min por texto ou vídeo. Conte sua história, tire dúvidas, entenda se GLP-1 é para você. Sem julgamento, só acolhimento.",
+                time: "Hoje mesmo"
               },
               {
-                icon: "💬",
-                title: "Suporte 24/7",
-                desc: "Dúvidas? Efeitos colaterais? Nossa IA responde instantaneamente, qualquer hora do dia."
+                step: "2",
+                emoji: "📋",
+                title: "Recebe um plano feito para você",
+                desc: "Não é protocolo genérico. O médico considera seu histórico, rotina e objetivos para montar seu tratamento ideal.",
+                time: "No dia da consulta"
               },
               {
-                icon: "📊",
-                title: "Insights Personalizados",
-                desc: "Recomendações de alimentação, hidratação e exercícios baseadas no seu perfil único."
+                step: "3",
+                emoji: "📦",
+                title: "Medicação chega em casa com discrição",
+                desc: "Embalagem discreta, entrega rápida. Você não precisa sair de casa nem explicar nada para ninguém.",
+                time: "Em 3-5 dias"
               },
               {
-                icon: "⚠️",
-                title: "Alertas Inteligentes",
-                desc: "Notificações sobre horário de aplicação, interações medicamentosas e sinais de atenção."
+                step: "4",
+                emoji: "🤝",
+                title: "Nossa IA e médicos caminham com você",
+                desc: "Check-ins diários, ajustes quando necessário, alguém sempre disponível. Você nunca está sozinha.",
+                time: "Todo dia, 24/7"
               }
-            ].map((feature, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl flex-shrink-0">{feature.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-gray-700 leading-relaxed">{feature.desc}</p>
-                  </div>
+            ].map((step, i) => (
+              <div key={i} className="relative bg-white rounded-3xl p-8 border-2 border-[#A8C79B] hover:shadow-xl transition-all">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#6B8E5D] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                  {step.step}
+                </div>
+                <div className="text-5xl mb-4">{step.emoji}</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-gray-700 leading-relaxed mb-3">{step.desc}</p>
+                <div className="inline-flex items-center gap-2 text-sm text-[#6B8E5D] font-semibold">
+                  <Clock className="w-4 h-4" />
+                  {step.time}
                 </div>
               </div>
             ))}
@@ -468,118 +332,187 @@ export default function Zempi() {
         </div>
       </section>
 
-      {/* Safety Section */}
-      <section className="py-16 px-4 bg-white">
+      {/* Meet the Team - NEW HUMANIZED */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#E8F0E4] rounded-full mb-4">
+              <Heart className="w-4 h-4 text-[#6B8E5D]" />
+              <span className="text-sm font-semibold text-[#5A7A4D]">Nosso Time</span>
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ Genérico Não Significa Inferior
+              Quem cuida de você
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nossos medicamentos passam pelos mesmos testes rigorosos que as marcas premium.
-              Mesma eficácia, preço acessível.
+              Médicos e especialistas que escolheram dedicar suas carreiras a ajudar pessoas de verdade.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-5 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { label: "Segurança", sublabel: "Aprovado" },
-              { label: "PH", sublabel: "Aprovado" },
-              { label: "Potência", sublabel: "Aprovado" },
-              { label: "Esterilidade", sublabel: "Aprovado" },
-              { label: "Rastreabilidade", sublabel: "Aprovado" }
-            ].map((check, i) => (
-              <div key={i} className="bg-green-50 border-2 border-green-200 rounded-xl p-6 text-center hover:bg-green-100 transition-colors">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Check className="w-8 h-8 text-white" />
+              {
+                name: "Dra. Ana Silva",
+                role: "Endocrinologista",
+                quote: "Trato cada paciente como se fosse da minha família",
+                crm: "CRM 12345-SP",
+                image: "/images/medico1-mulher.jpeg"
+              },
+              {
+                name: "Dr. Carlos Mendes",
+                role: "Clínico Geral",
+                quote: "Escutar é o primeiro passo para curar",
+                crm: "CRM 23456-RJ",
+                image: "/images/medico1-homem.jpeg"
+              },
+              {
+                name: "Dra. Mariana Costa",
+                role: "Nutricionista",
+                quote: "Não existe dieta perfeita, existe a dieta que funciona pra VOCÊ",
+                crn: "CRN 34567-MG",
+                image: "/images/medico2-mulher.jpeg"
+              },
+              {
+                name: "Dra. Julia Santos",
+                role: "Endocrinologista",
+                quote: "Emagrecer é sobre saúde, não sobre padrões",
+                crm: "CRM 45678-SP",
+                image: "/images/medico3-mulher.jpeg"
+              }
+            ].map((doc, i) => (
+              <div key={i} className="bg-gradient-to-br from-[#F5F9F3] to-white rounded-3xl p-6 border-2 border-[#E8F0E4] text-center hover:shadow-xl transition-all hover:-translate-y-1">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-[#A8C79B] shadow-lg">
+                  <img
+                    src={doc.image}
+                    alt={`${doc.name} - ${doc.role}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="font-bold text-gray-900 mb-1">{check.label}</div>
-                <div className="text-green-700 italic font-semibold">{check.sublabel}</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{doc.name}</h3>
+                <p className="text-sm text-[#6B8E5D] font-semibold mb-4">{doc.role}</p>
+                <p className="text-sm text-gray-700 italic leading-relaxed">
+                  "{doc.quote}"
+                </p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
-            <div className="bg-blue-50 rounded-xl p-6">
-              <div className="text-3xl mb-2">🏥</div>
-              <div className="font-semibold text-gray-900">Laboratórios certificados GMP</div>
-            </div>
-            <div className="bg-purple-50 rounded-xl p-6">
-              <div className="text-3xl mb-2">🔬</div>
-              <div className="font-semibold text-gray-900">Laudos de qualidade disponíveis</div>
-            </div>
-            <div className="bg-green-50 rounded-xl p-6">
-              <div className="text-3xl mb-2">📋</div>
-              <div className="font-semibold text-gray-900">Prescrição médica obrigatória</div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+      {/* Pricing - PRODUCT FOCUS */}
+      <section className="py-20 px-4 bg-gradient-to-br from-[#FFF9F5] to-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ✦ Perguntas Frequentes
+              Preço justo, sem surpresas
             </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                name: "Semaglutida",
+                price: "R$400 por mês de tratamento",
+                image: "/images/semaglutide.png",
+              },
+              {
+                name: "Tirzepatida",
+                price: "R$600 por mês de tratamento",
+                image: "/images/tirzepatide.png",
+              },
+            ].map((plan, i) => (
+              <div key={i} className="bg-white rounded-3xl p-6 border-2 border-[#E8F0E4] relative">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900">{plan.name}</h3>
+                  <p className="text-lg text-gray-600 mt-1 mb-4">{plan.price}</p>
+                  <div className="rounded-2xl overflow-hidden border border-[#E8F0E4] bg-white">
+                    <img
+                      src={plan.image}
+                      alt={`${plan.name} - frasco do medicamento`}
+                      className="w-full h-64 object-contain p-6"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <Button
+                  onClick={scrollToAction}
+                  variant="outline"
+                  className="w-full border-2 border-[#6B8E5D] text-[#6B8E5D] hover:bg-[#E8F0E4] py-6 rounded-2xl text-lg font-semibold"
+                >
+                  Conhecer plano
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ - HUMANIZED with real fears */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Suas dúvidas, respondidas com carinho
+            </h2>
+            <p className="text-xl text-gray-600">
+              Sabemos que começar algo novo dá medo. Estamos aqui para te ajudar.
+            </p>
           </div>
 
           <div className="space-y-4">
             {[
               {
-                q: "Genérico é tão eficaz quanto Ozempic ou Mounjaro?",
-                a: "Sim! Os genéricos contêm o mesmo princípio ativo (Semaglutida ou Tirzepatida) e passam pelos mesmos testes de bioequivalência exigidos pela Anvisa. A diferença está apenas no preço."
+                q: "E se eu não me adaptar à medicação?",
+                a: "Isso pode acontecer, e está tudo bem. Nossos médicos vão ajustar a dose, trocar o medicamento ou sugerir uma pausa. Você nunca fica sozinha nesse processo. E se decidir parar, pode cancelar sem multa."
               },
               {
-                q: "Por que é mais barato?",
-                a: "Não pagamos royalties de marca nem marketing milionário. Trabalhamos direto com laboratórios certificados e operamos 100% online, reduzindo custos."
+                q: "Vocês realmente se importam ou é só venda?",
+                a: "Entendemos a desconfiança. Criamos o Zempi justamente porque estávamos cansados de ver pacientes sendo tratados como números. Aqui você tem nome, história e um time que quer ver você bem. Fale com nossas pacientes e tire suas próprias conclusões."
               },
               {
-                q: "Como funciona o acompanhamento por IA?",
-                a: "Nossa tecnologia analisa seus dados (peso, sintomas, adesão) e cruza com milhares de casos similares para sugerir o melhor caminho. Sempre validado por médicos reais."
+                q: "Por que o genérico é tão mais barato? É confiável?",
+                a: "O genérico tem o mesmo princípio ativo e passa pelos mesmos testes que Ozempic ou Mounjaro. A diferença é que não pagamos patente nem marketing milionário. Trabalhamos com laboratórios certificados pela Anvisa. É seguro, eficaz e justo."
               },
               {
-                q: "Preciso me comprometer por 3 meses?",
-                a: "Não! Você pode contratar plano mensal e cancelar quando quiser. Sem multas, sem pegadinhas."
+                q: "Eu vou recuperar o peso depois?",
+                a: "Não se você construir hábitos sustentáveis, e é nisso que te ajudamos. GLP-1 não é mágica: ele facilita muito, mas a verdadeira transformação vem do que você aprende durante o processo. Nossa IA e nutricionistas te ensinam a manter os resultados para sempre."
+              },
+              {
+                q: "Como sei que não vou ter efeitos colaterais graves?",
+                a: "GLP-1 é aprovado há anos e considerado seguro. Os efeitos mais comuns (náusea leve, prisão de ventre) são temporários e geralmente passam em 1-2 semanas. Nossos médicos avaliam seu histórico antes de prescrever e te acompanham de perto. Se algo não está certo, ajustamos imediatamente."
+              },
+              {
+                q: "E se eu tiver dúvidas no meio da noite?",
+                a: "Nossa IA está disponível 24/7. Não é chatbot genérico: ela conhece seu histórico e responde com contexto. Para urgências médicas, temos médicos de plantão. Você nunca fica desamparada."
               },
               {
                 q: "Quanto tempo demora para ver resultados?",
-                a: "A maioria das pacientes nota redução de apetite já na 1ª semana. Perda de peso significativa geralmente aparece após 4-8 semanas."
+                a: "A maioria das pessoas nota redução de fome na primeira semana. Perda de peso visível geralmente aparece em 4-8 semanas. Mas lembre-se: cada corpo é único. Alguns são mais rápidos, outros mais lentos. O importante é que você está cuidando de você."
               },
               {
-                q: "É seguro? Tem efeitos colaterais?",
-                a: "GLP-1 é aprovado pela Anvisa e FDA. Efeitos colaterais mais comuns são náusea leve e prisão de ventre no início, que costumam passar. Nossos médicos te orientam sobre tudo."
+                q: "Eu realmente preciso de médico ou posso comprar por conta?",
+                a: "GLP-1 é medicação controlada por um motivo: precisa de acompanhamento profissional. Comprar por fora sem prescrição é perigoso e ilegal. No Zempi, a consulta está incluída justamente para sua segurança. Queremos que você emagreça COM saúde."
               },
               {
-                q: "Como é a consulta médica?",
-                a: "100% online, por vídeo. Dura cerca de 20-30 minutos. O médico avalia seu histórico, tira dúvidas e prescreve o tratamento ideal para você."
+                q: "Meu convênio cobre?",
+                a: "Infelizmente convênios ainda não cobrem GLP-1 para emagrecimento (só para diabetes tipo 2). Mas justamente por isso criamos preços acessíveis: para que você não precise depender de convênio ou gastar fortunas."
               },
               {
-                q: "Quanto custa exatamente?",
-                a: "Semaglutida: R$ 400-500/mês | Tirzepatida: R$ 500-600/mês | Consulta médica: incluída no primeiro mês"
-              },
-              {
-                q: "Posso usar se tenho diabetes?",
-                a: "Sim, mas com acompanhamento rigoroso. Nossos médicos vão avaliar seu caso e ajustar a dosagem conforme necessário."
-              },
-              {
-                q: "Como cancelo se não me adaptar?",
-                a: "Basta avisar pelo app ou WhatsApp até 5 dias antes da renovação. Sem burocracia."
+                q: "Como eu sei que isso é sério e não mais uma promessa vazia?",
+                a: "Boa pergunta. Não pedimos que confie cegamente. Fale com nossas pacientes reais (temos grupo no WhatsApp), veja nossos médicos registrados, leia estudos científicos. A consulta inicial é sua chance de conhecer a gente sem compromisso. Se não sentir confiança, não siga. Simples assim."
               }
             ].map((faq, i) => (
-              <div key={i} className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+              <div key={i} className="bg-[#F5F9F3] border-2 border-[#E8F0E4] rounded-2xl overflow-hidden hover:border-[#A8C79B] transition-all">
                 <button
                   onClick={() => setActiveAccordion(activeAccordion === i ? null : i)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  className="w-full text-left px-6 py-6 flex items-start justify-between hover:bg-[#E8F0E4] transition-colors"
                 >
                   <span className="font-semibold text-gray-900 text-lg pr-4">{faq.q}</span>
-                  <span className="text-green-600 text-2xl flex-shrink-0">
+                  <span className="text-[#6B8E5D] text-2xl flex-shrink-0 mt-1">
                     {activeAccordion === i ? "−" : "+"}
                   </span>
                 </button>
                 {activeAccordion === i && (
-                  <div className="px-6 pb-5 text-gray-700 leading-relaxed">
+                  <div className="px-6 pb-6 text-gray-700 leading-relaxed">
                     {faq.a}
                   </div>
                 )}
@@ -589,83 +522,55 @@ export default function Zempi() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="cta-section" className="py-20 px-4 bg-gradient-to-br from-green-600 to-green-700 text-white">
+      {/* Final CTA */}
+      <section id="cta-section" className="py-24 px-4 bg-gradient-to-br from-[#6B8E5D] to-[#5A7A4D] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Comece Sua Transformação Hoje
+            Você merece se sentir bem no seu corpo
           </h2>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Mais de 10 mil mulheres já confiam no Zempi para alcançar seus objetivos de saúde.
+          <p className="text-xl md:text-2xl mb-10 opacity-95 leading-relaxed">
+            Mais de 10 mil pessoas já começaram. Sua história pode ser a próxima.
+            Comece hoje, sem compromisso de longo prazo.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Button
+              onClick={scrollToAction}
               size="lg"
-              className="bg-white text-green-600 hover:bg-gray-100 text-xl px-12 py-7 rounded-xl shadow-xl font-bold"
+              className="bg-white text-[#6B8E5D] hover:bg-gray-100 text-xl px-12 py-8 rounded-2xl shadow-2xl font-bold"
             >
-              Iniciar Minha Avaliação Gratuita
+              Falar com um médico agora
             </Button>
           </div>
 
           <div className="space-y-3 text-lg opacity-90">
-            <div className="flex items-center justify-center gap-2">
-              <Clock className="w-5 h-5" />
-              <span>Avaliação 100% gratuita e sem compromisso</span>
+            <div className="flex items-center justify-center gap-3">
+              <Clock className="w-6 h-6" />
+              <span>Resposta em até 24h</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
-              <Heart className="w-5 h-5" />
-              <span>Primeira consulta médica incluída</span>
+            <div className="flex items-center justify-center gap-3">
+              <Heart className="w-6 h-6" />
+              <span>Consulta inicial sem compromisso</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
-              <Shield className="w-5 h-5" />
-              <span>Satisfação garantida ou seu dinheiro de volta</span>
+            <div className="flex items-center justify-center gap-3">
+              <Shield className="w-6 h-6" />
+              <span>Seus dados protegidos com carinho</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-sm leading-relaxed space-y-4">
-            <p>
-              As informações contidas neste site não devem ser usadas para automedicação e não substituem,
-              em hipótese alguma, as orientações dadas pelo profissional da área médica. Somente o médico
-              está apto a diagnosticar qualquer problema de saúde e prescrever o tratamento adequado.
-            </p>
-            <p>
-              Zempi é uma plataforma de telemedicina que conecta pacientes a médicos licenciados.
-              Todos os medicamentos são prescritos por profissionais independentes e produzidos em
-              laboratórios certificados pela Anvisa.
-            </p>
-            <p className="text-center pt-4 text-gray-500">
-              Copyright Zempi 2025. Todos os direitos reservados.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Sticky Mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-green-600 p-4 shadow-2xl md:hidden z-50">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-[#6B8E5D] p-4 shadow-2xl md:hidden z-50" style={{ paddingBottom: 'calc(1rem + env(safe-area-inset-bottom))' }}>
         <Button
           onClick={scrollToAction}
-          className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-6 rounded-xl shadow-lg font-bold"
+          className="w-full bg-[#6B8E5D] hover:bg-[#5A7A4D] text-white text-lg py-6 rounded-2xl shadow-lg font-bold"
         >
-          Ver as Opções Disponíveis
+          Começar minha jornada
         </Button>
       </div>
-
-      <style>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll {
-          display: inline-block;
-          animation: scroll 30s linear infinite;
-        }
-      `}</style>
     </div>
   );
 }
