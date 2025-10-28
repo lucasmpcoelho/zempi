@@ -7,6 +7,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Privacy from "@/pages/privacy";
 import Dashboard from "@/pages/dashboard";
+import Zempi from "@/pages/zempi";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/quem-somos" component={About} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/zempi" component={Zempi} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
