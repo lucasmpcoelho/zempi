@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 export default function Zempi() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   const scrollToAction = () => {
     const section = document.getElementById('cta-section');
@@ -49,18 +50,60 @@ export default function Zempi() {
     return () => clearInterval(timer);
   }, []);
 
+  // Lazy load video when hero section is in viewport
+  useEffect(() => {
+    const heroSection = document.querySelector('.hero-section-video');
+    if (!heroSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !shouldLoadVideo) {
+            setShouldLoadVideo(true);
+          }
+        });
+      },
+      { rootMargin: '100px' } // Start loading 100px before it comes into view
+    );
+
+    observer.observe(heroSection);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [shouldLoadVideo]);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section - BACKGROUND IMAGE WITH OVERLAY */}
-      <section className="relative overflow-hidden px-4 pt-24 pb-8 min-h-[calc(100svh-64px)] flex items-center lg:items-end">
+      {/* Hero Section - BACKGROUND VIDEO WITH OVERLAY */}
+      <section className="hero-section-video relative overflow-hidden px-4 pt-24 pb-8 min-h-[calc(100svh-64px)] flex items-center lg:items-end">
         <div className="absolute inset-0">
-          <img
-            src="/images/hero-image.jpeg"
-            alt="Três mulheres sorridentes representando diversidade e saúde"
-            className="w-full h-full object-cover"
-          />
+          {shouldLoadVideo ? (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/images/hero-image.jpeg"
+              className="w-full h-full object-cover"
+            >
+              <source src="/videos/hero-video.mp4" type="video/mp4" />
+              {/* Fallback image if video fails to load */}
+              <img
+                src="/images/hero-image.jpeg"
+                alt="Três mulheres sorridentes representando diversidade e saúde"
+                className="w-full h-full object-cover"
+              />
+            </video>
+          ) : (
+            <img
+              src="/images/hero-image.jpeg"
+              alt="Três mulheres sorridentes representando diversidade e saúde"
+              className="w-full h-full object-cover"
+            />
+          )}
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
