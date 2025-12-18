@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export function Footer() {
   return (
@@ -6,7 +6,9 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-serif text-3xl font-bold tracking-tight mb-6">REDE VIVA</h3>
+            <Link href="/">
+              <h3 className="font-serif text-3xl font-bold tracking-tight mb-6 cursor-pointer hover:opacity-80 transition-opacity">REDE VIVA</h3>
+            </Link>
             <p className="text-muted-foreground font-light max-w-sm">
               Investimento estratégico e tecnologia para o crescimento sustentável de clínicas de estética no Brasil.
             </p>
@@ -15,19 +17,19 @@ export function Footer() {
           <div>
             <h4 className="font-sans font-semibold text-sm uppercase tracking-widest mb-6">Empresa</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-primary transition-colors">Sobre Nós</a></li>
-              <li><a href="#market" className="hover:text-primary transition-colors">Oportunidade</a></li>
-              <li><a href="#technology" className="hover:text-primary transition-colors">Tecnologia</a></li>
+              <li><a href="/#about" className="hover:text-primary transition-colors">Sobre Nós</a></li>
+              <li><a href="/#market" className="hover:text-primary transition-colors">Oportunidade</a></li>
+              <li><a href="/#technology" className="hover:text-primary transition-colors">Tecnologia</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-sans font-semibold text-sm uppercase tracking-widest mb-6">Contato</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
-              <li>São Paulo, Brasil</li>
-              <li>contato@redeviva.com.br</li>
+              <li><a href="mailto:lucasmpcoelho@gmail.com" className="hover:text-primary transition-colors">lucasmpcoelho@gmail.com</a></li>
+              <li><a href="tel:+15106932587" className="hover:text-primary transition-colors">+1 (510) 693-2587</a></li>
               <li>
-                <Button variant="link" className="p-0 h-auto font-normal text-muted-foreground hover:text-primary">LinkedIn</Button>
+                <Link href="/contato" className="hover:text-primary transition-colors">Fale Conosco</Link>
               </li>
             </ul>
           </div>

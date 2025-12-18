@@ -32,12 +32,14 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <NavLink href="#about">Sobre</NavLink>
-          <NavLink href="#market">Oportunidade</NavLink>
-          <NavLink href="#technology">Tecnologia</NavLink>
-          <Button variant="outline" className="rounded-full px-6 border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-medium text-sm tracking-wide">
-            Fale Conosco
-          </Button>
+          <NavLink href="/#about">Sobre</NavLink>
+          <NavLink href="/#market">Oportunidade</NavLink>
+          <NavLink href="/#technology">Tecnologia</NavLink>
+          <Link href="/contato">
+            <Button variant="outline" className="rounded-full px-6 border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-medium text-sm tracking-wide">
+              Fale Conosco
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -52,10 +54,12 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 flex flex-col space-y-4 animate-in slide-in-from-top-5">
-          <MobileNavLink onClick={() => setIsMobileMenuOpen(false)} href="#about">Sobre</MobileNavLink>
-          <MobileNavLink onClick={() => setIsMobileMenuOpen(false)} href="#market">Oportunidade</MobileNavLink>
-          <MobileNavLink onClick={() => setIsMobileMenuOpen(false)} href="#technology">Tecnologia</MobileNavLink>
-          <Button className="w-full mt-4">Fale Conosco</Button>
+          <MobileNavLink onClick={() => setIsMobileMenuOpen(false)} href="/#about">Sobre</MobileNavLink>
+          <MobileNavLink onClick={() => setIsMobileMenuOpen(false)} href="/#market">Oportunidade</MobileNavLink>
+          <MobileNavLink onClick={() => setIsMobileMenuOpen(false)} href="/#technology">Tecnologia</MobileNavLink>
+          <Link href="/contato" onClick={() => setIsMobileMenuOpen(false)}>
+            <Button className="w-full mt-4">Fale Conosco</Button>
+          </Link>
         </div>
       )}
     </nav>
