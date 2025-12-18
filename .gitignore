@@ -23,9 +23,8 @@ service-account-*.json
 *.swo
 *~
 
-# Local runtime/state and generated assets
+# Local runtime/state
 .local/
-attached_assets/
 
 # Project-specific service account JSON
 zempi-*.json
