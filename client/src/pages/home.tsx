@@ -1,57 +1,21 @@
-import Navigation from "@/components/navigation";
-import HeroSection from "@/components/hero-section";
-import MusclePreservationSection from "@/components/muscle-preservation-section";
-import { Suspense, lazy } from "react";
-import SocialProofSection from "@/components/social-proof-section";
-const ChatSimulation = lazy(() => import("@/components/chat-simulation"));
-import HowItWorksSection from "@/components/how-it-works-section";
-const ClinicalAuthoritySection = lazy(() => import("@/components/clinical-authority-section"));
-import TestimonialsSection from "@/components/testimonials-section";
-import FAQSection from "@/components/faq-section";
-import WaitlistSection from "@/components/waitlist-section";
-import Footer from "@/components/footer";
-import StickyCTA from "@/components/sticky-cta";
-
-function SectionLoader() {
-  return (
-    <div className="py-24 bg-white animate-pulse">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto mb-4" />
-        <div className="h-4 bg-gray-100 rounded w-1/2 mx-auto mb-12" />
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="h-64 bg-gray-100 rounded-2xl" />
-          <div className="h-64 bg-gray-100 rounded-2xl" />
-        </div>
-      </div>
-    </div>
-  );
-}
+import { Navbar } from "@/components/nav";
+import { Hero } from "@/components/hero";
+import { About } from "@/components/sections/about";
+import { MarketWave } from "@/components/sections/market";
+import { Technology } from "@/components/sections/tech";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-foreground">
-      <Navigation />
-      <HeroSection />
-      <MusclePreservationSection />
-      <div className="content-auto">
-        <SocialProofSection />
-      </div>
-      <Suspense fallback={<SectionLoader />}>
-        <div className="content-auto">
-          <ChatSimulation />
-        </div>
-      </Suspense>
-      <HowItWorksSection />
-      <Suspense fallback={<SectionLoader />}>
-        <div className="content-auto">
-          <ClinicalAuthoritySection />
-        </div>
-      </Suspense>
-      <TestimonialsSection />
-      <FAQSection />
-      <WaitlistSection />
+    <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/20">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <MarketWave />
+        <Technology />
+      </main>
       <Footer />
-      <StickyCTA />
     </div>
   );
 }

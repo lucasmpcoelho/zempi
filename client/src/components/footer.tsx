@@ -1,166 +1,43 @@
-import { Instagram, Facebook, Linkedin, Youtube, Shield, Lock } from "lucide-react";
-import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 
-function ZempiLogo() {
+export function Footer() {
   return (
-    <svg width="40" height="40" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(0,1024) scale(0.1,-0.1)" fill="currentColor" stroke="none">
-        <path d="M3227 7590 c-131 -22 -264 -126 -328 -255 -33 -68 -34 -72 -34 -195
-0 -120 1 -128 32 -192 31 -67 100 -150 157 -191 16 -11 58 -32 94 -47 l66 -26
-3 -345 c5 -400 11 -439 93 -606 61 -123 166 -241 284 -318 l76 -49 0 -606 c0
--371 4 -630 11 -670 44 -278 242 -542 504 -673 318 -159 691 -135 986 63 92
-62 216 193 273 288 60 100 111 248 126 362 8 59 10 391 7 1070 l-3 985 -23 80
-c-94 330 -327 575 -646 678 -504 163 -1043 -128 -1202 -650 -25 -85 -27 -99
--32 -393 l-6 -305 -70 70 c-82 82 -136 177 -165 291 -18 69 -20 111 -20 404
-l0 327 43 13 c127 38 226 123 285 247 36 76 37 81 37 193 0 109 -2 119 -32
-183 -93 196 -300 303 -516 267z m207 -215 c93 -45 150 -134 149 -235 0 -77
--17 -123 -69 -180 -72 -80 -165 -106 -270 -75 -106 31 -194 146 -194 254 0
-104 75 204 185 248 43 18 152 11 199 -12z m1363 -605 c253 -60 460 -251 550
--506 l28 -79 3 -512 3 -511 -761 0 -760 1 0 482 c0 446 1 487 20 559 25 97 49
-151 104 234 182 274 506 406 813 332z"/>
-        <path d="M6369 6329 c-230 -33 -436 -185 -538 -394 -66 -134 -69 -161 -75
--625 -3 -228 -1 -435 3 -459 10 -51 41 -81 86 -81 17 0 107 24 200 52 l170 52
-505 6 c492 6 507 7 575 29 263 87 441 274 506 532 28 109 23 289 -11 389 -89
-263 -301 448 -570 496 -85 15 -753 18 -851 3z m864 -194 c188 -49 343 -204
-391 -391 32 -123 17 -246 -43 -369 -63 -128 -164 -219 -306 -276 -60 -24 -61
--24 -565 -29 l-505 -5 -122 -38 c-67 -20 -127 -37 -133 -37 -8 0 -10 106 -8
-373 4 356 5 375 26 431 59 158 180 275 344 330 73 25 73 25 468 26 319 0 407
--3 453 -15z"/>
-        <path d="M6307 5700 c-53 -42 -56 -130 -7 -175 25 -23 92 -31 130 -15 52 21
-75 95 49 153 -25 55 -122 76 -172 37z"/>
-        <path d="M6721 5704 c-61 -43 -60 -147 2 -184 59 -36 141 -19 165 35 27 60 8
-127 -45 154 -32 16 -95 13 -122 -5z"/>
-        <path d="M7127 5700 c-34 -27 -48 -79 -36 -126 18 -63 103 -93 168 -60 68 36
-68 156 0 192 -41 21 -102 18 -132 -6z"/>
-      </g>
-    </svg>
-  );
-}
-
-const footerSections = [
-  {
-    title: "Produto",
-    links: [
-      { name: "Benefícios", href: "#beneficios" },
-      { name: "Como Funciona", href: "#como-funciona" },
-      { name: "Preços", href: "#" },
-      { name: "Perguntas Frequentes", href: "#" }
-    ]
-  },
-  {
-    title: "Empresa",
-    links: [
-      { name: "Sobre Nós", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Carreiras", href: "#" },
-      { name: "Contato", href: "#" }
-    ]
-  },
-  {
-    title: "Legal",
-    links: [
-      { name: "Privacidade", href: "/privacy" },
-      { name: "Termos de Uso", href: "#" },
-      { name: "Política de Cookies", href: "#" },
-      { name: "LGPD", href: "#" }
-    ]
-  }
-];
-
-const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" }
-];
-
-export default function Footer() {
-  const handleLinkClick = (href: string) => {
-    if (href.startsWith('#')) {
-      const element = document.getElementById(href.slice(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
-  return (
-    <footer id="contato" className="bg-gray-900 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 md:gap-12 mb-12">
-          {/* Brand Column */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4 group cursor-pointer">
-              <div className="transition-transform duration-300 group-hover:scale-105">
-                <ZempiLogo />
-              </div>
-              <span className="text-2xl font-bold">Zempi</span>
-            </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Acompanhamento médico 24/7 para tratamento com Ozempic, Mounjaro e Saxenda.
+    <footer className="bg-background border-t border-border pt-20 pb-10">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="font-serif text-3xl font-bold tracking-tight mb-6">REDE VIVA</h3>
+            <p className="text-muted-foreground font-light max-w-sm">
+              Investimento estratégico e tecnologia para o crescimento sustentável de clínicas de estética no Brasil.
             </p>
-            <div className="flex space-x-3 sm:space-x-4">
-              {socialLinks.map((social) => (
-                <a 
-                  key={social.label}
-                  href={social.href} 
-                  className="w-12 h-12 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-                  aria-label={social.label}
-                  data-testid={`social-${social.label.toLowerCase()}`}
-                >
-                  <social.icon className="h-6 w-6 sm:h-5 sm:w-5" />
-                </a>
-              ))}
-            </div>
           </div>
-
-          {/* Footer Sections */}
-          {footerSections.map((section) => (
-            <div key={section.title} className="mt-8 md:mt-0">
-              <h4 className="font-semibold text-base mb-4 text-white">{section.title}</h4>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    {link.href.startsWith('#') ? (
-                      <button
-                        onClick={() => handleLinkClick(link.href)}
-                        className="text-gray-400 hover:text-white transition-all duration-200 text-left py-2.5 sm:py-1.5 text-sm relative group inline-block min-h-[44px] sm:min-h-0 flex items-center"
-                        data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      >
-                        {link.name}
-                        <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
-                      </button>
-                    ) : (
-                      <Link href={link.href}>
-                        <a className="text-gray-400 hover:text-white transition-all duration-200 text-sm py-2.5 sm:py-1.5 relative group inline-block min-h-[44px] sm:min-h-0 flex items-center" data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                          {link.name}
-                          <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full" />
-                        </a>
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          
+          <div>
+            <h4 className="font-sans font-semibold text-sm uppercase tracking-widest mb-6">Empresa</h4>
+            <ul className="space-y-4 text-sm text-muted-foreground">
+              <li><a href="#about" className="hover:text-primary transition-colors">Sobre Nós</a></li>
+              <li><a href="#market" className="hover:text-primary transition-colors">Oportunidade</a></li>
+              <li><a href="#technology" className="hover:text-primary transition-colors">Tecnologia</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="font-sans font-semibold text-sm uppercase tracking-widest mb-6">Contato</h4>
+            <ul className="space-y-4 text-sm text-muted-foreground">
+              <li>São Paulo, Brasil</li>
+              <li>contato@redeviva.com.br</li>
+              <li>
+                <Button variant="link" className="p-0 h-auto font-normal text-muted-foreground hover:text-primary">LinkedIn</Button>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-500 text-sm">
-              © 2025 Zempi. Todos os direitos reservados.
-            </p>
-            <div className="flex items-center space-x-6">
-              <span className="text-gray-500 text-sm flex items-center group">
-                <Shield className="mr-2 h-4 w-4 text-green-500 transition-transform duration-300 group-hover:scale-110" />
-                Dados protegidos por LGPD
-              </span>
-              <span className="text-gray-500 text-sm flex items-center group">
-                <Lock className="mr-2 h-4 w-4 text-blue-500 transition-transform duration-300 group-hover:scale-110" />
-                Conexão segura
-              </span>
-            </div>
+        
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground font-light">
+          <p>© {new Date().getFullYear()} Rede Viva. Todos os direitos reservados.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-primary">Privacidade</a>
+            <a href="#" className="hover:text-primary">Termos</a>
           </div>
         </div>
       </div>

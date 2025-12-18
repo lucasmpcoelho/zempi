@@ -1,2 +1,33 @@
-# zempi
-zempi is a 24/7 GLP-1 patient companion
+# Rede Viva
+
+Landing page para a Rede Viva - Parceiro de Investimento e Tecnologia para clínicas de estética.
+
+## Sobre
+
+A Rede Viva oferece excelência operacional e crescimento de receita para clínicas de estética através de tecnologia e capital estratégico.
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Vite
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deploy
+
+O deploy é automático via Vercel ao fazer push na branch `main`.
+
