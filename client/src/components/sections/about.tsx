@@ -15,17 +15,17 @@ export function About() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-sm font-sans font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-4 block">
-              Nossa Missão
+              Nossa Proposta
             </span>
             <h2 className="text-4xl md:text-5xl font-serif font-medium mb-8 leading-tight text-primary">
-              Excelência Operacional & <br/><span className="italic text-muted-foreground">Crescimento de Receita</span>
+              Liberdade para Cuidar, <br/><span className="italic text-muted-foreground">Inteligência para Crescer</span>
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
               <p>
-                A Rede Viva não é apenas um investidor. Somos parceiros operacionais dedicados a transformar clínicas de estética em potências de eficiência e rentabilidade.
+                Entendemos que a paixão do corpo clínico é a arte médica e o bem-estar do paciente, não planilhas e burocracia. Nossa missão é assumir a complexidade da gestão administrativa.
               </p>
               <p>
-                Combinamos capital estratégico com nossa plataforma proprietária habilitada por IA para otimizar jornadas de clientes, aumentar ticket médio e garantir a fidelização em um mercado cada vez mais competitivo.
+                Atuamos centralizando serviços secundários e gestão operacional, permitindo que você e sua equipe foquem 100% na excelência técnica e na experiência do cliente, enquanto nós garantimos a eficiência do negócio.
               </p>
             </div>
           </motion.div>

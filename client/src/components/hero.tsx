@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 import heroVideo from "@assets/generated_videos/cinematic_aerial_view_of_brazilian_nature_for_luxury_brand.mp4";
 
 export function Hero() {
@@ -28,11 +30,20 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-6 drop-shadow-lg">
-            Empowering the Bold
+            Redefining Clinical Excellence
           </h1>
-          <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto opacity-90 leading-relaxed drop-shadow-md">
+          <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto opacity-90 leading-relaxed drop-shadow-md mb-10">
             Parceiro estratégico de investimento e tecnologia para o futuro das clínicas de estética no Brasil.
           </p>
+          
+          <Link href="/contato">
+            <Button 
+              size="lg" 
+              className="bg-white text-black hover:bg-white/90 rounded-none px-10 py-7 text-sm tracking-widest uppercase font-semibold transition-all hover:scale-105"
+            >
+              Seja um Parceiro
+            </Button>
+          </Link>
         </motion.div>
       </div>
       

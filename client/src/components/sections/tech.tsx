@@ -32,29 +32,29 @@ export function Technology() {
              viewport={{ once: true }}
           >
              <h2 className="text-4xl md:text-6xl font-serif mb-8 text-white">
-               Inteligência Artificial <br/> <span className="text-white/50 italic">Aplicada à Estética</span>
+               Inteligência Artificial <br/> <span className="text-white/50 italic">Aplicada à Gestão</span>
              </h2>
              <p className="text-lg text-white/70 font-light mb-8 leading-relaxed max-w-md">
-               Nossa plataforma proprietária analisa dados em tempo real para otimizar agendamentos, prever churn e sugerir protocolos personalizados, maximizando a receita por m² da sua clínica.
+               Nossa plataforma proprietária atua nas alavancas críticas do negócio, trazendo eficiência sem perder a humanização.
              </p>
              <ul className="space-y-4 mb-10 text-white/80 font-light">
                <li className="flex items-center gap-3">
                  <div className="bg-white/10 p-2 rounded-full">
-                    <Users className="w-4 h-4 text-white" />
+                    <TrendingUp className="w-4 h-4 text-white" />
                  </div>
-                 CRM Integrado e Preditivo
+                 Gestão Inteligente de Estoque & Compras (Supply Chain)
                </li>
                <li className="flex items-center gap-3">
                  <div className="bg-white/10 p-2 rounded-full">
-                    <TrendingUp className="w-4 h-4 text-white" />
+                    <Users className="w-4 h-4 text-white" />
                  </div>
-                 Gestão Financeira Automatizada
+                 Eficiência Comercial & Aumento de Retenção
                </li>
                <li className="flex items-center gap-3">
                  <div className="bg-white/10 p-2 rounded-full">
                     <Activity className="w-4 h-4 text-white" />
                  </div>
-                 Dashboard de Performance Clínica
+                 Centralização de Serviços & Backoffice
                </li>
              </ul>
              <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-none px-8 py-6 text-sm tracking-widest uppercase font-semibold">
