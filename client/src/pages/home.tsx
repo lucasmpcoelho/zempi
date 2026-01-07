@@ -2,6 +2,7 @@ import { Navbar } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/sections/about";
 import { MarketWave } from "@/components/sections/market";
+import { Partners } from "@/components/sections/partners";
 import { Treatments } from "@/components/sections/treatments";
 import { Technology } from "@/components/sections/tech";
 import { Footer } from "@/components/footer";
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <About />
         <MarketWave />
+        <Partners />
         <Treatments />
         <Technology />
       </main>

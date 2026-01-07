@@ -31,3 +31,5 @@ npm run build
 
 O deploy é automático via Vercel ao fazer push na branch `main`.
 
+
+
