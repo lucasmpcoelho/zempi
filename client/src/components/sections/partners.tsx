@@ -28,7 +28,7 @@ export function Partners() {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50/50 dark:bg-emerald-900/10 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Left Column: Copy */}
                     <motion.div
@@ -42,7 +42,7 @@ export function Partners() {
                             Tecnologia de Ponta
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-[1.15] text-zinc-900 dark:text-zinc-50">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium mb-6 leading-[1.15] text-zinc-900 dark:text-zinc-50">
                             Potencialize sua Clínica com <br className="hidden md:block" />
                             <span className="text-emerald-600 dark:text-emerald-400">Inteligência Real.</span>
                         </h2>
@@ -73,8 +73,8 @@ export function Partners() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Button size="lg" className="bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 px-8 h-12 text-base rounded-full shadow-xl shadow-zinc-900/10 hover:shadow-2xl transition-all hover:-translate-y-0.5">
-                                Quero Conhecer a Ana
+                            <Button size="lg" className="bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 px-8 h-12 text-base rounded-full shadow-xl shadow-zinc-900/10 hover:shadow-2xl transition-all hover:-translate-y-0.5 w-full sm:w-auto">
+                                Fale Conosco
                                 <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                         </div>
