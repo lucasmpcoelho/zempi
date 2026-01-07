@@ -73,10 +73,12 @@ export function Partners() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Button size="lg" className="bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 px-8 h-12 text-base rounded-full shadow-xl shadow-zinc-900/10 hover:shadow-2xl transition-all hover:-translate-y-0.5 w-full sm:w-auto">
-                                Fale Conosco
-                                <ArrowRight className="w-4 h-4 ml-2" />
-                            </Button>
+                            <a href="/contato" className="w-full sm:w-auto">
+                                <Button size="lg" className="bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 px-8 h-12 text-base rounded-full shadow-xl shadow-zinc-900/10 hover:shadow-2xl transition-all hover:-translate-y-0.5 w-full">
+                                    Fale Conosco
+                                    <ArrowRight className="w-4 h-4 ml-2" />
+                                </Button>
+                            </a>
                         </div>
                     </motion.div>
 
