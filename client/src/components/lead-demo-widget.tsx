@@ -131,10 +131,13 @@ export function LeadDemoWidget() {
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
-    // Auto-scroll to bottom when messages change
+    // Auto-scroll to bottom when messages change (only within the container)
     useEffect(() => {
-        if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTo({
+                top: chatContainerRef.current.scrollHeight,
+                behavior: "smooth"
+            });
         }
     }, [messages, isTyping]);
 
