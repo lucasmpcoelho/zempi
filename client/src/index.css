@@ -33,77 +33,77 @@
 }
 
 :root {
-  /* Quiet Luxury Palette */
-  /* Background: Soft Warm Off-White */
-  --background: 40 20% 97%;
-  /* Foreground: Soft Black */
-  --foreground: 220 10% 15%;
+  /* Lyve Premium Palette */
+  /* Background: Soft Pearl */
+  --background: 45 33% 96%;
+  /* Foreground: Midnight Emerald (Darkest Shade) */
+  --foreground: 168 40% 10%;
 
-  /* Card: Slightly distinct from bg */
-  --card: 40 20% 99%;
-  --card-foreground: 220 10% 15%;
+  /* Card */
+  --card: 45 33% 98%;
+  --card-foreground: 168 40% 10%;
 
   /* Popover */
-  --popover: 40 20% 99%;
-  --popover-foreground: 220 10% 15%;
+  --popover: 45 33% 98%;
+  --popover-foreground: 168 40% 10%;
 
-  /* Primary: Deep Charcoal/Navy */
-  --primary: 220 15% 20%;
-  --primary-foreground: 40 20% 97%;
+  /* Primary: Midnight Emerald */
+  --primary: 168 40% 16%;
+  --primary-foreground: 45 33% 96%;
 
-  /* Secondary: Soft Taupe/Beige */
-  --secondary: 35 15% 90%;
-  --secondary-foreground: 220 15% 20%;
+  /* Secondary: Muted Emerald/Sage */
+  --secondary: 168 15% 90%;
+  --secondary-foreground: 168 40% 16%;
 
-  /* Muted: Greyish */
-  --muted: 220 5% 90%;
-  --muted-foreground: 220 5% 40%;
+  /* Muted */
+  --muted: 168 10% 90%;
+  --muted-foreground: 168 10% 40%;
 
-  /* Accent: Muted Gold/Bronze */
-  --accent: 35 30% 85%;
-  --accent-foreground: 220 15% 20%;
+  /* Accent: Champagne Gold */
+  --accent: 40 40% 85%;
+  --accent-foreground: 168 40% 10%;
 
   /* Destructive */
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  /* Border: Subtle Grey */
-  --border: 220 5% 85%;
-  --input: 220 5% 85%;
-  --ring: 220 15% 20%;
+  /* Border */
+  --border: 168 10% 85%;
+  --input: 168 10% 85%;
+  --ring: 168 40% 16%;
 
-  --radius: 0.25rem;
+  --radius: 0rem; /* Straight edges for more premium look */
 }
 
 .dark {
-  /* Dark Luxury */
-  --background: 220 15% 10%;
-  --foreground: 40 20% 95%;
+  /* Lyve Dark Mode: Midnight Emerald Focus */
+  --background: 168 40% 6%;
+  --foreground: 45 33% 96%;
 
-  --card: 220 15% 12%;
-  --card-foreground: 40 20% 95%;
+  --card: 168 40% 8%;
+  --card-foreground: 45 33% 96%;
 
-  --popover: 220 15% 12%;
-  --popover-foreground: 40 20% 95%;
+  --popover: 168 40% 8%;
+  --popover-foreground: 45 33% 96%;
 
-  --primary: 40 20% 95%;
-  --primary-foreground: 220 15% 10%;
+  --primary: 45 33% 96%;
+  --primary-foreground: 168 40% 16%;
 
-  --secondary: 220 15% 18%;
-  --secondary-foreground: 40 20% 95%;
+  --secondary: 168 30% 15%;
+  --secondary-foreground: 45 33% 96%;
 
-  --muted: 220 15% 18%;
-  --muted-foreground: 220 5% 60%;
+  --muted: 168 20% 15%;
+  --muted-foreground: 168 10% 70%;
 
-  --accent: 35 20% 25%;
-  --accent-foreground: 40 20% 95%;
+  --accent: 40 40% 25%;
+  --accent-foreground: 45 33% 96%;
 
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 220 15% 18%;
-  --input: 220 15% 18%;
-  --ring: 220 15% 80%;
+  --border: 168 30% 18%;
+  --input: 168 30% 18%;
+  --ring: 168 40% 80%;
 }
 
 @layer base {

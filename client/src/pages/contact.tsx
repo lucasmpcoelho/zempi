@@ -61,7 +61,7 @@ export default function Contact() {
                 {/* Contact Links */}
                 <div className="space-y-6">
                   <a
-                    href="mailto:lucasmpcoelho@gmail.com"
+                    href="mailto:lucas@lyve.care"
                     className="group flex items-center gap-4 p-6 bg-card border border-border hover:border-primary/30 transition-all duration-300"
                   >
                     <div className="w-12 h-12 bg-primary/5 border border-primary/10 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
@@ -69,7 +69,7 @@ export default function Contact() {
                     </div>
                     <div className="flex-1">
                       <p className="text-xs tracking-wider uppercase text-muted-foreground mb-1">Email</p>
-                      <p className="font-serif text-lg group-hover:text-primary transition-colors">lucasmpcoelho@gmail.com</p>
+                      <p className="font-serif text-lg group-hover:text-primary transition-colors">lucas@lyve.care</p>
                     </div>
                     <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </a>

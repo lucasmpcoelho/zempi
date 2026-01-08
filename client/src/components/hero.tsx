@@ -6,20 +6,20 @@ import heroVideo from "@assets/generated_videos/cinematic_aerial_view_of_brazili
 export function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Video Background */}
+      {/* Video Background with refined overlaps */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover scale-105"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/10" />
+        {/* Deep Emerald Overlays */}
+        <div className="absolute inset-0 bg-primary/30 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-background" />
       </div>
 
       {/* Content */}
@@ -30,15 +30,15 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-6 drop-shadow-lg">
-            Redefining Clinical Excellence
+            Lyve — Clínicas Estéticas com IA
           </h1>
-          <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto opacity-90 leading-relaxed drop-shadow-md mb-10">
-            Parceiro estratégico de investimento e tecnologia para o futuro das clínicas de estética no Brasil.
+          <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-3xl mx-auto opacity-90 leading-relaxed drop-shadow-md mb-10">
+            Sinta-se Lyve. A rede de clínicas estéticas potencializada por inteligência artificial.
           </p>
-          
+
           <Link href="/contato">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-black hover:bg-white/90 rounded-none px-10 py-7 text-sm tracking-widest uppercase font-semibold transition-all hover:scale-105"
             >
               Seja um Parceiro
@@ -46,9 +46,9 @@ export function Hero() {
           </Link>
         </motion.div>
       </div>
-      
+
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

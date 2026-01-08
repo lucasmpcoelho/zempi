@@ -92,14 +92,14 @@ function PixRequestCard() {
     };
 
     return (
-        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/30 dark:to-teal-900/30 border border-emerald-200 dark:border-emerald-700 rounded-2xl p-4 max-w-[220px]">
+        <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-4 max-w-[220px]">
             <div className="text-center mb-3">
-                <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-300 uppercase tracking-wide">Pix Copia e Cola</span>
-                <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">R$ 50,00</p>
+                <span className="text-xs font-semibold text-primary uppercase tracking-wide">Pix Copia e Cola</span>
+                <p className="text-2xl font-bold text-primary mt-1">R$ 50,00</p>
             </div>
             <button
                 onClick={handleCopy}
-                className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-all active:scale-95"
+                className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-all active:scale-95"
             >
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 {copied ? "Copiado!" : "Copiar Código Pix"}
@@ -110,14 +110,14 @@ function PixRequestCard() {
 
 function PixConfirmedCard() {
     return (
-        <div className="bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-900/40 dark:to-green-900/40 border border-emerald-300 dark:border-emerald-600 rounded-2xl p-4 max-w-[240px]">
+        <div className="bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 rounded-2xl p-4 max-w-[240px]">
             <div className="flex items-center gap-2 mb-2">
-                <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                     <Check className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Pagamento Confirmado!</span>
+                <span className="text-sm font-semibold text-primary">Pagamento Confirmado!</span>
             </div>
-            <p className="text-sm text-emerald-600 dark:text-emerald-400">
+            <p className="text-sm text-primary/80">
                 Agendamento confirmado para <strong>amanhã às 15h</strong>. Enviei os detalhes por WhatsApp. 💖
             </p>
         </div>
