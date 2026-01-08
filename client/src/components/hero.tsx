@@ -30,10 +30,10 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-6 drop-shadow-lg">
-            Lyve — Clínicas Estéticas com IA
+            Empowering the Bold
           </h1>
           <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-3xl mx-auto opacity-90 leading-relaxed drop-shadow-md mb-10">
-            Sinta-se Lyve. A rede de clínicas estéticas potencializada por inteligência artificial.
+            Lyve — parceiro estratégico de investimento e tecnologia para o futuro das clínicas de estéticas no Brasil
           </p>
 
           <Link href="/contato">
