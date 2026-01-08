@@ -1,10 +1,10 @@
-# Rede Viva
+# Lyve
 
-Landing page para a Rede Viva - Parceiro de Investimento e Tecnologia para clínicas de estética.
+Landing page para a Lyve - Parceiro de Investimento e Tecnologia para clínicas de estética.
 
 ## Sobre
 
-A Rede Viva oferece excelência operacional e crescimento de receita para clínicas de estética através de tecnologia e capital estratégico.
+A Lyve oferece excelência operacional e crescimento de receita para clínicas de estética através de tecnologia e capital estratégico.
 
 ## Tech Stack
 

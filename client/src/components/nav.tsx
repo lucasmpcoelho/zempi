@@ -26,7 +26,7 @@ export function Navbar() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
           <span className="text-2xl font-serif font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity cursor-pointer">
-            REDE VIVA
+            LYVE
           </span>
         </Link>
 
@@ -43,7 +43,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -68,8 +68,8 @@ export function Navbar() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a 
-      href={href} 
+    <a
+      href={href}
       className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors relative group"
     >
       {children}
@@ -80,8 +80,8 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 
 function MobileNavLink({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
   return (
-    <a 
-      href={href} 
+    <a
+      href={href}
       onClick={onClick}
       className="text-lg font-serif font-medium text-foreground py-2 border-b border-border/50"
     >

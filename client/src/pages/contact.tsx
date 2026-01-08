@@ -12,7 +12,7 @@ export default function Contact() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              
+
               {/* Left: Image */}
               <motion.div
                 className="relative"
@@ -21,16 +21,16 @@ export default function Contact() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="aspect-[4/5] relative overflow-hidden">
-                  <img 
-                    src={lucasImg} 
-                    alt="Lucas Coelho - Founder" 
+                  <img
+                    src={lucasImg}
+                    alt="Lucas Coelho - Founder"
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                 </div>
-                
+
                 {/* Name Card */}
-                <motion.div 
+                <motion.div
                   className="absolute -bottom-6 -right-6 bg-card border border-border p-6 shadow-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -55,12 +55,12 @@ export default function Contact() {
                   <span className="italic text-muted-foreground">Conosco</span>
                 </h1>
                 <p className="text-lg text-muted-foreground font-light mb-12 leading-relaxed max-w-md">
-                  Interessado em fazer parte da Rede Viva? Entre em contato para discutirmos oportunidades de parceria e investimento.
+                  Interessado em fazer parte da Lyve? Entre em contato para discutirmos oportunidades de parceria e investimento.
                 </p>
 
                 {/* Contact Links */}
                 <div className="space-y-6">
-                  <a 
+                  <a
                     href="mailto:lucasmpcoelho@gmail.com"
                     className="group flex items-center gap-4 p-6 bg-card border border-border hover:border-primary/30 transition-all duration-300"
                   >
@@ -74,7 +74,7 @@ export default function Contact() {
                     <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </a>
 
-                  <a 
+                  <a
                     href="tel:+15106932587"
                     className="group flex items-center gap-4 p-6 bg-card border border-border hover:border-primary/30 transition-all duration-300"
                   >
@@ -92,7 +92,7 @@ export default function Contact() {
                 {/* Decorative Line */}
                 <div className="mt-12 flex items-center gap-4">
                   <div className="h-px flex-1 bg-border" />
-                  <span className="text-xs tracking-widest uppercase text-muted-foreground/50">Rede Viva</span>
+                  <span className="text-xs tracking-widest uppercase text-muted-foreground/50">Lyve</span>
                   <div className="h-px flex-1 bg-border" />
                 </div>
               </motion.div>
