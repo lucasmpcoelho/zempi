@@ -30,20 +30,20 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-6 drop-shadow-lg">
-            Empowering the Bold
+            Excelência Clínica,<br />Inteligência Operacional.
           </h1>
-          <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-3xl mx-auto opacity-90 leading-relaxed drop-shadow-md mb-10">
-            Lyve — parceiro estratégico de investimento e tecnologia para o futuro das clínicas de estéticas no Brasil
+          <p className="font-sans text-lg md:text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto opacity-90 leading-relaxed drop-shadow-md mb-10">
+            Plataforma de investimento e tecnologia para clínicas de estética de alto padrão.
           </p>
 
-          <Link href="/contato">
+          <a href="#about">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-white/90 rounded-none px-10 py-7 text-sm tracking-widest uppercase font-semibold transition-all hover:scale-105"
+              className="bg-white/10 backdrop-blur-sm text-white border border-white/30 hover:bg-white hover:text-black rounded-none px-10 py-7 text-sm tracking-widest uppercase font-semibold transition-all hover:scale-105"
             >
-              Seja um Parceiro
+              Conheça Nossa Visão
             </Button>
-          </Link>
+          </a>
         </motion.div>
       </div>
 

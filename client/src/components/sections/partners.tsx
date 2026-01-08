@@ -1,29 +1,28 @@
 import { motion } from "framer-motion";
 import { LeadDemoWidget } from "../lead-demo-widget";
-import { ArrowRight, Star, ShieldCheck, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MessageCircle, Brain, Calendar } from "lucide-react";
 
 const features = [
     {
-        icon: <Zap className="w-5 h-5 text-accent" />,
-        title: "Atendimento Imediato (0 delay)",
-        description: "Seu paciente é atendido no microssegundo que manda mensagem. Satisfação instantânea."
+        icon: <MessageCircle className="w-5 h-5 text-primary/70" />,
+        title: "Atendimento Inteligente",
+        description: "Resposta contextualizada e acolhedora, a qualquer hora do dia."
     },
     {
-        icon: <Star className="w-5 h-5 text-accent" />,
-        title: "Triagem Inteligente",
-        description: "Ana qualifica, tira dúvidas de preços (se você permitir) e só passa leads quentes."
+        icon: <Brain className="w-5 h-5 text-primary/70" />,
+        title: "Qualificação Automatizada",
+        description: "Entendimento de intenção e direcionamento eficiente para sua equipe."
     },
     {
-        icon: <ShieldCheck className="w-5 h-5 text-accent" />,
-        title: "Agenda Cheia, Zero Stress",
-        description: "Automatize agendamentos, lembretes e cobrança de sinal. O fim do 'no-show'."
+        icon: <Calendar className="w-5 h-5 text-primary/70" />,
+        title: "Gestão de Agenda",
+        description: "Agendamentos, lembretes e confirmações integrados sem fricção."
     }
 ];
 
 export function Partners() {
     return (
-        <section className="py-28 bg-background overflow-hidden relative border-t border-border/40">
+        <section id="technology" className="py-28 bg-background overflow-hidden relative border-t border-border/40">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
@@ -37,21 +36,20 @@ export function Partners() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide mb-6 border border-primary/10">
-                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                            Tecnologia de Ponta
-                        </div>
+                        <span className="text-xs font-sans font-semibold tracking-[0.3em] text-muted-foreground uppercase mb-4 block">
+                            Tecnologia Proprietária
+                        </span>
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium mb-6 leading-[1.15] text-foreground">
-                            Potencialize sua Clínica com <br className="hidden md:block" />
-                            <span className="text-primary italic">Inteligência Real.</span>
+                            Inteligência Artificial <br className="hidden md:block" />
+                            <span className="text-muted-foreground italic">para Estética.</span>
                         </h2>
 
                         <p className="text-lg text-muted-foreground font-light leading-relaxed mb-10 max-w-lg">
-                            Não é um "chatbot". É uma assistente virtual treinada para acolher seus pacientes, elevar a percepção da sua marca e garantir que nenhuma oportunidade seja perdida.
+                            Desenvolvemos soluções de IA específicas para o mercado de estética brasileiro. Nossas ferramentas atuam no atendimento, qualificação e gestão de pacientes.
                         </p>
 
-                        <div className="space-y-8 mb-12">
+                        <div className="space-y-6 mb-12">
                             {features.map((feature, idx) => (
                                 <motion.div
                                     key={idx}
@@ -61,25 +59,20 @@ export function Partners() {
                                     transition={{ delay: idx * 0.1, duration: 0.5 }}
                                     className="flex gap-4 group"
                                 >
-                                    <div className="w-12 h-12 rounded-2xl bg-card border border-border/50 flex items-center justify-center shrink-0 group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:scale-105 transition-all duration-300">
+                                    <div className="w-11 h-11 bg-card border border-border/50 flex items-center justify-center shrink-0 group-hover:bg-primary/5 group-hover:border-primary/20 transition-all duration-300">
                                         {feature.icon}
                                     </div>
                                     <div>
-                                        <h3 className="font-medium text-zinc-900 dark:text-zinc-100 mb-1.5">{feature.title}</h3>
-                                        <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xs">{feature.description}</p>
+                                        <h3 className="font-medium text-foreground mb-1">{feature.title}</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">{feature.description}</p>
                                     </div>
                                 </motion.div>
                             ))}
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <a href="/contato" className="w-full sm:w-auto">
-                                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-12 text-base rounded-none shadow-xl shadow-primary/10 hover:shadow-2xl transition-all hover:-translate-y-0.5 w-full">
-                                    Fale Conosco
-                                    <ArrowRight className="w-4 h-4 ml-2" />
-                                </Button>
-                            </a>
-                        </div>
+                        <p className="text-sm text-muted-foreground/70 font-light italic">
+                            Ana — nossa assistente virtual em ação.
+                        </p>
                     </motion.div>
 
                     {/* Right Column: Widget Demo */}
@@ -95,25 +88,6 @@ export function Partners() {
 
                         <div className="relative">
                             <LeadDemoWidget />
-
-                            {/* Floating "Live Stat" Card */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1, duration: 0.6 }}
-                                className="absolute top-24 -right-12 bg-white dark:bg-zinc-900/90 backdrop-blur p-4 rounded-2xl shadow-xl border border-zinc-100 dark:border-zinc-800 max-w-[200px] hidden xl:block"
-                            >
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-primary opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                                    </span>
-                                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Performance</span>
-                                </div>
-                                <p className="text-sm font-medium text-foreground">
-                                    <span className="text-primary font-bold">+42%</span> de conversão em avaliações agendadas.
-                                </p>
-                            </motion.div>
                         </div>
                     </motion.div>
 

@@ -18,7 +18,7 @@ export function Footer() {
             <h4 className="font-sans font-semibold text-sm uppercase tracking-widest mb-6">Empresa</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li><a href="/#about" className="hover:text-primary transition-colors">Sobre Nós</a></li>
-              <li><a href="/#market" className="hover:text-primary transition-colors">Oportunidade</a></li>
+              <li><a href="/#market" className="hover:text-primary transition-colors">Mercado</a></li>
               <li><a href="/#technology" className="hover:text-primary transition-colors">Tecnologia</a></li>
             </ul>
           </div>
@@ -27,7 +27,7 @@ export function Footer() {
             <h4 className="font-sans font-semibold text-sm uppercase tracking-widest mb-6">Contato</h4>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li><a href="mailto:lucas@lyve.care" className="hover:text-primary transition-colors">lucas@lyve.care</a></li>
-              <li><a href="tel:+15106932587" className="hover:text-primary transition-colors">+1 (510) 693-2587</a></li>
+              <li><a href="tel:+5571997046635" className="hover:text-primary transition-colors">+55 71 99704-6635</a></li>
               <li>
                 <Link href="/contato" className="hover:text-primary transition-colors">Fale Conosco</Link>
               </li>
