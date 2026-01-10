@@ -26,7 +26,7 @@ export function ClinicasOpportunity() {
   return (
     <section className="py-20 md:py-28 bg-primary/5 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(26,60,52,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(26,60,52,0.05),transparent_60%)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -34,14 +34,17 @@ export function ClinicasOpportunity() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-xs font-semibold tracking-[0.3em] text-muted-foreground uppercase mb-4 block">
+          <span className="text-xs font-semibold tracking-[0.3em] text-primary uppercase mb-6 block">
             A Oportunidade
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium mb-6 text-foreground">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium mb-6 text-foreground tracking-tight">
             O Novo Paciente de Estética:{" "}
-            <span className="text-primary italic">Pós-Ozempic</span>
+            <span className="text-primary italic relative inline-block">
+              Pós-Ozempic
+              <span className="absolute bottom-1 left-0 right-0 h-px bg-primary/20 scale-x-90" />
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground font-light max-w-2xl mx-auto">
             Uma nova categoria de paciente está surgindo — com alto poder aquisitivo,
@@ -50,7 +53,7 @@ export function ClinicasOpportunity() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -58,16 +61,16 @@ export function ClinicasOpportunity() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15, duration: 0.5 }}
-              className="bg-card border border-border rounded-xl p-8 text-center hover:border-primary/30 hover:shadow-lg transition-all"
+              className="bg-card/50 backdrop-blur-sm border border-transparent hover:border-primary/10 rounded-sm p-10 text-center hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all group"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
                 <stat.icon className="w-7 h-7 text-primary" />
               </div>
-              <p className="text-4xl md:text-5xl font-bold text-primary mb-1">
+              <p className="text-4xl md:text-5xl font-serif font-medium text-primary mb-2 tracking-tight">
                 {stat.value}
               </p>
-              <p className="font-medium text-foreground mb-2">{stat.label}</p>
-              <p className="text-sm text-muted-foreground">{stat.description}</p>
+              <p className="font-medium text-foreground uppercase tracking-wider text-sm mb-3">{stat.label}</p>
+              <p className="text-sm text-muted-foreground font-light leading-relaxed">{stat.description}</p>
             </motion.div>
           ))}
         </div>
@@ -78,7 +81,7 @@ export function ClinicasOpportunity() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-12 text-center"
+          className="mt-16 text-center"
         >
           <p className="text-lg text-muted-foreground font-light max-w-xl mx-auto">
             Esses pacientes estão buscando sua clínica <span className="font-medium text-foreground">agora</span>.
