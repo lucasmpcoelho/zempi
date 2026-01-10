@@ -50,8 +50,8 @@ export function ClinicasHero() {
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-medium leading-[1.1] mb-8 tracking-tight drop-shadow-lg">
-            Eficiência Invisível.<br />
-            <span className="italic opacity-90">Resultados Visíveis.</span>
+            Seu Parceiro de IA<br />
+            <span className="italic opacity-90">para Estética.</span>
           </h1>
 
           {/* Subheadline */}
