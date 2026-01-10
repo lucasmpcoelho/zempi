@@ -55,14 +55,14 @@ export function ClinicasFounder() {
                   href="https://linkedin.com/in/lucasmpcoelho"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-lg text-primary text-sm font-medium transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-full text-primary text-sm font-medium transition-colors"
                 >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
                 <a
                   href="mailto:lucas@lyve.care"
-                  className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-lg text-primary text-sm font-medium transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-full text-primary text-sm font-medium transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   Email

@@ -96,11 +96,7 @@ export function ClinicasResults() {
                     </td>
                     <td className="py-5 px-4 text-center">
                       <span
-                        className={`inline-flex items-center gap-1 font-bold ${
-                          item.positive
-                            ? "text-emerald-600 dark:text-emerald-400"
-                            : "text-emerald-600 dark:text-emerald-400"
-                        }`}
+                        className="inline-flex items-center gap-1 font-bold text-primary"
                       >
                         {item.positive ? (
                           <TrendingUp className="w-4 h-4" />

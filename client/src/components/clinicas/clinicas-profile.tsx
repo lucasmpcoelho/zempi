@@ -56,7 +56,7 @@ export function ClinicasProfile() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="flex gap-4 p-6 bg-card border border-border rounded-xl hover:border-primary/20 transition-colors"
+              className="flex gap-4 p-6 bg-card border border-border rounded-sm hover:border-primary/20 transition-colors"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <item.icon className="w-6 h-6 text-primary" />
@@ -77,7 +77,7 @@ export function ClinicasProfile() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="bg-card border-2 border-primary/20 rounded-xl p-8 text-center">
+          <div className="bg-card border-2 border-primary/20 rounded-sm p-8 text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Check className="w-8 h-8 text-primary" />
             </div>

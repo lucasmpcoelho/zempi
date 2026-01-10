@@ -67,8 +67,8 @@ export function ClinicasPartnership() {
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-5 h-5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+                  <div className="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-primary" />
                   </div>
                   <span className="text-muted-foreground">{item}</span>
                 </motion.li>
@@ -132,8 +132,8 @@ export function ClinicasPartnership() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-12 text-center"
         >
-          <div className="inline-block bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900 rounded-lg px-6 py-4">
-            <p className="text-emerald-700 dark:text-emerald-400 font-medium text-lg">
+          <div className="inline-block bg-primary/5 border border-primary/20 rounded-lg px-6 py-4">
+            <p className="text-primary font-medium text-lg">
               Se não gerar resultado, você não paga nada.
             </p>
           </div>
