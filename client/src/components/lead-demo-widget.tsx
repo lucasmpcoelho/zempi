@@ -132,7 +132,7 @@ function IntegrationCard({ icon: Icon, title, visible, className }: { icon: any,
                     initial={{ opacity: 0, x: -20, scale: 0.95 }}
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={{ opacity: 0, x: -20, scale: 0.95 }}
-                    className={`bg-white/90 backdrop-blur border border-border/50 shadow-lg p-3 rounded-xl flex items-center gap-3 w-48 z-50 ${className}`}
+                    className={`bg-white/90 backdrop-blur border border-border/50 shadow-lg p-3 rounded-xl flex items-center gap-3 w-full lg:w-48 z-50 ${className}`}
                 >
                     <div className="w-8 h-8 rounded-full bg-[#1A3C34]/10 flex items-center justify-center shrink-0">
                         <Icon className="w-4 h-4 text-[#1A3C34]" />
@@ -237,14 +237,14 @@ export function LeadDemoWidget() {
             {/* Integration Visualizations - Positioned OUTSIDE the overflow container */}
             {/* Using negative RIGHT values to push them to the right, or LEFT to push left. 
                 Given the layout, let's try pushing lightly to the LEFT to use the gap space. */}
-            <div className="absolute top-32 -left-40 z-50">
+            <div className="absolute z-50 top-36 left-4 right-4 lg:left-auto lg:right-auto lg:top-32 lg:-left-40">
                 <IntegrationCard
                     icon={Calendar}
                     title="Agenda Sincronizada"
                     visible={showCalendarSync}
                 />
             </div>
-            <div className="absolute bottom-48 -left-40 z-50">
+            <div className="absolute z-50 bottom-56 left-4 right-4 lg:left-auto lg:right-auto lg:bottom-48 lg:-left-40">
                 <IntegrationCard
                     icon={Database}
                     title="CRM Atualizado"
